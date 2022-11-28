@@ -131,14 +131,13 @@
                       <av:Size x:Key="ShapeSize">200,66</av:Size>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="Seq_actions that validate system is active" sap:VirtualizedContainerService.HintSize="376,461" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                  <Sequence DisplayName="Seq_actions that validate system is active" sap:VirtualizedContainerService.HintSize="376,330" sap2010:WorkflowViewState.IdRef="Sequence_24">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <h:Login in_str_mainScreenTransacion="{x:Null}" out_win_LoginWindow="{x:Null}" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="Login_1" in_sec_LoginPassword="[CType(io_ProcessSetup.Job.CustomData(&quot;SapPassword&quot;),SecureString)]" in_str_LoginClientNumber="[io_ProcessSetup.Environment.GeneralAssets.Custom(&quot;SAP_Client&quot;).ToString]" in_str_LoginUserName="[io_ProcessSetup.Job.CustomData(&quot;SapUserName&quot;).ToString]" in_str_LogonConnectionName="[io_ProcessSetup.Environment.GeneralAssets.Custom(&quot;SAP_ConnectionName&quot;).ToString]" />
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;dsad&quot;]" />
+                    <h:Login out_win_LoginWindow="{x:Null}" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="Login_1" in_sec_LoginPassword="[CType(io_ProcessSetup.Job.CustomData(&quot;SapPassword&quot;),SecureString)]" in_str_LoginClientNumber="[io_ProcessSetup.Environment.GeneralAssets.Custom(&quot;SAP_Client&quot;).ToString]" in_str_LoginUserName="[io_ProcessSetup.Job.CustomData(&quot;SapUserName&quot;).ToString]" in_str_LogonConnectionName="[io_ProcessSetup.Environment.GeneralAssets.Custom(&quot;SAP_ConnectionName&quot;).ToString]" in_str_mainScreenTransacion="[io_ProcessSetup.BusinessProcess.Assets(&quot;SAP_MainScreen&quot;).ToString]" />
                   </Sequence>
                 </FlowStep>
                 <FlowDecision x:Name="__ReferenceID1" Condition="[int_attemptsToOpenBusinessApp=2]" DisplayName="is second attempt?" sap:VirtualizedContainerService.HintSize="105,87" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
