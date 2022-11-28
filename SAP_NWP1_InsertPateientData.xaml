@@ -1,13 +1,18 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="SeqNWP1_InsertPateientData" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="SeqNWP1_InsertPateientData" this:SeqNWP1_InsertPateientData.in_str_ClinicService="מ-אאג" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="in_pateientNumber" Type="InArgument(x:String)" />
     <x:Property Name="in_dateFrom" Type="InArgument(s:DateTime)" />
     <x:Property Name="in_dateTo" Type="InArgument(s:DateTime)" />
+    <x:Property Name="in_str_ClinicService" Type="InArgument(x:String)" />
+    <x:Property Name="in_str_pateientNumber" Type="InArgument(x:String)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
   </x:Members>
-  <this:SeqNWP1_InsertPateientData.in_pateientNumber>
+  <this:SeqNWP1_InsertPateientData.in_str_pateientNumber>
     <InArgument x:TypeArguments="x:String" />
-  </this:SeqNWP1_InsertPateientData.in_pateientNumber>
-  <sap:VirtualizedContainerService.HintSize>1410,1306</sap:VirtualizedContainerService.HintSize>
+  </this:SeqNWP1_InsertPateientData.in_str_pateientNumber>
+  <sap:VirtualizedContainerService.HintSize>1033,2779</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -100,7 +105,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Seq NWP1 - insert current data" sap:VirtualizedContainerService.HintSize="602,1912" sap2010:WorkflowViewState.IdRef="Sequence_15">
+  <Sequence DisplayName="Seq NWP1 - insert current data" sap:VirtualizedContainerService.HintSize="602,2594" sap2010:WorkflowViewState.IdRef="Sequence_15">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:UiElement" Name="uiwin_nwp1" />
     </Sequence.Variables>
@@ -109,19 +114,19 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: בחירות של סוג תצוגה 'מתקן שירות/מרפאת חוץ'" sap:VirtualizedContainerService.HintSize="560,1820" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" OpenMode="Never" OutUiElement="[uiwin_nwp1]" ScopeGuid="4ffc1a46-127c-4132-9a55-8c8593848986" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: בחירות של סוג תצוגה 'מתקן שירות/מרפאת חוץ'" sap:VirtualizedContainerService.HintSize="560,2502" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" OpenMode="Never" OutUiElement="[uiwin_nwp1]" ScopeGuid="4ffc1a46-127c-4132-9a55-8c8593848986" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do insert data" sap:VirtualizedContainerService.HintSize="526,1531" sap2010:WorkflowViewState.IdRef="Sequence_16">
+          <Sequence DisplayName="Do insert data" sap:VirtualizedContainerService.HintSize="526,2213" sap2010:WorkflowViewState.IdRef="Sequence_16">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text 'CTextField מתקן'" sap:VirtualizedContainerService.HintSize="484,154" sap2010:WorkflowViewState.IdRef="SetValue_1" Text="מ-אאג">
+            <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text 'CTextField מתקן'" sap:VirtualizedContainerService.HintSize="484,154" sap2010:WorkflowViewState.IdRef="SetValue_1" Text="[in_str_ClinicService]">
               <ui:SetValue.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1f845132-20f8-4bc0-ba52-966add29c91a" InformativeScreenshot="a2a43159e16bb8950a9a9884abfcd7c8" Selector="&lt;wnd app='saplgpad.exe' cls='#32770' title='בחירות של סוג תצוגה &amp;apos;מתקן שירות/מרפאת חוץ&amp;apos;' idx='*' /&gt;&lt;sap id='usr/tabsTABSTRIP/tabpTAB_ALLGEMEIN/ssubSUB_ALLGEMEIN:SAPLN1LSTAMB:0110/ctxtSCR_LEISTUNGSSTELLE' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -133,7 +138,7 @@
                 </ui:Target>
               </ui:SetValue.Target>
             </ui:SetValue>
-            <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text 'in_pateientNumber'" sap:VirtualizedContainerService.HintSize="484,154" sap2010:WorkflowViewState.IdRef="SetValue_2" Text="[in_pateientNumber]">
+            <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text 'in_pateientNumber'" sap:VirtualizedContainerService.HintSize="484,154" sap2010:WorkflowViewState.IdRef="SetValue_2" Text="[in_str_pateientNumber]">
               <ui:SetValue.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1f845132-20f8-4bc0-ba52-966add29c91a" InformativeScreenshot="0e37a5c902389c4fb40c59a5613f98b1" Selector="&lt;wnd app='saplgpad.exe' cls='#32770' title='בחירות של סוג תצוגה &amp;apos;מתקן שירות/מרפאת חוץ&amp;apos;' idx='*' /&gt;&lt;sap id='usr/tabsTABSTRIP/tabpTAB_ALLGEMEIN/ssubSUB_ALLGEMEIN:SAPLN1LSTAMB:0110/ctxtSCR_PATIENT' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -145,7 +150,8 @@
                 </ui:Target>
               </ui:SetValue.Target>
             </ui:SetValue>
-            <If Condition="[Not in_dateFrom.ToString(&quot;dd/MM/yyyy&quot;).Equals(&quot;01/01/0001&quot;)]" DisplayName="האם נדרש להזין תאריך מ " sap:VirtualizedContainerService.HintSize="484,341" sap2010:WorkflowViewState.IdRef="If_1">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;מתקן שירות &quot; +&quot;מ-אאג&quot; + &quot;מספר מטופל &quot; + in_str_pateientNumber]" />
+            <If Condition="[Not in_dateFrom.ToString(&quot;dd/MM/yyyy&quot;).Equals(&quot;01/01/0001&quot;)]" DisplayName="האם נדרש להזין תאריך מ " sap:VirtualizedContainerService.HintSize="484,567" sap2010:WorkflowViewState.IdRef="If_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -153,21 +159,29 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set in_dateFrom.ToString(&quot;dd.MM.yyyy&quot;)" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="SetValue_3" Text="[in_dateFrom.ToString(&quot;dd.MM.yyyy&quot;)]">
-                  <ui:SetValue.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1f845132-20f8-4bc0-ba52-966add29c91a" InformativeScreenshot="3dc2534bb0ffbf0dd6654a08308fcd5c" Selector="&lt;wnd app='saplgpad.exe' cls='#32770' title='בחירות של סוג תצוגה &amp;apos;מתקן שירות/מרפאת חוץ&amp;apos;' idx='*' /&gt;&lt;sap id='usr/tabsTABSTRIP/tabpTAB_ALLGEMEIN/ssubSUB_ALLGEMEIN:SAPLN1LSTAMB:0110/ctxtSCR_DATUM_VON' /&gt;">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
-                      <ui:Target.WaitForReady>
-                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                      </ui:Target.WaitForReady>
-                    </ui:Target>
-                  </ui:SetValue.Target>
-                </ui:SetValue>
+                <Sequence sap:VirtualizedContainerService.HintSize="376,379" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set in_dateFrom.ToString(&quot;dd.MM.yyyy&quot;)" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="SetValue_6" Text="[in_dateFrom.ToString(&quot;dd.MM.yyyy&quot;)]">
+                    <ui:SetValue.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1f845132-20f8-4bc0-ba52-966add29c91a" InformativeScreenshot="3dc2534bb0ffbf0dd6654a08308fcd5c" Selector="&lt;wnd app='saplgpad.exe' cls='#32770' title='בחירות של סוג תצוגה &amp;apos;מתקן שירות/מרפאת חוץ&amp;apos;' idx='*' /&gt;&lt;sap id='usr/tabsTABSTRIP/tabpTAB_ALLGEMEIN/ssubSUB_ALLGEMEIN:SAPLN1LSTAMB:0110/ctxtSCR_DATUM_VON' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SetValue.Target>
+                  </ui:SetValue>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;תאריך מ הוזן :  &quot; + in_dateFrom.ToString(&quot;dd.MM.yyyy&quot;)]" />
+                </Sequence>
               </If.Then>
             </If>
-            <If Condition="[Not in_dateTo.ToString(&quot;dd/MM/yyyy&quot;).Equals(&quot;01/01/0001&quot;)]" DisplayName="האם נדרש להזין תאריך עד " sap:VirtualizedContainerService.HintSize="484,341" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[Not in_dateTo.ToString(&quot;dd/MM/yyyy&quot;).Equals(&quot;01/01/0001&quot;)]" DisplayName="האם נדרש להזין תאריך עד " sap:VirtualizedContainerService.HintSize="484,598" sap2010:WorkflowViewState.IdRef="If_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -175,26 +189,47 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set in_dateTo.ToString(&quot;dd.MM.yyyy&quot;)" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="SetValue_4" Text="[in_dateTo.ToString(&quot;dd.MM.yyyy&quot;)]">
-                  <ui:SetValue.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1f845132-20f8-4bc0-ba52-966add29c91a" InformativeScreenshot="a6672a7c7e757ef320beb4330be5be80" Selector="&lt;wnd app='saplgpad.exe' cls='#32770' title='בחירות של סוג תצוגה &amp;apos;מתקן שירות/מרפאת חוץ&amp;apos;' idx='*' /&gt;&lt;sap id='usr/tabsTABSTRIP/tabpTAB_ALLGEMEIN/ssubSUB_ALLGEMEIN:SAPLN1LSTAMB:0110/ctxtSCR_DATUM_BIS' /&gt;">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
-                      <ui:Target.WaitForReady>
-                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                      </ui:Target.WaitForReady>
-                    </ui:Target>
-                  </ui:SetValue.Target>
-                </ui:SetValue>
+                <Sequence sap2010:Annotation.AnnotationText="הזננת תאריך עד" DisplayName="Sequenc DATE TO" sap:VirtualizedContainerService.HintSize="376,410" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set in_dateTo.ToString(&quot;dd.MM.yyyy&quot;)" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="SetValue_5" Text="[in_dateTo.ToString(&quot;dd.MM.yyyy&quot;)]">
+                    <ui:SetValue.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1f845132-20f8-4bc0-ba52-966add29c91a" InformativeScreenshot="a6672a7c7e757ef320beb4330be5be80" Selector="&lt;wnd app='saplgpad.exe' cls='#32770' title='בחירות של סוג תצוגה &amp;apos;מתקן שירות/מרפאת חוץ&amp;apos;' idx='*' /&gt;&lt;sap id='usr/tabsTABSTRIP/tabpTAB_ALLGEMEIN/ssubSUB_ALLGEMEIN:SAPLN1LSTAMB:0110/ctxtSCR_DATUM_BIS' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SetValue.Target>
+                  </ui:SetValue>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;תאריך עד הוזן :  &quot; + in_dateTo.ToString(&quot;dd.MM.yyyy&quot;)]" />
+                </Sequence>
               </If.Then>
             </If>
-            <uix:NClick ClickType="Single" DisplayName="Click 'בצע'" sap:VirtualizedContainerService.HintSize="484,156" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4ffc1a46-127c-4132-9a55-8c8593848986" Version="V1">
+            <uix:NClick sap2010:Annotation.AnnotationText="לחיצה על בצע ובדיקה שעבר מסך בצורה תקינה" ClickType="Single" DisplayName="Click 'בצע'" sap:VirtualizedContainerService.HintSize="484,224" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4ffc1a46-127c-4132-9a55-8c8593848986" Timeout="5" Version="V1">
               <uix:NClick.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="37, 715, 58, 20" ElementType="Button" FriendlyName="'בצע'" FullSelectorArgument="&lt;sap id='tbar[0]/btn[0]' /&gt;" FuzzySelectorArgument="&lt;sap id='tbar[0]/btn[0]' check:text='בצע' /&gt;" Guid="673f5bb2-e640-409b-a7b2-a4aa4e429cfd" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAD4AAAAYCAYAAACiNE5vAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKUSURBVFhH7dhBaxNBGAbg/SEeS+ld0kMEc+hB/4IVmgohCipCoYgIRhATvdgVKi1WW6xCJYjSg4sHe5OigaY9VFQWqqRQQ0TTUKOmbfK679Q0u9mZ3bZ62Y2Hl+zONxP2mW+WQLTKjxI6Mf/hP4sPcX8shUTiTChDG40u+B39Mp49zqBR+whsFkIVmmij0QU/f+4sKqvTaGyuAfXvoQpNtAmjCo6tz0D1Vbhimfzh2yX54gAlv7SIE/oRnL59QVzT5AtvbK1KvywoIfTo8HFk5g6LEE+TP7z2Adh4GcjY0ZeeHxKf7DxNnvB1wqvzQGVWkRSS2jEYjrFx6L090BdnYWZ6oA2mbDXOt9U0zZneBEzHdx08MjTvOU4TbUp4ufAAjY05oDyjyAj0SDf0vHzMTHdb8IutWn4AUa0Pxu5cZ8T8yABMSU0VQnh82Un7mAydy+VEnSba/gK+87DR9IhtzLYZAmrbmGyfD4xrNSSzspo8RBPGnEyf8kUz/wQuMF5dZd06xsns3lDG4P7g7HQ7sv2em2Ff4wv/+mnKmvQC+DblkSHrvY3B+HNvprugxYeccxb6rc2w3uFIP0z7uCRGnHB5TRZZh12dbltDE21K+JeVSTQqT10L22PEu6Av8Jqb0Lx2R2yKR53ZL5zxPN6S+TTRpoQXzQnU9wAnKBqPia76PbSYm74prTEHgTNENvFeaIYm2pTwtffjqK+r4XzI1s9R67jvJhuz1ZvZ6bhzrTtem6NKEy/eaUm9GZpoU8ILy6Oe8KCGJtqU8JWlW9guP5EuDnJook0Jf/v6BqrFGfwqToQqNNEmhd8dvYLJsWEsz1/DuzfXQxWaaKPRBa+VHmH63lXp3zZhCG00uuCdlg6Fl/AbNGSD5ZNcwEEAAAAASUVORK5CYII=" InformativeScreenshot="f704b174a557a35efcac48bec8867c10.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32770' title='בחירות של סוג תצוגה &amp;apos;מתקן שירות/מרפאת חוץ&amp;apos;' idx='*' /&gt;" SearchSteps="Selector" />
               </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="Element 'רשימת מוזמנים'" Mode="Appears" Retry="True" Timeout="5">
+                  <uix:VerifyExecutionOptions.Target>
+                    <uix:TargetAnchorable DesignTimeRectangle="22, 86, 1490, 31" ElementType="Toolbar" FriendlyName="'רשימת מוזמנים'" FullSelectorArgument="&lt;sap id='titl' /&gt;" FuzzySelectorArgument="&lt;sap id='titl' check:text='רשימת מוזמנים (רענון אוטומטי כל 360 שניות)   ;' /&gt;" Guid="a4e231c4-ab3d-42f7-ba30-2eebef7c549c" ImageBase64="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" InformativeScreenshot="f974644619985170faa9330ac27dfb92.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='*רשימת מוזמנים*' /&gt;" SearchSteps="Selector" />
+                  </uix:VerifyExecutionOptions.Target>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;הוזן מרפאת שירות מ-אאג  &quot;]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;לחיצה על בצע&quot;]" />
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
