@@ -141,7 +141,7 @@
         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;נמצאו &quot; + out_dt_ExtractDataTable.RowCount.ToString +&quot;שורות &quot;]" />
       </If.Else>
     </If>
-    <If sap2010:Annotation.AnnotationText="בדיקה האם יש שורה ללא מספר מקרה" Condition="[out_dt_ExtractDataTable.AsEnumerable.Any(function (x) String.IsNullOrEmpty(x(&quot;&quot;).ToString))]" DisplayName="If there rows without case number" sap:VirtualizedContainerService.HintSize="579,249" sap2010:WorkflowViewState.IdRef="If_2">
+    <If sap2010:Annotation.AnnotationText="בדיקה האם יש שורה ללא מספר מקרה" Condition="[out_dt_ExtractDataTable.AsEnumerable.Any(function (x) String.IsNullOrEmpty(x(&quot;מקרה&quot;).ToString))]" DisplayName="If there rows without case number" sap:VirtualizedContainerService.HintSize="579,249" sap2010:WorkflowViewState.IdRef="If_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
