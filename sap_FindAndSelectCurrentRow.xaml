@@ -1,11 +1,18 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="sap_FindAndSelectCurrentRow" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="sap_FindAndSelectCurrentRow" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="out_dt_ExtractDataTable" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="out_int_rowIndex" Type="InArgument(x:Int32)" />
+    <x:Property Name="out_uiElment_currentRowCell" Type="InArgument(ui:UiElement)" />
   </x:Members>
+  <this:sap_FindAndSelectCurrentRow.out_int_rowIndex>
+    <InArgument x:TypeArguments="x:Int32" />
+  </this:sap_FindAndSelectCurrentRow.out_int_rowIndex>
+  <this:sap_FindAndSelectCurrentRow.out_uiElment_currentRowCell>
+    <InArgument x:TypeArguments="ui:UiElement" />
+  </this:sap_FindAndSelectCurrentRow.out_uiElment_currentRowCell>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>611,1356</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1417,1518</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>sap_FindAndSelectCurrentRow_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
@@ -81,10 +88,11 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="sap_FindAndSelectCurrentRow" sap:VirtualizedContainerService.HintSize="621,1251" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="sap_FindAndSelectCurrentRow" sap:VirtualizedContainerService.HintSize="590,1453" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:UiElement" Name="out_uiWin" />
     </Sequence.Variables>
@@ -93,65 +101,183 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="579,539" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="Never" OutUiElement="[out_uiWin]" ScopeGuid="76ceb8bd-fa3a-44ff-ac19-acb024cadece" Timeout="5" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: רשימת מוזמנים (רענון אוטומטי כל 360 שניות)   ;" sap:VirtualizedContainerService.HintSize="548,1269" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="e1e2e85d-d65f-4aad-9eb6-52546aef6177" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,250" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="514,977" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[out_dt_ExtractDataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='יחידה ארגונית מטפלת' ReferenceIdx='0' Name='יחידה ארגונית מטפלת'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='חדר טיפולים' ReferenceIdx='1' Name='חדר טיפולים'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='שעת זימון' ReferenceIdx='2' Name='שעת זימון'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='מספר סידורי לפציינט' ReferenceIdx='3' Name='מספר סידורי לפציינט'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='שליחת ת.סרולוגיה במייל' ReferenceIdx='4' Name='שליחת ת.סרולוגיה במייל'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='שליחת ת.קורונה במייל' ReferenceIdx='5' Name='שליחת ת.קורונה במייל'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='דוא&quot;ל' ReferenceIdx='6' Name='דוא&quot;ל'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='שם מטופל' ReferenceIdx='7' Name='שם מטופל'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='טלפון 1' ReferenceIdx='8' Name='טלפון 1'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='טלפון 2' ReferenceIdx='9' Name='טלפון 2'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='מספר מסמך זיהוי.מט' ReferenceIdx='10' Name='מספר מסמך זיהוי.מט'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='סוג מסמך זיהוי.מט' ReferenceIdx='11' Name='סוג מסמך זיהוי.מט'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='מספר מטופל' ReferenceIdx='12' Name='מספר מטופל'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='מין' ReferenceIdx='13' Name='מין'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='מקרה' ReferenceIdx='14' Name='מקרה'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='שעה' ReferenceIdx='15' Name='שעה'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='תיאור שירות' ReferenceIdx='16' Name='תיאור שירות'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='עדיפות' ReferenceIdx='17' Name='עדיפות'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='מסמך סיכום ביקור' ReferenceIdx='18' Name='מסמך סיכום ביקור'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='עדיפות )טקסט(' ReferenceIdx='19' Name='עדיפות )טקסט('&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='סיווג מטופל' ReferenceIdx='20' Name='סיווג מטופל'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='שירות' ReferenceIdx='21' Name='שירות'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='סטטוס שירות' ReferenceIdx='22' Name='סטטוס שירות'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='הערה לשירות' ReferenceIdx='23' Name='הערה לשירות'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='שעת שיחרור שירות' ReferenceIdx='24' Name='שעת שיחרור שירות'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="Rows" MaximumResults="0" Version="V1">
-              <uix:NExtractData.NextLink>
-                <uix:TargetAnchorable DesignTimeRectangle="0, 0, 0, 0" Guid="82bc29bd-ae38-4fd6-8892-8b619b73d672" />
-              </uix:NExtractData.NextLink>
-              <uix:NExtractData.Target>
-                <uix:TargetAnchorable DesignTimeRectangle="29, 159, 1259, 615" FriendlyName="'SAPGUI.GridViewCtrl.1'" FullSelectorArgument="&lt;sap id='usr/ssubVIEW_SCREEN:SAPLN1LSTAMB:0007/cntlISH_VIEW_007/shellcont/shell' /&gt;" Guid="09a3355a-9568-4d6e-81e5-d084f2a6a4ef" InformativeScreenshot="1fc40b99f62950e2c3bc161ebf9c9a3c.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='רשימת מוזמנים (רענון אוטומטי כל 360 שניות)   ;' /&gt;" SearchSteps="Selector" />
-              </uix:NExtractData.Target>
-            </uix:NExtractData>
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="472,883" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+              <TryCatch.Try>
+                <ui:CellScope ColumnName="מקרה" DisplayName="Table Cell Scope 'GridViewColumn  מקרה'" sap:VirtualizedContainerService.HintSize="434,651" sap2010:WorkflowViewState.IdRef="CellScope_3" RowNumber="First Empty Row" TableRow="[out_int_rowIndex]" UiElement="[out_uiElment_currentRowCell]">
+                  <ui:CellScope.Body>
+                    <ActivityAction x:TypeArguments="x:Object">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,362" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ClickType="Single" DisplayName="Click" sap:VirtualizedContainerService.HintSize="334,137" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" OutUiElement="[out_uiElment_currentRowCell]" Timeout="2" Version="V1" />
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;נמצאה שורה ללא מספר מקרה&quot;]" />
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:CellScope.Body>
+                  <ui:CellScope.ColumnNames>
+                    <scg:List x:TypeArguments="x:String" Capacity="25">
+                      <x:String>יחידה ארגונית מטפלת</x:String>
+                      <x:String>חדר טיפולים</x:String>
+                      <x:String>שעת זימון</x:String>
+                      <x:String>מספר סידורי לפציינט</x:String>
+                      <x:String>שליחת ת.סרולוגיה במייל</x:String>
+                      <x:String>שליחת ת.קורונה במייל</x:String>
+                      <x:String>דוא"ל</x:String>
+                      <x:String>שם מטופל</x:String>
+                      <x:String>טלפון 1</x:String>
+                      <x:String>טלפון 2</x:String>
+                      <x:String>מספר מסמך זיהוי.מט</x:String>
+                      <x:String>סוג מסמך זיהוי.מט</x:String>
+                      <x:String>מספר מטופל</x:String>
+                      <x:String>מין</x:String>
+                      <x:String>מקרה</x:String>
+                      <x:String>שעה</x:String>
+                      <x:String>תיאור שירות</x:String>
+                      <x:String>עדיפות</x:String>
+                      <x:String>מסמך סיכום ביקור</x:String>
+                      <x:String>עדיפות )טקסט(</x:String>
+                      <x:String>סיווג מטופל</x:String>
+                      <x:String>שירות</x:String>
+                      <x:String>סטטוס שירות</x:String>
+                      <x:String>הערה לשירות</x:String>
+                      <x:String>שעת שיחרור שירות</x:String>
+                    </scg:List>
+                  </ui:CellScope.ColumnNames>
+                  <ui:CellScope.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3644816a-291d-47f2-aca3-47dccb90ad4f" InformativeScreenshot="5bd167acbeb2c19a8b9ae1ea857b6207" Selector="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='*רשימת מוזמנים*' /&gt;&lt;sap id='usr/ssubVIEW_SCREEN:SAPLN1LSTAMB:0007/cntlISH_VIEW_007/shellcont/shell' /&gt;" TimeoutMS="3000">
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </ui:CellScope.Target>
+                </ui:CellScope>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="438,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <Sequence sap:VirtualizedContainerService.HintSize="376,246" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Warn" Message="[&quot;לא נמצאו שורות לטיפול&quot;]" />
+                      <Throw DisplayName="Throw BIX" Exception="[new BusinessRuleException(&quot;לא נמצאו שורות לטיפול&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                    </Sequence>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
       <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="0, 0, 0, 0" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplgpad.exe" IconBase64="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" InformativeScreenshot="f74f3abb79ea05b75d84fb6270a13692.png" Selector="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='רשימת מוזמנים (רענון אוטומטי כל 360 שניות)   ;'/&gt;" />
+        <uix:TargetApp Area="-8, -8, 1936, 1056" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplgpad.exe" IconBase64="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" InformativeScreenshot="419a1e6c842d0fb5158e1444f7cd9323.png" IsExactTitleEnabled="True" Selector="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='*רשימת מוזמנים*' /&gt;" />
       </uix:NApplicationCard.TargetApp>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <If sap2010:Annotation.AnnotationText="האם בכלל התקבלה טבלה&#xA;אם לא נזרקת שגיאה עסקית" Condition="[NOT out_dt_ExtractDataTable.RowCount&gt;0]" DisplayName="If there is any row" sap:VirtualizedContainerService.HintSize="579,291" sap2010:WorkflowViewState.IdRef="If_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="548,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,409" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="Never" OutUiElement="[out_uiWin]" ScopeGuid="76ceb8bd-fa3a-44ff-ac19-acb024cadece" Timeout="5" Version="V1">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,250" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[out_dt_ExtractDataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='יחידה ארגונית מטפלת' ReferenceIdx='0' Name='יחידה ארגונית מטפלת'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='חדר טיפולים' ReferenceIdx='1' Name='חדר טיפולים'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='שעת זימון' ReferenceIdx='2' Name='שעת זימון'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='מספר סידורי לפציינט' ReferenceIdx='3' Name='מספר סידורי לפציינט'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='שליחת ת.סרולוגיה במייל' ReferenceIdx='4' Name='שליחת ת.סרולוגיה במייל'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='שליחת ת.קורונה במייל' ReferenceIdx='5' Name='שליחת ת.קורונה במייל'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='דוא&quot;ל' ReferenceIdx='6' Name='דוא&quot;ל'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='שם מטופל' ReferenceIdx='7' Name='שם מטופל'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='טלפון 1' ReferenceIdx='8' Name='טלפון 1'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='טלפון 2' ReferenceIdx='9' Name='טלפון 2'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='מספר מסמך זיהוי.מט' ReferenceIdx='10' Name='מספר מסמך זיהוי.מט'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='סוג מסמך זיהוי.מט' ReferenceIdx='11' Name='סוג מסמך זיהוי.מט'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='מספר מטופל' ReferenceIdx='12' Name='מספר מטופל'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='מין' ReferenceIdx='13' Name='מין'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='מקרה' ReferenceIdx='14' Name='מקרה'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='שעה' ReferenceIdx='15' Name='שעה'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='תיאור שירות' ReferenceIdx='16' Name='תיאור שירות'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='עדיפות' ReferenceIdx='17' Name='עדיפות'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='מסמך סיכום ביקור' ReferenceIdx='18' Name='מסמך סיכום ביקור'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='עדיפות )טקסט(' ReferenceIdx='19' Name='עדיפות )טקסט('&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='סיווג מטופל' ReferenceIdx='20' Name='סיווג מטופל'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='שירות' ReferenceIdx='21' Name='שירות'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='סטטוס שירות' ReferenceIdx='22' Name='סטטוס שירות'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='הערה לשירות' ReferenceIdx='23' Name='הערה לשירות'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='שעת שיחרור שירות' ReferenceIdx='24' Name='שעת שיחרור שירות'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="Rows" MaximumResults="0" Version="V1">
+                    <uix:NExtractData.NextLink>
+                      <uix:TargetAnchorable DesignTimeRectangle="0, 0, 0, 0" Guid="82bc29bd-ae38-4fd6-8892-8b619b73d672" />
+                    </uix:NExtractData.NextLink>
+                    <uix:NExtractData.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="29, 159, 1259, 615" FriendlyName="'SAPGUI.GridViewCtrl.1'" FullSelectorArgument="&lt;sap id='usr/ssubVIEW_SCREEN:SAPLN1LSTAMB:0007/cntlISH_VIEW_007/shellcont/shell' /&gt;" Guid="09a3355a-9568-4d6e-81e5-d084f2a6a4ef" InformativeScreenshot="1fc40b99f62950e2c3bc161ebf9c9a3c.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='רשימת מוזמנים (רענון אוטומטי כל 360 שניות)   ;' /&gt;" SearchSteps="Selector" />
+                    </uix:NExtractData.Target>
+                  </uix:NExtractData>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="0, 0, 0, 0" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplgpad.exe" IconBase64="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" InformativeScreenshot="f74f3abb79ea05b75d84fb6270a13692.png" Selector="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='רשימת מוזמנים (רענון אוטומטי כל 360 שניות)   ;'/&gt;" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+          <If sap2010:Annotation.AnnotationText="האם בכלל התקבלה טבלה&#xA;אם לא נזרקת שגיאה עסקית" Condition="[NOT out_dt_ExtractDataTable.RowCount&gt;0]" DisplayName="If there is any row" sap:VirtualizedContainerService.HintSize="200,93" sap2010:WorkflowViewState.IdRef="If_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If.Then>
+              <Throw Exception="[new BusinessRuleException(&quot;לא נמצאו שורת למטופל&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+            </If.Then>
+            <If.Else>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;נמצאו &quot; + out_dt_ExtractDataTable.RowCount.ToString +&quot;שורות &quot;]" />
+            </If.Else>
+          </If>
+          <If sap2010:Annotation.AnnotationText="בדיקה האם יש שורה ללא מספר מקרה" Condition="[out_dt_ExtractDataTable.AsEnumerable.Any(function (x) String.IsNullOrEmpty(x(&quot;מקרה&quot;).ToString))]" DisplayName="If there rows without case number" sap:VirtualizedContainerService.HintSize="200,93" sap2010:WorkflowViewState.IdRef="If_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If.Else>
+              <Throw Exception="[new BusinessRuleException(&quot;לא נמצאו שורות ללא מספר מקרה&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
+            </If.Else>
+          </If>
+        </Sequence>
+      </ui:CommentOut.Body>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <If.Then>
-        <Throw Exception="[new BusinessRuleException(&quot;לא נמצאו שורת למטופל&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
-      </If.Then>
-      <If.Else>
-        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;נמצאו &quot; + out_dt_ExtractDataTable.RowCount.ToString +&quot;שורות &quot;]" />
-      </If.Else>
-    </If>
-    <If sap2010:Annotation.AnnotationText="בדיקה האם יש שורה ללא מספר מקרה" Condition="[out_dt_ExtractDataTable.AsEnumerable.Any(function (x) String.IsNullOrEmpty(x(&quot;מקרה&quot;).ToString))]" DisplayName="If there rows without case number" sap:VirtualizedContainerService.HintSize="579,249" sap2010:WorkflowViewState.IdRef="If_2">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <If.Else>
-        <Throw Exception="[new BusinessRuleException(&quot;לא נמצאו שורות ללא מספר מקרה&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
-      </If.Else>
-    </If>
+    </ui:CommentOut>
   </Sequence>
 </Activity>

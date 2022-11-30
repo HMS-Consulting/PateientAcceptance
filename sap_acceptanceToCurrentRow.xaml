@@ -1,0 +1,111 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="sap_acceptanceToCurrentRow" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1417,863" sap2010:WorkflowViewState.IdRef="sap_acceptanceToCurrentRow_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="sap_acceptanceToCurrentRow" sap:VirtualizedContainerService.HintSize="476,798" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: רשימת מוזמנים (רענון אוטומטי כל 360 שניות)   ;" sap:VirtualizedContainerService.HintSize="434,706" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="209a223b-1885-4cce-95e8-ffafa3f4f494" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,417" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ClickType="Single" DisplayName="Click 'קבלה למרפאה'" sap:VirtualizedContainerService.HintSize="334,193" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="209a223b-1885-4cce-95e8-ffafa3f4f494" Timeout="5" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="1579, 161, 110, 22" ElementType="Button" FriendlyName="'קבלה למרפאה'" FullSelectorArgument="&lt;ctrl name='קבלה למרפאה' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='קבלה למרפאה' role='push button' automationid='' check:text='קבלה למרפאה' /&gt;" Guid="626b69b1-6d75-4440-be2a-bd2e5fc4e0fe" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHIAAAAaCAYAAABreghKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOLSURBVGhD7ZrPS1RBHMDfHyPiP6CHvXjw4P8g6FYsS1BdhPAQVBCteck9GEqWkgWGiNLl4aHoEpKB2kGpeGChYMtG6WJW/tpv831vZpw3b96bebbarszCB2bnO/Od73w/b3c96CysvgZLY1P5VQbHK78DS+NiRZ4TuMjfpad8EsePh29BLnfZUsegI+aNi3xQvMFF4nj2eT9U9z4D7K9b6hB0g46YNy7y2tUrXCSOKxsTUN3fBDj6afkPdHd3J4Ju0BHzligSDr4C7L6xnDFMVtzLjxE35iIPy8qDLKcHk6gVSdwYi6webCgPq1fcSw7kZ9WxtNQylymiRJ1IdGMucu8TwM7LhsG9SJo/o46lpZa5TJAlInEvjKEbI5HbKHJ3HqDyIsxyDjKOA06ITnCleH5a2FMZgWJbCxSXyXi6U9pLaMuBx9fFxehefB/KQfOSuHtB2EfJ9I/QGiQ090jK5fW3RGKhOhFl/vh6ksTJL18kcYOOtCK31p9AdecVwNakFq/QDE5rD3hsbqqDFN0BLl8zCMXWZigu0diFPr4X8ZsmzaljmAcbQnPhHOYTzw7RB3lxrYbIPUIk50rey4jPkVokcYOOaipSVWBYAImzSypEBvtF8fExbFimMCjF4xuMdeSn1LEo/5IreMh0Z8XlOHuRSz2QiTx5wicO3xNZmUIPaUpQNDafF6/8BJmLjDZCOjtEQszkHsaxgFBtKfOfmsjvX8bJ4jmAH+NhFrtIgV3gheYHSIFNUFxk43ZwcX6qPfhdKAxIa+nvBZ/vJbLonghiTDyHoZqj4PmRWinae0gk5aK4WRRJ36vyK88MSC9yznekFfltbQyqlZnIgdoGSHG8nJPtFdYqwD1GIlXC45qPa2OkILp7hOY1uSjJIhMeEkJqkcQNOtKKLHmjcFQDkUEThAtGwL1JsgV5ps3HdbrG1zIXJV6krgfpRaIbdKQVuflxBI62ayGS4H/FCnFyKfFP8uRP7LFIr9DEv45xfJxDbDSpJSvXp0B3D/Zekcv/lhHrl/BrFPK7Wf2DkFokcYOOtCLXV4bUIi1mKB+UeE4iEh1pRa69vw+HW9PKQy0GnEBkGtANOtKKXH17D3ZLk/CnNGqpQ9ANOoqIfDh0k4vE8djwdViZvwMfFu5a6hB0g46YNy5yr/yMi8TxxKPbyn8vsNQP6Ih54yKZREtjYkWeE6zIc0Igsgx/ASV/IMWaNpXYAAAAAElFTkSuQmCC" InformativeScreenshot="a90b13f4ddaf4873495634fc51fc82a1.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='רשימת מוזמנים (רענון אוטומטי כל 360 שניות)   ;' /&gt;" SearchSteps="Selector, FuzzySelector, Image" SelectionStrategy="AA" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="Element 'אחזקת נתוני'" Mode="Appears" Timeout="10">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Target>
+                    <uix:TargetAnchorable DesignTimeRectangle="22, 86, 1841, 31" ElementType="Toolbar" FriendlyName="'אחזקת נתוני'" FullSelectorArgument="&lt;sap id='titl' text=' אחזקת נתוני אב מטופל: מסך נתונים' /&gt;" FuzzySelectorArgument="&lt;sap id='titl' text=' אחזקת נתוני אב מטופל: מסך נתונים' check:text='אחזקת נתוני אב מטופל: מסך נתונים' /&gt;" Guid="5e19daf7-0d8f-4d57-897d-0fe15fe9e30c" ImageBase64="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" InformativeScreenshot="8423e6fa950c8d8986e51d77a8cce17f.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='אחזקת נתוני אב מטופל: מסך נתונים' /&gt;" SearchSteps="Selector" />
+                  </uix:VerifyExecutionOptions.Target>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;הרובוט לחץ  קבלה  למרפאה&quot;]" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1056" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplgpad.exe" IconBase64="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" InformativeScreenshot="938df2304495354aad9bbb55d9778bd6.png" Selector="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='*רשימת מוזמנים*' /&gt;" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
