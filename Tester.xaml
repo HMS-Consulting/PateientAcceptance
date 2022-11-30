@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Tester" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1417,1393" sap2010:WorkflowViewState.IdRef="Tester_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:hm="clr-namespace:HMS.Modeling;assembly=HmsTeam.UiPath.Shared" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ucas="clr-namespace:UiPath.Core.Activities.SAP;assembly=UiPath.UiAutomation.Activities" xmlns:ucas1="clr-namespace:UiPath.Core.Activities.Storage;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Tester" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1417,1208" sap2010:WorkflowViewState.IdRef="Tester_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:h="clr-namespace:HmsTeam_SAP_Activities;assembly=HmsTeam.SAP.Activities" xmlns:hm="clr-namespace:HMS.Modeling;assembly=HmsTeam.UiPath.Shared" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ucas="clr-namespace:UiPath.Core.Activities.SAP;assembly=UiPath.UiAutomation.Activities" xmlns:ucas1="clr-namespace:UiPath.Core.Activities.Storage;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="38">
+    <scg:List x:TypeArguments="x:String" Capacity="40">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -39,10 +39,12 @@
       <x:String>UiPath.Core.Activities.Orchestrator</x:String>
       <x:String>UiPath.UIAutomationCore.Contracts</x:String>
       <x:String>UiPath.Core.Activities.SAP</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>HmsTeam_SAP_Activities</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="35">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="36">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -78,26 +80,32 @@
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>HmsTeam.SAP.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="418,1328" sap2010:WorkflowViewState.IdRef="Sequence_7">
+  <Sequence sap:VirtualizedContainerService.HintSize="376,1143" sap2010:WorkflowViewState.IdRef="Sequence_7">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="DT" />
       <Variable x:TypeArguments="x:Int32" Name="index" />
       <Variable x:TypeArguments="ui:UiElement" Name="ui_CellElment" />
       <Variable x:TypeArguments="x:Int32" Name="int_rowIndex" />
+      <Variable x:TypeArguments="ss:SecureString" Name="pass" />
+      <Variable x:TypeArguments="x:String" Name="sapuser" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap:VirtualizedContainerService.HintSize="376,403" sap2010:WorkflowViewState.IdRef="Sequence_10">
+    <Sequence sap:VirtualizedContainerService.HintSize="334,66" sap2010:WorkflowViewState.IdRef="Sequence_10">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
+      <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="SAP_Cred" DisplayName="Get Credential" FolderPath="Root/.General" sap:VirtualizedContainerService.HintSize="334,79" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[pass]" Username="[sapuser]" />
+      <h:Login out_win_LoginWindow="{x:Null}" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="Login_2" in_sec_LoginPassword="[pass]" in_str_LoginClientNumber="941" in_str_LoginUserName="[sapuser]" in_str_LogonConnectionName="WOLF QA" in_str_mainScreenTransacion="NWP1" />
       <ucas:CallTransaction DisplayName="Call Transaction 'saplgpad.exe זימון'" sap:VirtualizedContainerService.HintSize="334,159" sap2010:WorkflowViewState.IdRef="CallTransaction_1" Transaction="NWP1">
         <ucas:CallTransaction.Target>
           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a07c1288-c15d-4da0-a745-7e480c795adc" InformativeScreenshot="18d2b05659a26e303efab781293406fe" Selector="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' omit:title='זימון מטופל אמבולטורי' /&gt;">
@@ -110,24 +118,25 @@
           </ui:Target>
         </ucas:CallTransaction.Target>
       </ucas:CallTransaction>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SAP_NWP1_InsertPateientData workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="SAP_NWP1_InsertPateientData.xaml">
-        <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateFrom">
-            <mva:VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="DateAdd(&quot;d&quot;,-3,datetime.Now)" />
-          </InArgument>
-          <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateTo">
-            <mva:VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="DateAdd(&quot;d&quot;,7,datetime.Now)" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_str_ClinicService">
-            <Literal x:TypeArguments="x:String">מ-אאג</Literal>
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_str_pateientNumber">
-            <Literal x:TypeArguments="x:String">2048988</Literal>
-          </InArgument>
-        </ui:InvokeWorkflowFile.Arguments>
-      </ui:InvokeWorkflowFile>
     </Sequence>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_FindAndSelectCurrentRow workflow" sap:VirtualizedContainerService.HintSize="376,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="sap_FindAndSelectCurrentRow.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SAP_NWP1_InsertPateientData workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="SAP_NWP1_InsertPateientData.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateFrom">
+          <mva:VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="DateAdd(&quot;d&quot;,-3,datetime.Now)" />
+        </InArgument>
+        <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateTo">
+          <mva:VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="DateAdd(&quot;d&quot;,7,datetime.Now)" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str_ClinicService">
+          <Literal x:TypeArguments="x:String">מ-אאג</Literal>
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str_pateientCassNumber" />
+        <InArgument x:TypeArguments="x:String" x:Key="in_str_pateientNumber">
+          <Literal x:TypeArguments="x:String">1220420</Literal>
+        </InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_FindAndSelectCurrentRow workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="sap_FindAndSelectCurrentRow.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="x:Int32" x:Key="out_int_rowIndex">
           <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="int_rowIndex" />
@@ -137,20 +146,20 @@
         </OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_acceptanceToCurrentRow workflow" sap:VirtualizedContainerService.HintSize="376,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="sap_acceptanceToCurrentRow.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_acceptanceToCurrentRow workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="sap_acceptanceToCurrentRow.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_clikEntersToExitAlertMassages workflow" sap:VirtualizedContainerService.HintSize="376,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="sap_clikEntersToExitAlertMassages.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_clikEntersToExitAlertMassages workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="sap_clikEntersToExitAlertMassages.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:Int32" x:Key="in_int_maxRetray">
           <Literal x:TypeArguments="x:Int32" Value="2" />
         </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ucas1:DownloadStorageFile TimeoutMS="{x:Null}" Destination="[Environment.GetFolderPath(Environment.SpecialFolder.Desktop)]" DisplayName="Download Storage File" FolderPath="Root" sap:VirtualizedContainerService.HintSize="376,185" sap2010:WorkflowViewState.IdRef="DownloadStorageFile_1" Path="Root" StorageBucketName="Root" />
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Main workflow" sap:VirtualizedContainerService.HintSize="376,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Main.xaml">
+    <ucas1:DownloadStorageFile TimeoutMS="{x:Null}" Destination="[Environment.GetFolderPath(Environment.SpecialFolder.Desktop)]" DisplayName="Download Storage File" FolderPath="Root" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="DownloadStorageFile_1" Path="Root" StorageBucketName="Root" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Main workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Main.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_str_BusinessProcessName">PatientAcceptance</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_str_BusinessDepartmentName">Wolfson</InArgument>
