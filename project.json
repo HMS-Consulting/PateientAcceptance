@@ -38,7 +38,10 @@
       "privateWorkflows": []
     },
     "processOptions": {
-      "ignoredFiles": []
+      "ignoredFiles": [
+        "Tester.xaml",
+        "Tester - Randomaly creates queue items and reports their status.xaml"
+      ]
     },
     "fileInfoCollection": [],
     "modernBehavior": true

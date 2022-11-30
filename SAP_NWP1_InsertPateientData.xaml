@@ -10,7 +10,7 @@
     </x:Property>
     <x:Property Name="in_str_pateientNumber" Type="InArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1417,2912</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1033,2912</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -100,7 +100,6 @@
       <AssemblyReference>System.Management.Automation</AssemblyReference>
       <AssemblyReference>HmsTeam.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Activities.Contracts</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="Seq NWP1 - insert current data" sap:VirtualizedContainerService.HintSize="915,2847" sap2010:WorkflowViewState.IdRef="Sequence_15">
@@ -112,7 +111,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: בחירות של סוג תצוגה 'מתקן שירות/מרפאת חוץ'" sap:VirtualizedContainerService.HintSize="873,2755" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" OpenMode="Never" OutUiElement="[uiwin_nwp1]" ScopeGuid="4ffc1a46-127c-4132-9a55-8c8593848986" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: בחירות של סוג תצוגה 'מתקן שירות/מרפאת חוץ'" sap:VirtualizedContainerService.HintSize="873,2755" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" OpenMode="Never" OutUiElement="[uiwin_nwp1]" ScopeGuid="4ffc1a46-127c-4132-9a55-8c8593848986" Timeout="5" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
