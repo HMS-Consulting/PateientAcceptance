@@ -1,18 +1,12 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="sap_FindAndSelectCurrentRow" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="sap_FindAndSelectCurrentRow" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="out_int_rowIndex" Type="InArgument(x:Int32)" />
-    <x:Property Name="out_uiElment_currentRowCell" Type="InArgument(ui:UiElement)" />
+    <x:Property Name="out_int_rowIndex" Type="OutArgument(x:Int32)" />
+    <x:Property Name="out_uiElment_currentRowCell" Type="OutArgument(ui:UiElement)" />
   </x:Members>
-  <this:sap_FindAndSelectCurrentRow.out_int_rowIndex>
-    <InArgument x:TypeArguments="x:Int32" />
-  </this:sap_FindAndSelectCurrentRow.out_int_rowIndex>
-  <this:sap_FindAndSelectCurrentRow.out_uiElment_currentRowCell>
-    <InArgument x:TypeArguments="ui:UiElement" />
-  </this:sap_FindAndSelectCurrentRow.out_uiElment_currentRowCell>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1417,1518</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1417,1505</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>sap_FindAndSelectCurrentRow_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
@@ -92,7 +86,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="sap_FindAndSelectCurrentRow" sap:VirtualizedContainerService.HintSize="590,1453" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="sap_FindAndSelectCurrentRow" sap:VirtualizedContainerService.HintSize="590,1440" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:UiElement" Name="out_uiWin" />
     </Sequence.Variables>
@@ -101,34 +95,34 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: רשימת מוזמנים (רענון אוטומטי כל 360 שניות)   ;" sap:VirtualizedContainerService.HintSize="548,1269" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="e1e2e85d-d65f-4aad-9eb6-52546aef6177" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: רשימת מוזמנים (רענון אוטומטי כל 360 שניות)   ;" sap:VirtualizedContainerService.HintSize="548,1256" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="e1e2e85d-d65f-4aad-9eb6-52546aef6177" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="514,977" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="514,967" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="472,883" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="472,873" sap2010:WorkflowViewState.IdRef="TryCatch_1">
               <TryCatch.Try>
-                <ui:CellScope ColumnName="מקרה" DisplayName="Table Cell Scope 'GridViewColumn  מקרה'" sap:VirtualizedContainerService.HintSize="434,651" sap2010:WorkflowViewState.IdRef="CellScope_3" RowNumber="First Empty Row" TableRow="[out_int_rowIndex]" UiElement="[out_uiElment_currentRowCell]">
+                <ui:CellScope ColumnName="מקרה" DisplayName="Table Cell Scope 'GridViewColumn  מקרה'" sap:VirtualizedContainerService.HintSize="434,646" sap2010:WorkflowViewState.IdRef="CellScope_3" RowNumber="First Empty Row" TableRow="[out_int_rowIndex]" UiElement="[out_uiElment_currentRowCell]">
                   <ui:CellScope.Body>
                     <ActivityAction x:TypeArguments="x:Object">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,362" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,359" sap2010:WorkflowViewState.IdRef="Sequence_5">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <uix:NClick ClickType="Single" DisplayName="Click" sap:VirtualizedContainerService.HintSize="334,137" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" OutUiElement="[out_uiElment_currentRowCell]" Timeout="2" Version="V1" />
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;נמצאה שורה ללא מספר מקרה&quot;]" />
+                        <uix:NClick ClickType="Single" DisplayName="Click" sap:VirtualizedContainerService.HintSize="334,136" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" OutUiElement="[out_uiElment_currentRowCell]" Timeout="2" Version="V1" />
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;נמצאה שורה ללא מספר מקרה&quot;+Environment.NewLine +&quot;אינדקס השורה&quot;+ out_int_rowIndex.ToString]" />
                       </Sequence>
                     </ActivityAction>
                   </ui:CellScope.Body>
@@ -162,7 +156,7 @@
                     </scg:List>
                   </ui:CellScope.ColumnNames>
                   <ui:CellScope.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3644816a-291d-47f2-aca3-47dccb90ad4f" InformativeScreenshot="5bd167acbeb2c19a8b9ae1ea857b6207" Selector="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='*רשימת מוזמנים*' /&gt;&lt;sap id='usr/ssubVIEW_SCREEN:SAPLN1LSTAMB:0007/cntlISH_VIEW_007/shellcont/shell' /&gt;" TimeoutMS="3000">
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3644816a-291d-47f2-aca3-47dccb90ad4f" InformativeScreenshot="f6ac4ee468d03d035508ce0572382391" Selector="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='רשימת מוזמנים (רענון אוטומטי כל 360 שניות)   ;' /&gt;&lt;sap id='usr/ssubVIEW_SCREEN:SAPLN1LSTAMB:0007/cntlISH_VIEW_007/shellcont/shell' /&gt;" TimeoutMS="3000">
                       <ui:Target.WaitForReady>
                         <InArgument x:TypeArguments="ui:WaitForReady" />
                       </ui:Target.WaitForReady>
@@ -171,7 +165,7 @@
                 </ui:CellScope>
               </TryCatch.Try>
               <TryCatch.Catches>
-                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="438,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="438,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -182,7 +176,7 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                     </ActivityAction.Argument>
-                    <Sequence sap:VirtualizedContainerService.HintSize="376,246" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                    <Sequence sap:VirtualizedContainerService.HintSize="376,247" sap2010:WorkflowViewState.IdRef="Sequence_7">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
