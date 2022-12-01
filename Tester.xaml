@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Tester" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="727,2378" sap2010:WorkflowViewState.IdRef="Tester_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:h="clr-namespace:HmsTeam_SAP_Activities;assembly=HmsTeam.SAP.Activities" xmlns:hm="clr-namespace:HMS.Modeling;assembly=HmsTeam.UiPath.Shared" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ucas="clr-namespace:UiPath.Core.Activities.SAP;assembly=UiPath.UiAutomation.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Tester" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1410,2860" sap2010:WorkflowViewState.IdRef="Tester_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:h="clr-namespace:HmsTeam_SAP_Activities;assembly=HmsTeam.SAP.Activities" xmlns:hm="clr-namespace:HMS.Modeling;assembly=HmsTeam.UiPath.Shared" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ucas="clr-namespace:UiPath.Core.Activities.SAP;assembly=UiPath.UiAutomation.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="45">
       <x:String>System.Activities</x:String>
@@ -93,7 +93,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="418,2233" sap2010:WorkflowViewState.IdRef="Sequence_7">
+  <Sequence sap:VirtualizedContainerService.HintSize="478,2755" sap2010:WorkflowViewState.IdRef="Sequence_7">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="DT" />
       <Variable x:TypeArguments="x:Int32" Name="index" />
@@ -113,12 +113,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="376,51" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,144" sap2010:WorkflowViewState.IdRef="CommentOut_4">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,160" sap2010:WorkflowViewState.IdRef="Sequence_19">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_19">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
@@ -143,46 +144,46 @@
               </ui:Target>
             </ui:Click.Target>
           </ui:Click>
+          <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="tooltip" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="334,164" sap2010:WorkflowViewState.IdRef="GetAttribute_1">
+            <ui:GetAttribute.Result>
+              <OutArgument x:TypeArguments="x:String">[att_tooltipbutton]</OutArgument>
+            </ui:GetAttribute.Result>
+            <ui:GetAttribute.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1ac09415-27c2-4dff-a7fb-fcaebc12cbef" Selector="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='אחזקת קבלה מהירה למטופל אמבולטורי: מסך פתיחה: מסך נתונים' /&gt;&lt;sap colTooltip='IR קשור-מקרה' id='usr/ssubSUBSCREEN:SAPMNPA10:0500/subSUBSCR13:SAPLNIRA:0200/subNIRA_SC:SAPLNIRA_TC:0100/tblSAPLNIRA_TCG_TC_NIRA' tableRow='3' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:GetAttribute.Target>
+          </ui:GetAttribute>
+          <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="GetValue_1">
+            <ui:GetValue.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="beca3150-a090-4034-b383-40c7891b9088" Selector="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='אחזקת קבלה מהירה למטופל אמבולטורי: מסך פתיחה: מסך נתונים' /&gt;&lt;sap colTooltip='IR קשור-מקרה' id='usr/ssubSUBSCREEN:SAPMNPA10:0500/subSUBSCR13:SAPLNIRA:0200/subNIRA_SC:SAPLNIRA_TC:0100/tblSAPLNIRA_TCG_TC_NIRA' tableRow='0' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:GetValue.Target>
+            <ui:GetValue.Value>
+              <OutArgument x:TypeArguments="x:String">[icontext]</OutArgument>
+            </ui:GetValue.Value>
+          </ui:GetValue>
         </Sequence>
       </ui:CommentOut.Body>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="tooltip" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="376,164" sap2010:WorkflowViewState.IdRef="GetAttribute_1">
-      <ui:GetAttribute.Result>
-        <OutArgument x:TypeArguments="x:String">[att_tooltipbutton]</OutArgument>
-      </ui:GetAttribute.Result>
-      <ui:GetAttribute.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1ac09415-27c2-4dff-a7fb-fcaebc12cbef" Selector="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='אחזקת קבלה מהירה למטופל אמבולטורי: מסך פתיחה: מסך נתונים' /&gt;&lt;sap colTooltip='IR קשור-מקרה' id='usr/ssubSUBSCREEN:SAPMNPA10:0500/subSUBSCR13:SAPLNIRA:0200/subNIRA_SC:SAPLNIRA_TC:0100/tblSAPLNIRA_TCG_TC_NIRA' tableRow='3' /&gt;">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
-          <ui:Target.WaitForReady>
-            <InArgument x:TypeArguments="ui:WaitForReady" />
-          </ui:Target.WaitForReady>
-        </ui:Target>
-      </ui:GetAttribute.Target>
-    </ui:GetAttribute>
-    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text" sap:VirtualizedContainerService.HintSize="376,68" sap2010:WorkflowViewState.IdRef="GetValue_1">
-      <ui:GetValue.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="beca3150-a090-4034-b383-40c7891b9088" Selector="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='אחזקת קבלה מהירה למטופל אמבולטורי: מסך פתיחה: מסך נתונים' /&gt;&lt;sap colTooltip='IR קשור-מקרה' id='usr/ssubSUBSCREEN:SAPMNPA10:0500/subSUBSCR13:SAPLNIRA:0200/subNIRA_SC:SAPLNIRA_TC:0100/tblSAPLNIRA_TCG_TC_NIRA' tableRow='0' /&gt;">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
-          <ui:Target.WaitForReady>
-            <InArgument x:TypeArguments="ui:WaitForReady" />
-          </ui:Target.WaitForReady>
-        </ui:Target>
-      </ui:GetValue.Target>
-      <ui:GetValue.Value>
-        <OutArgument x:TypeArguments="x:String">[icontext]</OutArgument>
-      </ui:GetValue.Value>
-    </ui:GetValue>
-    <Sequence sap:VirtualizedContainerService.HintSize="376,648" sap2010:WorkflowViewState.IdRef="Sequence_10">
+    <Sequence sap:VirtualizedContainerService.HintSize="436,648" sap2010:WorkflowViewState.IdRef="Sequence_10">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -204,7 +205,7 @@
         </ucas:CallTransaction.Target>
       </ucas:CallTransaction>
     </Sequence>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SAP_NWP1_InsertPateientData workflow" sap:VirtualizedContainerService.HintSize="376,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="SAP_NWP1_InsertPateientData.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SAP_NWP1_InsertPateientData workflow" sap:VirtualizedContainerService.HintSize="436,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="SAP_NWP1_InsertPateientData.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateFrom">
           <mva:VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="DateAdd(&quot;d&quot;,-3,datetime.Now)" />
@@ -217,29 +218,29 @@
         </InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_str_pateientCassNumber" />
         <InArgument x:TypeArguments="x:String" x:Key="in_str_pateientNumber">
-          <Literal x:TypeArguments="x:String">2048988</Literal>
+          <Literal x:TypeArguments="x:String">1735737</Literal>
         </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_FindAndSelectCurrentRow workflow" sap:VirtualizedContainerService.HintSize="376,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="sap_FindAndSelectCurrentRow.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_FindAndSelectCurrentRow workflow" sap:VirtualizedContainerService.HintSize="436,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="sap_FindAndSelectCurrentRow.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="x:Int32" x:Key="out_int_rowIndex">[int_rowIndex]</OutArgument>
         <OutArgument x:TypeArguments="ui:UiElement" x:Key="out_uiElment_currentRowCell">[ui_CellElment]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_acceptanceToCurrentRow workflow" sap:VirtualizedContainerService.HintSize="376,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="sap_acceptanceToCurrentRow.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_acceptanceToCurrentRow workflow" sap:VirtualizedContainerService.HintSize="436,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="sap_acceptanceToCurrentRow.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_clikEntersToExitAlertMassages workflow" sap:VirtualizedContainerService.HintSize="376,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="sap_clikEntersToExitAlertMassages.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_clikEntersToExitAlertMassages workflow" sap:VirtualizedContainerService.HintSize="436,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="sap_clikEntersToExitAlertMassages.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:Int32" x:Key="in_int_maxRetray">
           <Literal x:TypeArguments="x:Int32" Value="2" />
         </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <uix:NApplicationCard sap2010:Annotation.AnnotationText="לחיצה על בחר מקרה ובדיקת מעבר תקין למסך הבא&#xA;" AttachMode="ByInstance" DisplayName="Use Application: אחזקת נתוני אב מטופל: מסך נתונים" sap:VirtualizedContainerService.HintSize="376,108" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="1e5b5b79-0819-46f9-8cc6-831c6c4010d6" Version="V1">
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="לחיצה על בחר מקרה ובדיקת מעבר תקין למסך הבא&#xA;" AttachMode="ByInstance" DisplayName="Use Application: אחזקת נתוני אב מטופל: מסך נתונים" sap:VirtualizedContainerService.HintSize="436,108" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="1e5b5b79-0819-46f9-8cc6-831c6c4010d6" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -277,7 +278,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_clikEntersToExitAlertMassages workflow" sap:VirtualizedContainerService.HintSize="376,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="sap_clikEntersToExitAlertMassages.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_clikEntersToExitAlertMassages workflow" sap:VirtualizedContainerService.HintSize="436,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="sap_clikEntersToExitAlertMassages.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:Int32" x:Key="in_int_maxRetray">
           <Literal x:TypeArguments="x:Int32" Value="3" />
@@ -289,7 +290,32 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="376,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_InsertVisitData workflow" sap:VirtualizedContainerService.HintSize="436,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="sap_InsertVisitData.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str_visitType">
+          <Literal x:TypeArguments="x:String">01</Literal>
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str_visitorType">
+          <Literal x:TypeArguments="x:String">10</Literal>
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str_referrer">
+          <Literal x:TypeArguments="x:String">50</Literal>
+        </InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_clikEntersToExitAlertMassages workflow" sap:VirtualizedContainerService.HintSize="436,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="sap_clikEntersToExitAlertMassages.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_int_maxRetray">
+          <Literal x:TypeArguments="x:Int32" Value="3" />
+        </InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:InvokeWorkflowFile>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,204" sap2010:WorkflowViewState.IdRef="Sequence_14">
           <sap:WorkflowViewStateService.ViewState>
@@ -330,64 +356,30 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="376,51" sap2010:WorkflowViewState.IdRef="CommentOut_3">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,158" sap2010:WorkflowViewState.IdRef="Sequence_18">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Sequence read status bar" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_16">
-            <Sequence.Variables>
-              <Variable x:TypeArguments="x:String" Name="str_statusBarType" />
-              <Variable x:TypeArguments="x:String" Name="str_statusBarText" />
-            </Sequence.Variables>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ucas:ReadStatusbar ContinueOnError="{x:Null}" MessageData="{x:Null}" MessageId="{x:Null}" MessageNumber="{x:Null}" DisplayName="Read Status Bar 'StatusPane הזן'" sap:VirtualizedContainerService.HintSize="334,265" sap2010:WorkflowViewState.IdRef="ReadStatusbar_2" MessageText="[str_statusBarText]" MessageType="[str_statusBarType]">
-              <ucas:ReadStatusbar.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="351a3742-a608-4c7c-a516-0d9a7577dc93" InformativeScreenshot="31c0ae1d354b7ebcd73ce76277e7ae83" Selector="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;&lt;sap id='sbar/pane[0]' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ucas:ReadStatusbar.Target>
-            </ucas:ReadStatusbar>
-            <If Condition="[NOT (string.IsNullOrEmpty(str_statusBarText) AndAlso string.IsNullOrEmpty(str_statusBarType))]" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="If_1">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <If.Else>
-                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_17">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </Sequence>
-              </If.Else>
-            </If>
-            <Throw Exception="[new SystemException(&quot;error insert data nwd1: &quot; +str_statusBarText )]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
-          </Sequence>
-        </Sequence>
-      </ui:CommentOut.Body>
+    <Sequence DisplayName="Sequence read status bar" sap:VirtualizedContainerService.HintSize="436,488" sap2010:WorkflowViewState.IdRef="Sequence_16">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="str_statusBarType" />
+        <Variable x:TypeArguments="x:String" Name="str_statusBarText" />
+      </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-    </ui:CommentOut>
+      <ucas:ReadStatusbar ContinueOnError="{x:Null}" MessageData="{x:Null}" MessageId="{x:Null}" MessageNumber="{x:Null}" DisplayName="Read Status Bar 'StatusPane הזן'" sap:VirtualizedContainerService.HintSize="334,265" sap2010:WorkflowViewState.IdRef="ReadStatusbar_2" MessageText="[str_statusBarText]" MessageType="[str_statusBarType]">
+        <ucas:ReadStatusbar.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="351a3742-a608-4c7c-a516-0d9a7577dc93" InformativeScreenshot="31c0ae1d354b7ebcd73ce76277e7ae83" Selector="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;&lt;sap id='sbar/pane[0]' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ucas:ReadStatusbar.Target>
+      </ucas:ReadStatusbar>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;&quot;+str_statusBarText]" />
+    </Sequence>
   </Sequence>
 </Activity>
