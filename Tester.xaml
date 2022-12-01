@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Tester" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1410,2860" sap2010:WorkflowViewState.IdRef="Tester_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:h="clr-namespace:HmsTeam_SAP_Activities;assembly=HmsTeam.SAP.Activities" xmlns:hm="clr-namespace:HMS.Modeling;assembly=HmsTeam.UiPath.Shared" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ucas="clr-namespace:UiPath.Core.Activities.SAP;assembly=UiPath.UiAutomation.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Tester" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1007,3518" sap2010:WorkflowViewState.IdRef="Tester_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:h="clr-namespace:HmsTeam_SAP_Activities;assembly=HmsTeam.SAP.Activities" xmlns:hm="clr-namespace:HMS.Modeling;assembly=HmsTeam.UiPath.Shared" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ucas="clr-namespace:UiPath.Core.Activities.SAP;assembly=UiPath.UiAutomation.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="45">
+    <scg:List x:TypeArguments="x:String" Capacity="90">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -46,6 +46,7 @@
       <x:String>UiPath.Platform.ObjectLibrary</x:String>
       <x:String>UiPath.Shared.Activities</x:String>
       <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -93,7 +94,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="478,2755" sap2010:WorkflowViewState.IdRef="Sequence_7">
+  <Sequence sap:VirtualizedContainerService.HintSize="478,3413" sap2010:WorkflowViewState.IdRef="Sequence_7">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="DT" />
       <Variable x:TypeArguments="x:Int32" Name="index" />
@@ -113,6 +114,37 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: אחזקת קבלה מהירה למטופל אמבולטורי: מסך פתיחה: מסך נתונים" sap:VirtualizedContainerService.HintSize="436,618" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="999e8fd3-8e33-4cb7-93ab-35eb8381b998" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,329" sap2010:WorkflowViewState.IdRef="Sequence_20">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NMouseScroll Direction="Down" DisplayName="Mouse Scroll" sap:VirtualizedContainerService.HintSize="334,236" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" InteractionMode="HardwareEvents" MovementUnits="10" Timeout="3" Version="V1">
+              <uix:NMouseScroll.SearchedElement>
+                <uix:SearchedElement DisplayName="{x:Null}">
+                  <uix:SearchedElement.Target>
+                    <uix:TargetAnchorable DesignTimeRectangle="992, 431, 384, 22" FriendlyName="'SAP.Toolbar.1'" FullSelectorArgument="&lt;sap id='usr/ssubSUBSCREEN:SAPMNPA10:0500/subSUBSCR13:SAPLNIRA:0200/subNIRA_SC:SAPLNIRA_TC:0100/cntlNIRA_TOOLBAR/shellcont/shell' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ssubSUBSCREEN:SAPMNPA10:0500/subSUBSCR13:SAPLNIRA:0200/subNIRA_SC:SAPLNIRA_TC:0100/cntlNIRA_TOOLBAR/shellcont/shell' check:text='SAP.Toolbar.1' /&gt;" Guid="80700c52-c8cc-46e7-a816-f24b5f90da16" ImageBase64="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" InformativeScreenshot="35eee657bbaf49303dd0e7cf158a5290.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='אחזקת קבלה מהירה למטופל אמבולטורי: מסך פתיחה: מסך נתונים' /&gt;" SearchSteps="Selector" />
+                  </uix:SearchedElement.Target>
+                  <uix:SearchedElement.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:SearchedElement.Timeout>
+                </uix:SearchedElement>
+              </uix:NMouseScroll.SearchedElement>
+            </uix:NMouseScroll>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1534, 822" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplgpad.exe" IconBase64="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" InformativeScreenshot="fcf0d7e99175f5aa4ba074305ba5e7e9.png" Selector="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='אחזקת קבלה מהירה למטופל אמבולטורי: מסך פתיחה: מסך נתונים'/&gt;" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
     <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,144" sap2010:WorkflowViewState.IdRef="CommentOut_4">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_19">
@@ -207,19 +239,11 @@
     </Sequence>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SAP_NWP1_InsertPateientData workflow" sap:VirtualizedContainerService.HintSize="436,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="SAP_NWP1_InsertPateientData.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateFrom">
-          <mva:VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="DateAdd(&quot;d&quot;,-3,datetime.Now)" />
-        </InArgument>
-        <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateTo">
-          <mva:VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="DateAdd(&quot;d&quot;,7,datetime.Now)" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_str_ClinicService">
-          <Literal x:TypeArguments="x:String">מ-אאג</Literal>
-        </InArgument>
+        <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateFrom">[DateAdd("d",-3,datetime.Now)]</InArgument>
+        <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateTo">[DateAdd("d",7,datetime.Now)]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str_ClinicService">מ-אאג</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_str_pateientCassNumber" />
-        <InArgument x:TypeArguments="x:String" x:Key="in_str_pateientNumber">
-          <Literal x:TypeArguments="x:String">1735737</Literal>
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str_pateientNumber">1735737</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_FindAndSelectCurrentRow workflow" sap:VirtualizedContainerService.HintSize="436,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="sap_FindAndSelectCurrentRow.xaml">
@@ -235,9 +259,7 @@
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_clikEntersToExitAlertMassages workflow" sap:VirtualizedContainerService.HintSize="436,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="sap_clikEntersToExitAlertMassages.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:Int32" x:Key="in_int_maxRetray">
-          <Literal x:TypeArguments="x:Int32" Value="2" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_int_maxRetray">2</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <uix:NApplicationCard sap2010:Annotation.AnnotationText="לחיצה על בחר מקרה ובדיקת מעבר תקין למסך הבא&#xA;" AttachMode="ByInstance" DisplayName="Use Application: אחזקת נתוני אב מטופל: מסך נתונים" sap:VirtualizedContainerService.HintSize="436,108" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="1e5b5b79-0819-46f9-8cc6-831c6c4010d6" Version="V1">
@@ -280,9 +302,7 @@
     </uix:NApplicationCard>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_clikEntersToExitAlertMassages workflow" sap:VirtualizedContainerService.HintSize="436,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="sap_clikEntersToExitAlertMassages.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:Int32" x:Key="in_int_maxRetray">
-          <Literal x:TypeArguments="x:Int32" Value="3" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_int_maxRetray">3</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -292,22 +312,14 @@
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_InsertVisitData workflow" sap:VirtualizedContainerService.HintSize="436,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="sap_InsertVisitData.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_str_visitType">
-          <Literal x:TypeArguments="x:String">01</Literal>
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_str_visitorType">
-          <Literal x:TypeArguments="x:String">10</Literal>
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_str_referrer">
-          <Literal x:TypeArguments="x:String">50</Literal>
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str_visitType">01</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str_visitorType">10</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str_referrer">50</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_clikEntersToExitAlertMassages workflow" sap:VirtualizedContainerService.HintSize="436,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="sap_clikEntersToExitAlertMassages.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:Int32" x:Key="in_int_maxRetray">
-          <Literal x:TypeArguments="x:Int32" Value="3" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="in_int_maxRetray">3</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">

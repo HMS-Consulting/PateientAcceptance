@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="sap_InsertVisitData" this:sap_InsertVisitData.in_str_visitType="01" this:sap_InsertVisitData.in_str_visitorType="10" this:sap_InsertVisitData.in_str_referrer="50" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="sap_InsertVisitData" this:sap_InsertVisitData.in_str_visitType="01" this:sap_InsertVisitData.in_str_visitorType="10" this:sap_InsertVisitData.in_str_referrer="50" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_str_visitType" Type="InArgument(x:String)" />
     <x:Property Name="in_str_visitorType" Type="InArgument(x:String)" />
@@ -7,10 +7,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>727,701</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>644,701</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>sap_InsertVisitData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="68">
+    <scg:List x:TypeArguments="x:String" Capacity="35">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -49,7 +49,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <sco:Collection x:TypeArguments="AssemblyReference">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="34">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -82,9 +82,9 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-    </sco:Collection>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="sap_InsertVisitData" sap:VirtualizedContainerService.HintSize="634,636" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <sap:WorkflowViewStateService.ViewState>
@@ -105,13 +105,13 @@
           <av:Size x:Key="ShapeSize">200,51</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: אחזקת קבלה מהירה למטופל אמבולטורי: מסך פתיחה: מסך נתונים" sap:VirtualizedContainerService.HintSize="873,2613" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="3b529e25-afc7-4875-ac59-ca6e2be4a8b5" Version="V1">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: אחזקת קבלה מהירה למטופל אמבולטורי: מסך פתיחה: מסך נתונים" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="3b529e25-afc7-4875-ac59-ca6e2be4a8b5" Version="V1">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do insert visitor data" sap:VirtualizedContainerService.HintSize="839,2324" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <Sequence DisplayName="Do insert visitor data" sap:VirtualizedContainerService.HintSize="839,2596" sap2010:WorkflowViewState.IdRef="Sequence_1">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="str_TableText" />
                 <Variable x:TypeArguments="x:String" Name="att_tooltipbutton" />
@@ -154,15 +154,30 @@
                   </ui:Target>
                 </ui:GetAttribute.Target>
               </ui:GetAttribute>
-              <If Condition="[att_tooltipbutton.Equals(&quot;הפעלת יחס ביטוח&quot;)]" DisplayName="   If   הכפתור האדום בשורה הראשונה מופיע" sap:VirtualizedContainerService.HintSize="797,669" sap2010:WorkflowViewState.IdRef="If_1">
+              <If Condition="[att_tooltipbutton.Equals(&quot;הפעלת יחס ביטוח&quot;)]" DisplayName="   If   הכפתור האדום בשורה הראשונה מופיע" sap:VirtualizedContainerService.HintSize="797,943" sap2010:WorkflowViewState.IdRef="If_1">
                 <If.Then>
-                  <Sequence sap:VirtualizedContainerService.HintSize="376,510" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <Sequence sap:VirtualizedContainerService.HintSize="376,785" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:Boolean" Name="boo_elementExist" />
+                    </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click  על הכפתור האדום בשורה הראשונה" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                    <uix:NMouseScroll Direction="Down" DisplayName="Mouse Scroll" sap:VirtualizedContainerService.HintSize="334,236" sap2010:WorkflowViewState.IdRef="NMouseScroll_2" InteractionMode="HardwareEvents" MovementUnits="10" Timeout="3" Version="V1">
+                      <uix:NMouseScroll.SearchedElement>
+                        <uix:SearchedElement DisplayName="{x:Null}">
+                          <uix:SearchedElement.Target>
+                            <uix:TargetAnchorable DesignTimeRectangle="992, 431, 384, 22" FriendlyName="'SAP.Toolbar.1'" FullSelectorArgument="&lt;sap id='usr/ssubSUBSCREEN:SAPMNPA10:0500/subSUBSCR13:SAPLNIRA:0200/subNIRA_SC:SAPLNIRA_TC:0100/cntlNIRA_TOOLBAR/shellcont/shell' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ssubSUBSCREEN:SAPMNPA10:0500/subSUBSCR13:SAPLNIRA:0200/subNIRA_SC:SAPLNIRA_TC:0100/cntlNIRA_TOOLBAR/shellcont/shell' check:text='SAP.Toolbar.1' /&gt;" Guid="80700c52-c8cc-46e7-a816-f24b5f90da16" ImageBase64="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" InformativeScreenshot="35eee657bbaf49303dd0e7cf158a5290.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='אחזקת קבלה מהירה למטופל אמבולטורי: מסך פתיחה: מסך נתונים' /&gt;" SearchSteps="Selector" />
+                          </uix:SearchedElement.Target>
+                          <uix:SearchedElement.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:SearchedElement.Timeout>
+                        </uix:SearchedElement>
+                      </uix:NMouseScroll.SearchedElement>
+                    </uix:NMouseScroll>
+                    <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DisplayName="Click  על הכפתור האדום בשורה הראשונה" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
                       <ui:Click.CursorPosition>
                         <ui:CursorPosition Position="Center">
                           <ui:CursorPosition.OffsetX>
@@ -189,13 +204,14 @@
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence sap:VirtualizedContainerService.HintSize="376,185" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;לא נמצא כפתור הפעלת יחסי ביטוח בשורה 1&quot;]" />
+                    <Throw Exception="[new BusinessRuleException(&quot;לא נמצאו קשרי ביטוח ללקוח&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
                   </Sequence>
                 </If.Else>
               </If>
