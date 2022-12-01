@@ -44,10 +44,12 @@
       <x:String>System.Xml</x:String>
       <x:String>System.Xml.Linq</x:String>
       <x:String>System.Net.Mail</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.Core.Activities.SAP</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="52">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -137,7 +139,7 @@
             </ui:SetValue>
             <If Condition="[not String.IsNullOrEmpty( in_str_pateientCassNumber)]" sap:VirtualizedContainerService.HintSize="797,538" sap2010:WorkflowViewState.IdRef="If_3">
               <If.Then>
-                <Sequence DisplayName="Sequence   in_str_pateientCassNumber" sap:VirtualizedContainerService.HintSize="376,377" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                <Sequence DisplayName="Sequence   in_str_pateientCassNumber" sap:VirtualizedContainerService.HintSize="376,379" sap2010:WorkflowViewState.IdRef="Sequence_19">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -242,7 +244,7 @@
                 </Sequence>
               </If.Then>
             </If>
-            <uix:NClick sap2010:Annotation.AnnotationText="לחיצה על בצע ובדיקה שעבר מסך בצורה תקינה" ClickType="Single" DisplayName="Click 'בצע'" sap:VirtualizedContainerService.HintSize="797,224" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4ffc1a46-127c-4132-9a55-8c8593848986" Timeout="5" Version="V1">
+            <uix:NClick sap2010:Annotation.AnnotationText="לחיצה על בצע ובדיקה שעבר מסך בצורה תקינה" ClickType="Single" DisplayName="Click 'בצע'" sap:VirtualizedContainerService.HintSize="797,224" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4ffc1a46-127c-4132-9a55-8c8593848986" Timeout="1" Version="V1">
               <uix:NClick.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="37, 715, 58, 20" ElementType="Button" FriendlyName="'בצע'" FullSelectorArgument="&lt;sap id='tbar[0]/btn[0]' /&gt;" FuzzySelectorArgument="&lt;sap id='tbar[0]/btn[0]' check:text='בצע' /&gt;" Guid="673f5bb2-e640-409b-a7b2-a4aa4e429cfd" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAD4AAAAYCAYAAACiNE5vAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKUSURBVFhH7dhBaxNBGAbg/SEeS+ld0kMEc+hB/4IVmgohCipCoYgIRhATvdgVKi1WW6xCJYjSg4sHe5OigaY9VFQWqqRQQ0TTUKOmbfK679Q0u9mZ3bZ62Y2Hl+zONxP2mW+WQLTKjxI6Mf/hP4sPcX8shUTiTChDG40u+B39Mp49zqBR+whsFkIVmmij0QU/f+4sKqvTaGyuAfXvoQpNtAmjCo6tz0D1Vbhimfzh2yX54gAlv7SIE/oRnL59QVzT5AtvbK1KvywoIfTo8HFk5g6LEE+TP7z2Adh4GcjY0ZeeHxKf7DxNnvB1wqvzQGVWkRSS2jEYjrFx6L090BdnYWZ6oA2mbDXOt9U0zZneBEzHdx08MjTvOU4TbUp4ufAAjY05oDyjyAj0SDf0vHzMTHdb8IutWn4AUa0Pxu5cZ8T8yABMSU0VQnh82Un7mAydy+VEnSba/gK+87DR9IhtzLYZAmrbmGyfD4xrNSSzspo8RBPGnEyf8kUz/wQuMF5dZd06xsns3lDG4P7g7HQ7sv2em2Ff4wv/+mnKmvQC+DblkSHrvY3B+HNvprugxYeccxb6rc2w3uFIP0z7uCRGnHB5TRZZh12dbltDE21K+JeVSTQqT10L22PEu6Av8Jqb0Lx2R2yKR53ZL5zxPN6S+TTRpoQXzQnU9wAnKBqPia76PbSYm74prTEHgTNENvFeaIYm2pTwtffjqK+r4XzI1s9R67jvJhuz1ZvZ6bhzrTtem6NKEy/eaUm9GZpoU8ILy6Oe8KCGJtqU8JWlW9guP5EuDnJook0Jf/v6BqrFGfwqToQqNNEmhd8dvYLJsWEsz1/DuzfXQxWaaKPRBa+VHmH63lXp3zZhCG00uuCdlg6Fl/AbNGSD5ZNcwEEAAAAASUVORK5CYII=" InformativeScreenshot="f704b174a557a35efcac48bec8867c10.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32770' title='בחירות של סוג תצוגה &amp;apos;מתקן שירות/מרפאת חוץ&amp;apos;' idx='*' /&gt;" SearchSteps="Selector" />
               </uix:NClick.Target>
