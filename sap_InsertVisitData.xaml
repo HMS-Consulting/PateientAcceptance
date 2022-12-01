@@ -105,13 +105,13 @@
           <av:Size x:Key="ShapeSize">200,51</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: אחזקת קבלה מהירה למטופל אמבולטורי: מסך פתיחה: מסך נתונים" sap:VirtualizedContainerService.HintSize="873,2890" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="3b529e25-afc7-4875-ac59-ca6e2be4a8b5" Version="V1">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: אחזקת קבלה מהירה למטופל אמבולטורי: מסך פתיחה: מסך נתונים" sap:VirtualizedContainerService.HintSize="873,3046" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="3b529e25-afc7-4875-ac59-ca6e2be4a8b5" Version="V1">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do insert visitor data" sap:VirtualizedContainerService.HintSize="839,2601" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <Sequence DisplayName="Do insert visitor data" sap:VirtualizedContainerService.HintSize="839,2832" sap2010:WorkflowViewState.IdRef="Sequence_1">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="str_TableText" />
                 <Variable x:TypeArguments="x:String" Name="att_tooltipbutton" />
@@ -154,9 +154,9 @@
                   </ui:Target>
                 </ui:GetAttribute.Target>
               </ui:GetAttribute>
-              <If Condition="[att_tooltipbutton.Equals(&quot;הפעלת יחס ביטוח&quot;)]" DisplayName="   If   הכפתור האדום בשורה הראשונה מופיע" sap:VirtualizedContainerService.HintSize="797,946" sap2010:WorkflowViewState.IdRef="If_1">
+              <If Condition="[att_tooltipbutton.Equals(&quot;הפעלת יחס ביטוח&quot;)]" DisplayName="   If   הכפתור האדום בשורה הראשונה מופיע" sap:VirtualizedContainerService.HintSize="797,807" sap2010:WorkflowViewState.IdRef="If_1">
                 <If.Then>
-                  <Sequence sap:VirtualizedContainerService.HintSize="376,787" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <Sequence sap:VirtualizedContainerService.HintSize="376,648" sap2010:WorkflowViewState.IdRef="Sequence_2">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:Boolean" Name="boo_elementExist" />
                     </Sequence.Variables>
@@ -165,42 +165,52 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NMouseScroll Direction="Down" DisplayName="Mouse Scroll" sap:VirtualizedContainerService.HintSize="334,236" sap2010:WorkflowViewState.IdRef="NMouseScroll_2" InteractionMode="HardwareEvents" MovementUnits="10" Timeout="3" Version="V1">
-                      <uix:NMouseScroll.SearchedElement>
-                        <uix:SearchedElement DisplayName="{x:Null}">
-                          <uix:SearchedElement.Target>
-                            <uix:TargetAnchorable DesignTimeRectangle="992, 431, 384, 22" FriendlyName="'SAP.Toolbar.1'" FullSelectorArgument="&lt;sap id='usr/ssubSUBSCREEN:SAPMNPA10:0500/subSUBSCR13:SAPLNIRA:0200/subNIRA_SC:SAPLNIRA_TC:0100/cntlNIRA_TOOLBAR/shellcont/shell' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ssubSUBSCREEN:SAPMNPA10:0500/subSUBSCR13:SAPLNIRA:0200/subNIRA_SC:SAPLNIRA_TC:0100/cntlNIRA_TOOLBAR/shellcont/shell' check:text='SAP.Toolbar.1' /&gt;" Guid="80700c52-c8cc-46e7-a816-f24b5f90da16" ImageBase64="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" InformativeScreenshot="35eee657bbaf49303dd0e7cf158a5290.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='אחזקת קבלה מהירה למטופל אמבולטורי: מסך פתיחה: מסך נתונים' /&gt;" SearchSteps="Selector" />
-                          </uix:SearchedElement.Target>
-                          <uix:SearchedElement.Timeout>
-                            <InArgument x:TypeArguments="x:Double" />
-                          </uix:SearchedElement.Timeout>
-                        </uix:SearchedElement>
-                      </uix:NMouseScroll.SearchedElement>
-                    </uix:NMouseScroll>
-                    <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DisplayName="Click  על הכפתור האדום בשורה הראשונה" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
-                      <ui:Click.CursorPosition>
-                        <ui:CursorPosition Position="Center">
-                          <ui:CursorPosition.OffsetX>
-                            <InArgument x:TypeArguments="x:Int32" />
-                          </ui:CursorPosition.OffsetX>
-                          <ui:CursorPosition.OffsetY>
-                            <InArgument x:TypeArguments="x:Int32" />
-                          </ui:CursorPosition.OffsetY>
-                        </ui:CursorPosition>
-                      </ui:Click.CursorPosition>
-                      <ui:Click.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e84c80ff-e92c-4b6d-bfcd-cd60330e06fb" Selector="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='אחזקת קבלה מהירה למטופל אמבולטורי: מסך פתיחה: מסך נתונים' /&gt;&lt;sap colTooltip='IR קשור-מקרה' id='usr/ssubSUBSCREEN:SAPMNPA10:0500/subSUBSCR13:SAPLNIRA:0200/subNIRA_SC:SAPLNIRA_TC:0100/tblSAPLNIRA_TCG_TC_NIRA' tableRow='0' /&gt;">
-                          <ui:Target.TimeoutMS>
-                            <InArgument x:TypeArguments="x:Int32" />
-                          </ui:Target.TimeoutMS>
-                          <ui:Target.WaitForReady>
-                            <InArgument x:TypeArguments="ui:WaitForReady" />
-                          </ui:Target.WaitForReady>
-                        </ui:Target>
-                      </ui:Click.Target>
-                    </ui:Click>
+                    <uix:NMouseScroll ContinueOnError="True" Direction="Down" DisplayName="Mouse Scroll" sap:VirtualizedContainerService.HintSize="334,136" sap2010:WorkflowViewState.IdRef="NMouseScroll_2" InteractionMode="HardwareEvents" MovementUnits="10" Timeout="3" Version="V1" />
+                    <uix:NClick ClickType="Single" DisplayName="Click" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" Version="V1">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="0, 0, 0, 0" FullSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='אחזקת קבלה מהירה למטופל אמבולטורי: מסך פתיחה: מסך נתונים' /&gt;&lt;sap colTooltip='IR קשור-מקרה' id='usr/ssubSUBSCREEN:SAPMNPA10:0500/subSUBSCR13:SAPLNIRA:0200/subNIRA_SC:SAPLNIRA_TC:0100/tblSAPLNIRA_TCG_TC_NIRA' tableRow='0' /&gt;" Guid="0f4e2c57-b052-4852-a519-9e3aa704c374" SearchSteps="Selector" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                      <ui:CommentOut.Body>
+                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,160" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DisplayName="Click  על הכפתור האדום בשורה הראשונה" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                            <ui:Click.CursorPosition>
+                              <ui:CursorPosition Position="Center">
+                                <ui:CursorPosition.OffsetX>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:CursorPosition.OffsetX>
+                                <ui:CursorPosition.OffsetY>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:CursorPosition.OffsetY>
+                              </ui:CursorPosition>
+                            </ui:Click.CursorPosition>
+                            <ui:Click.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e84c80ff-e92c-4b6d-bfcd-cd60330e06fb" Selector="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='אחזקת קבלה מהירה למטופל אמבולטורי: מסך פתיחה: מסך נתונים' /&gt;&lt;sap colTooltip='IR קשור-מקרה' id='usr/ssubSUBSCREEN:SAPMNPA10:0500/subSUBSCR13:SAPLNIRA:0200/subNIRA_SC:SAPLNIRA_TC:0100/tblSAPLNIRA_TCG_TC_NIRA' tableRow='0' /&gt;">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:Click.Target>
+                          </ui:Click>
+                        </Sequence>
+                      </ui:CommentOut.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:CommentOut>
                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;לחיצה על הפעלת יחסי ביטוח בשורה מספר 1&quot;]" />
-                    <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="334,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V1" />
                   </Sequence>
                 </If.Then>
                 <If.Else>
@@ -215,6 +225,14 @@
                   </Sequence>
                 </If.Else>
               </If>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_clikEntersToExitAlertMassages workflow" sap:VirtualizedContainerService.HintSize="797,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="sap_clikEntersToExitAlertMassages.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_int_maxRetray">
+                    <Literal x:TypeArguments="x:Int32" Value="2" />
+                  </InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0.5" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="797,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V1" />
               <uix:NClick ClickType="Single" DisplayName="Click 'Button שמירה (Ctrl+S)'" sap:VirtualizedContainerService.HintSize="797,156" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3b529e25-afc7-4875-ac59-ca6e2be4a8b5" Version="V1">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable DesignTimeRectangle="1282, 50, 22, 22" ElementType="Button" FriendlyName="'Button שמירה (Ctrl+S)'" FullSelectorArgument="&lt;sap id='tbar[0]/btn[11]' tooltip='שמירה*' /&gt;" FuzzySelectorArgument="&lt;sap id='tbar[0]/btn[11]' tooltip='שמירה*' /&gt;" Guid="ecdb82d3-75a2-4b4a-9c7e-689804d457b6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEeSURBVEhL7ZIxTgMxEEWnogwXpEgR4AJcI1IK0oQKcQKkdBRAkRKlokDAJRCBza6dj2clR2bytVZY4Sq2nnejPzNPXkVW9QdKIN/1J0pQUNSsUAKpwlECeiM5GfeCzqT2UHx9/9o+Wc7I9UjlvmD51URyRq5H1q6CJW1iOSPXI3U4LGkTyxm5noI38mtYYtPx6RTz5ftObrl9emtrtzciNdKEwxJFZ7MHDEaX7e8utOb86nErojOdb2DRYm2azJ/3IoroTLdxsPQWsZk+HJa+IjqT2hORvuewIjpz4x0sWpyKWE0kimZ3L7i4WeBoOOF1HrvbitLMbs1Tif7V0zzuTlH8FGlmt+Y5iW4BWdq8D1HStajoP9ZB9OdVSAT8AN48aF3JiGE3AAAAAElFTkSuQmCC" InformativeScreenshot="17c219758659e4fdcee234d4de0ca460.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='אחזקת קבלה מהירה למטופל אמבולטורי: מסך פתיחה: מסך נתונים' /&gt;" SearchSteps="Selector" />
