@@ -27,7 +27,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1417,827</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1391,768</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="120">
@@ -1400,9 +1400,9 @@
                             <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="tran_currentTranItem IsNot Nothing" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_8" />
                           </Transition.Condition>
                           <Transition.To>
-                            <State x:Name="__ReferenceID52" sap2010:Annotation.AnnotationText="בכל מקרה של שגיאה (עסקית או טכנית) שבגינה נרצה להפסיק מיד את הטיפול ברשומה נשתמש ב&#xA; Throw&#xA;למשל:&#xA;Throw new BusinessRuleException(&quot;Customer doesn't exist&quot;).&#xA;בכל מקרה של שגיאה (טכנית או עסקית) בגינה נרצה להמשיך ולהשאר בתוך ה-State הגדול נשתמש ב&#xA;Add to collection" DisplayName="State_Execute Transaction" sap:VirtualizedContainerService.HintSize="300,223" sap2010:WorkflowViewState.IdRef="State_13">
+                            <State x:Name="__ReferenceID52" sap2010:Annotation.AnnotationText="בכל מקרה של שגיאה (עסקית או טכנית) שבגינה נרצה להפסיק מיד את הטיפול ברשומה נשתמש ב&#xA; Throw&#xA;למשל:&#xA;Throw new BusinessRuleException(&quot;Customer doesn't exist&quot;).&#xA;בכל מקרה של שגיאה (טכנית או עסקית) בגינה נרצה להמשיך ולהשאר בתוך ה-State הגדול נשתמש ב&#xA;Add to collection" DisplayName="State_Execute Transaction" sap:VirtualizedContainerService.HintSize="1014,1629" sap2010:WorkflowViewState.IdRef="State_13">
                               <State.Entry>
-                                <TryCatch DisplayName="Try_Execute transation" sap:VirtualizedContainerService.HintSize="967.2,1070.4" sap2010:WorkflowViewState.IdRef="TryCatch_23">
+                                <TryCatch DisplayName="Try_Execute transation" sap:VirtualizedContainerService.HintSize="968,1059" sap2010:WorkflowViewState.IdRef="TryCatch_23">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1410,7 +1410,7 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <TryCatch.Try>
-                                    <Sequence DisplayName="Sequence_Execute Transaction" sap:VirtualizedContainerService.HintSize="375.2,816" sap2010:WorkflowViewState.IdRef="Sequence_150">
+                                    <Sequence DisplayName="Sequence_Execute Transaction" sap:VirtualizedContainerService.HintSize="376,808" sap2010:WorkflowViewState.IdRef="Sequence_150">
                                       <Sequence.Variables>
                                         <Variable x:TypeArguments="njl:JValue" Name="temp" />
                                       </Sequence.Variables>
@@ -1420,7 +1420,7 @@
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_203">
+                                      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_203">
                                         <Assign.To>
                                           <OutArgument x:TypeArguments="x:Object">[dic_str_obj_AllTransactionData("LogF_TransactionProgress")]</OutArgument>
                                         </Assign.To>
@@ -1428,7 +1428,7 @@
                                           <InArgument x:TypeArguments="x:Object">[tran_currentTranItem.Progress]</InArgument>
                                         </Assign.Value>
                                       </Assign>
-                                      <ui:RemoveLogFields DisplayName="Remove Log Fields" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="RemoveLogFields_3">
+                                      <ui:RemoveLogFields DisplayName="Remove Log Fields" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="RemoveLogFields_3">
                                         <ui:RemoveLogFields.Fields>
                                           <scg:List x:TypeArguments="InArgument(x:String)" Capacity="16">
                                             <InArgument x:TypeArguments="x:String">queueName</InArgument>
@@ -1440,7 +1440,7 @@
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                       </ui:RemoveLogFields>
-                                      <ui:AddLogFields sap2010:Annotation.AnnotationText="This activity ensure that from now on, the transaction data will be added to logs " DisplayName="Add TransactionData to LogField" sap:VirtualizedContainerService.HintSize="333.6,82.4" sap2010:WorkflowViewState.IdRef="AddLogFields_5">
+                                      <ui:AddLogFields sap2010:Annotation.AnnotationText="This activity ensure that from now on, the transaction data will be added to logs " DisplayName="Add TransactionData to LogField" sap:VirtualizedContainerService.HintSize="334,79" sap2010:WorkflowViewState.IdRef="AddLogFields_5">
                                         <ui:AddLogFields.Fields>
                                           <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="LogF_AllTransactionData">[dic_str_obj_AllTransactionData]</InArgument>
                                           <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="LogF_TransactionSpecificContent">[tran_currentTranItem.SpecificContent]</InArgument>
@@ -1458,14 +1458,14 @@
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                       </ui:AddLogFields>
-                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_28" Level="Info" Message="[&quot;Transaction started. Reference: &quot;+tran_currentTranItem.Reference+vbCr+&quot;Priority: &quot;+tran_currentTranItem.Priority.ToString+vbCr+&quot;Queue name: &quot;+tran_currentTranItem.QueueName+vbCr+&quot;Progress: &quot;+tran_currentTranItem.Progress+vbCr+&quot;RetryNo: &quot;+tran_currentTranItem.RetryNo.ToString+vbCr+&quot;Specific content: &quot;+vbCr+Newtonsoft.Json.JsonConvert.SerializeObject(tran_currentTranItem.SpecificContent)]">
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_28" Level="Info" Message="[&quot;Transaction started. Reference: &quot;+tran_currentTranItem.Reference+vbCr+&quot;Priority: &quot;+tran_currentTranItem.Priority.ToString+vbCr+&quot;Queue name: &quot;+tran_currentTranItem.QueueName+vbCr+&quot;Progress: &quot;+tran_currentTranItem.Progress+vbCr+&quot;RetryNo: &quot;+tran_currentTranItem.RetryNo.ToString+vbCr+&quot;Specific content: &quot;+vbCr+Newtonsoft.Json.JsonConvert.SerializeObject(tran_currentTranItem.SpecificContent)]">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                       </ui:LogMessage>
-                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ExecuteTransation workflow" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_45" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="ExecuteTransaction.xaml">
+                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ExecuteTransation workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_45" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="ExecuteTransaction.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
                                           <InOutArgument x:TypeArguments="ui:QueueItem" x:Key="io_currentTranItem">[tran_currentTranItem]</InOutArgument>
                                           <InOutArgument x:TypeArguments="scg:List(s:Exception)" x:Key="io_list_transactionSystemExceptions">[list_transactionSystemExceptions]</InOutArgument>
@@ -2323,7 +2323,7 @@
                                 <Transition DisplayName="MaxTransactions" sap:VirtualizedContainerService.HintSize="2130.4,509.6" sap2010:WorkflowViewState.IdRef="Transition_38">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <av:PointCollection x:Key="ConnectorLocation">540,312.4 510,312.4 510,413 398,413</av:PointCollection>
+                                      <av:PointCollection x:Key="ConnectorLocation">540,312.4 510,312.4 510,423 398,423</av:PointCollection>
                                       <x:Int32 x:Key="SrcConnectionPointIndex">29</x:Int32>
                                       <x:Int32 x:Key="DestConnectionPointIndex">36</x:Int32>
                                     </scg:Dictionary>
@@ -2373,7 +2373,7 @@
                                       </State.Entry>
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <av:Point x:Key="ShapeLocation">250,332.5</av:Point>
+                                          <av:Point x:Key="ShapeLocation">250,342.5</av:Point>
                                           <av:Size x:Key="ShapeSize">148,161</av:Size>
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           <x:Double x:Key="StateContainerWidth">113.59999999999991</x:Double>
@@ -2384,7 +2384,7 @@
                                         <Transition DisplayName="MoveOn" sap:VirtualizedContainerService.HintSize="448.8,509.6" sap2010:WorkflowViewState.IdRef="Transition_42">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <av:PointCollection x:Key="ConnectorLocation">250,412.833333333333 220,412.833333333333 220,425.666666666666 190.333333333333,425.666666666666</av:PointCollection>
+                                              <av:PointCollection x:Key="ConnectorLocation">250,423 220,423 220,425.833333333333 190,425.833333333333</av:PointCollection>
                                               <x:Int32 x:Key="SrcConnectionPointIndex">37</x:Int32>
                                               <x:Int32 x:Key="DestConnectionPointIndex">36</x:Int32>
                                             </scg:Dictionary>
@@ -2411,7 +2411,7 @@
                                 <Transition DisplayName="max system exceptions" sap:VirtualizedContainerService.HintSize="1145.6,838.4" sap2010:WorkflowViewState.IdRef="Transition_32">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <av:PointCollection x:Key="ConnectorLocation">540,345.85 510,345.85 510,453.25 398,453.25</av:PointCollection>
+                                      <av:PointCollection x:Key="ConnectorLocation">540,345.85 510,345.85 510,463.25 398,463.25</av:PointCollection>
                                       <x:Int32 x:Key="SrcConnectionPointIndex">41</x:Int32>
                                       <x:Int32 x:Key="DestConnectionPointIndex">56</x:Int32>
                                     </scg:Dictionary>
@@ -2449,7 +2449,7 @@
                                 <Transition DisplayName="Need to stop job" sap2010:WorkflowViewState.IdRef="Transition_45">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <av:PointCollection x:Key="ConnectorLocation">585,446.2 585,485.45 398,485.45</av:PointCollection>
+                                      <av:PointCollection x:Key="ConnectorLocation">585,446.2 585,495.45 398,495.45</av:PointCollection>
                                       <x:Int32 x:Key="SrcConnectionPointIndex">11</x:Int32>
                                       <x:Int32 x:Key="DestConnectionPointIndex">72</x:Int32>
                                     </scg:Dictionary>
@@ -2469,7 +2469,7 @@
                         <Transition DisplayName="EndProcess" sap:VirtualizedContainerService.HintSize="475.2,509.6" sap2010:WorkflowViewState.IdRef="Transition_16">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <av:PointCollection x:Key="ConnectorLocation">984.8,454.333333333333 984.8,523.5 375.8,523.5 375.8,493.5</av:PointCollection>
+                              <av:PointCollection x:Key="ConnectorLocation">984.8,454.333333333333 984.8,533.5 375.8,533.5 375.8,503.5</av:PointCollection>
                               <x:Int32 x:Key="SrcConnectionPointIndex">43</x:Int32>
                               <x:Int32 x:Key="DestConnectionPointIndex">67</x:Int32>
                             </scg:Dictionary>
@@ -2488,7 +2488,7 @@
                 <Transition DisplayName="Exception" sap:VirtualizedContainerService.HintSize="448.8,512.8" sap2010:WorkflowViewState.IdRef="Transition_36">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:PointCollection x:Key="ConnectorLocation">923.6,51.76 1109.6,51.76 1109.6,567.6 286.8,567.6 286.8,494.1</av:PointCollection>
+                      <av:PointCollection x:Key="ConnectorLocation">923.6,51.4 940,51.4 940,0 220,0 220,533.5 287,533.5 287,503.5</av:PointCollection>
                       <x:Int32 x:Key="SrcConnectionPointIndex">32</x:Int32>
                       <x:Int32 x:Key="DestConnectionPointIndex">19</x:Int32>
                     </scg:Dictionary>

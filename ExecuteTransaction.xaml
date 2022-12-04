@@ -13,7 +13,7 @@
   <this:ExecuteTransaction.in_pateientNumber>
     <InArgument x:TypeArguments="x:String" />
   </this:ExecuteTransaction.in_pateientNumber>
-  <sap:VirtualizedContainerService.HintSize>1121,1872</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1391,1872</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="58">
@@ -760,19 +760,11 @@
                       </sap:WorkflowViewStateService.ViewState>
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SeqNWP1_InsertPateientData workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="SAP_NWP1_InsertPateientData.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateFrom">
-                            <mva:VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="DateAdd(&quot;d&quot;,-10,DateTime.Now)" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateTo">
-                            <mva:VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="DateAdd(&quot;d&quot;,10,DateTime.Now)" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_str_ClinicService">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_ProcessSetup.BusinessProcess.Assets(&quot;Sap_clinic&quot;).ToString" />
-                          </InArgument>
+                          <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateFrom">[DateAdd("d",-10,DateTime.Now)]</InArgument>
+                          <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateTo">[DateAdd("d",10,DateTime.Now)]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_str_ClinicService">[io_ProcessSetup.BusinessProcess.Assets("Sap_clinic").ToString]</InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="in_str_pateientCassNumber" />
-                          <InArgument x:TypeArguments="x:String" x:Key="in_str_pateientNumber">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="int_pateientNumber.ToString" />
-                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_str_pateientNumber">[int_pateientNumber.ToString]</InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                       <FlowStep.Next>
@@ -822,11 +814,9 @@
                                       <av:PointCollection x:Key="ConnectorLocation">730,405.5 730,456</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_clikEntersToExitAlertMassages workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="sap_clikEntersToExitAlertMassages.xaml">
+                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_clikEntersToExitAlertMassages workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="sap_clikEntersToExitAlertMassages.xaml">
                                     <ui:InvokeWorkflowFile.Arguments>
-                                      <InArgument x:TypeArguments="x:Int32" x:Key="in_int_maxRetray">
-                                        <Literal x:TypeArguments="x:Int32" Value="3" />
-                                      </InArgument>
+                                      <InArgument x:TypeArguments="x:Int32" x:Key="in_int_maxRetray">3</InArgument>
                                     </ui:InvokeWorkflowFile.Arguments>
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -908,7 +898,7 @@
                                                   <av:PointCollection x:Key="ConnectorLocation">150,535.5 150,565.5 140,565.5 140,604.5</av:PointCollection>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_InsertVisitData workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="sap_InsertVisitData.xaml">
+                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_InsertVisitData workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="sap_InsertVisitData.xaml">
                                                 <ui:InvokeWorkflowFile.Arguments>
                                                   <InArgument x:TypeArguments="x:String" x:Key="in_str_visitType">
                                                     <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_ProcessSetup.BusinessProcess.Assets(&quot;VisitType&quot;).ToString" />
@@ -967,10 +957,7 @@
                                                         </ucas:ReadStatusbar.Target>
                                                       </ucas:ReadStatusbar>
                                                       <FlowStep.Next>
-                                                        <FlowDecision x:Name="__ReferenceID13" DisplayName="נוצר מקרה?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
-                                                          <FlowDecision.Condition>
-                                                            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="str_statusBarText.Contains(&quot;נוצר&quot;)" />
-                                                          </FlowDecision.Condition>
+                                                        <FlowDecision x:Name="__ReferenceID13" Condition="[str_statusBarText.Contains(&quot;נוצר&quot;)]" DisplayName="נוצר מקרה?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1114,9 +1101,7 @@
                                                                                             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;הודעת מדפסת הופיע&quot;]" />
                                                                                             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_clikEntersToExitAlertMassages workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="sap_clikEntersToExitAlertMassages.xaml">
                                                                                               <ui:InvokeWorkflowFile.Arguments>
-                                                                                                <InArgument x:TypeArguments="x:Int32" x:Key="in_int_maxRetray">
-                                                                                                  <Literal x:TypeArguments="x:Int32" Value="1" />
-                                                                                                </InArgument>
+                                                                                                <InArgument x:TypeArguments="x:Int32" x:Key="in_int_maxRetray">1</InArgument>
                                                                                               </ui:InvokeWorkflowFile.Arguments>
                                                                                             </ui:InvokeWorkflowFile>
                                                                                           </Sequence>
@@ -1142,9 +1127,7 @@
                                                                                       </uix:NCheckState>
                                                                                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_clikEntersToExitAlertMassages workflow" sap:VirtualizedContainerService.HintSize="680,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="sap_clikEntersToExitAlertMassages.xaml">
                                                                                         <ui:InvokeWorkflowFile.Arguments>
-                                                                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_int_maxRetray">
-                                                                                            <Literal x:TypeArguments="x:Int32" Value="2" />
-                                                                                          </InArgument>
+                                                                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_int_maxRetray">2</InArgument>
                                                                                         </ui:InvokeWorkflowFile.Arguments>
                                                                                       </ui:InvokeWorkflowFile>
                                                                                     </Sequence>
@@ -1222,7 +1205,7 @@
                                                                   <av:Size x:Key="ShapeSize">200,66</av:Size>
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
-                                                              <Sequence DisplayName="שגיאה ביצירץ מקרה" sap:VirtualizedContainerService.HintSize="473,327" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                                              <Sequence DisplayName="שגיאה ביצירץ מקרה" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_19">
                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
