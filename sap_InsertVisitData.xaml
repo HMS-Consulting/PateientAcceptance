@@ -105,13 +105,13 @@
           <av:Size x:Key="ShapeSize">200,51</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: אחזקת קבלה מהירה למטופל אמבולטורי: מסך פתיחה: מסך נתונים" sap:VirtualizedContainerService.HintSize="873,3252" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="3b529e25-afc7-4875-ac59-ca6e2be4a8b5" Version="V1">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: אחזקת קבלה מהירה למטופל אמבולטורי: מסך פתיחה: מסך נתונים" sap:VirtualizedContainerService.HintSize="873,3600" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="3b529e25-afc7-4875-ac59-ca6e2be4a8b5" Version="V1">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do insert visitor data" sap:VirtualizedContainerService.HintSize="839,2963" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <Sequence DisplayName="Do insert visitor data" sap:VirtualizedContainerService.HintSize="839,3311" sap2010:WorkflowViewState.IdRef="Sequence_1">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="str_TableText" />
                 <Variable x:TypeArguments="x:String" Name="att_tooltipbutton" />
@@ -231,12 +231,22 @@
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
               <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DelayAfter="0.5" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="797,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V1" />
-              <uix:NClick ClickType="Single" DelayAfter="0.5" DelayBefore="0.5" DisplayName="Click 'Button שמירה (Ctrl+S)'" sap:VirtualizedContainerService.HintSize="797,156" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3b529e25-afc7-4875-ac59-ca6e2be4a8b5" Version="V1">
+              <uix:NClick ClickType="Single" DelayAfter="0.5" DelayBefore="0.5" DisplayName="Click 'Button שמירה (Ctrl+S)'" sap:VirtualizedContainerService.HintSize="797,156" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3b529e25-afc7-4875-ac59-ca6e2be4a8b5" Version="V1">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable DesignTimeRectangle="1282, 50, 22, 22" ElementType="Button" FriendlyName="'Button שמירה (Ctrl+S)'" FullSelectorArgument="&lt;sap id='tbar[0]/btn[11]' tooltip='שמירה*' /&gt;" FuzzySelectorArgument="&lt;sap id='tbar[0]/btn[11]' tooltip='שמירה*' /&gt;" Guid="ecdb82d3-75a2-4b4a-9c7e-689804d457b6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEeSURBVEhL7ZIxTgMxEEWnogwXpEgR4AJcI1IK0oQKcQKkdBRAkRKlokDAJRCBza6dj2clR2bytVZY4Sq2nnejPzNPXkVW9QdKIN/1J0pQUNSsUAKpwlECeiM5GfeCzqT2UHx9/9o+Wc7I9UjlvmD51URyRq5H1q6CJW1iOSPXI3U4LGkTyxm5noI38mtYYtPx6RTz5ftObrl9emtrtzciNdKEwxJFZ7MHDEaX7e8utOb86nErojOdb2DRYm2azJ/3IoroTLdxsPQWsZk+HJa+IjqT2hORvuewIjpz4x0sWpyKWE0kimZ3L7i4WeBoOOF1HrvbitLMbs1Tif7V0zzuTlH8FGlmt+Y5iW4BWdq8D1HStajoP9ZB9OdVSAT8AN48aF3JiGE3AAAAAElFTkSuQmCC" InformativeScreenshot="17c219758659e4fdcee234d4de0ca460.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='אחזקת קבלה מהירה למטופל אמבולטורי: מסך פתיחה: מסך נתונים' /&gt;" SearchSteps="Selector" />
                 </uix:NClick.Target>
               </uix:NClick>
               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="797,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;לחיצה על שמירה&quot;]" />
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_clikEntersToExitAlertMassages workflow" sap:VirtualizedContainerService.HintSize="797,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="sap_clikEntersToExitAlertMassages.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_int_maxRetray">2</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <uix:NClick ClickType="Single" ContinueOnError="True" DelayAfter="0.5" DelayBefore="0.5" DisplayName="Click 'Button שמירה (Ctrl+S)'" sap:VirtualizedContainerService.HintSize="797,156" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3b529e25-afc7-4875-ac59-ca6e2be4a8b5" Timeout="2" Version="V1">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="1282, 50, 22, 22" ElementType="Button" FriendlyName="'Button שמירה (Ctrl+S)'" FullSelectorArgument="&lt;sap id='tbar[0]/btn[11]' tooltip='שמירה*' /&gt;" FuzzySelectorArgument="&lt;sap id='tbar[0]/btn[11]' tooltip='שמירה*' /&gt;" Guid="ecdb82d3-75a2-4b4a-9c7e-689804d457b6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEeSURBVEhL7ZIxTgMxEEWnogwXpEgR4AJcI1IK0oQKcQKkdBRAkRKlokDAJRCBza6dj2clR2bytVZY4Sq2nnejPzNPXkVW9QdKIN/1J0pQUNSsUAKpwlECeiM5GfeCzqT2UHx9/9o+Wc7I9UjlvmD51URyRq5H1q6CJW1iOSPXI3U4LGkTyxm5noI38mtYYtPx6RTz5ftObrl9emtrtzciNdKEwxJFZ7MHDEaX7e8utOb86nErojOdb2DRYm2azJ/3IoroTLdxsPQWsZk+HJa+IjqT2hORvuewIjpz4x0sWpyKWE0kimZ3L7i4WeBoOOF1HrvbitLMbs1Tif7V0zzuTlH8FGlmt+Y5iW4BWdq8D1HStajoP9ZB9OdVSAT8AN48aF3JiGE3AAAAAElFTkSuQmCC" InformativeScreenshot="17c219758659e4fdcee234d4de0ca460.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='אחזקת קבלה מהירה למטופל אמבולטורי: מסך פתיחה: מסך נתונים' /&gt;" SearchSteps="Selector" />
+                </uix:NClick.Target>
+              </uix:NClick>
             </Sequence>
           </ActivityAction>
         </uix:NApplicationCard.Body>
