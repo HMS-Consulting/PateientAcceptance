@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>644,701</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1055,701</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>sap_InsertVisitData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
@@ -83,7 +83,6 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="sap_InsertVisitData" sap:VirtualizedContainerService.HintSize="634,636" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -165,7 +164,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NMouseScroll ContinueOnError="True" Direction="Down" DisplayName="Mouse Scroll" sap:VirtualizedContainerService.HintSize="334,136" sap2010:WorkflowViewState.IdRef="NMouseScroll_2" InteractionMode="HardwareEvents" MovementUnits="10" Timeout="3" Version="V1" />
+                    <uix:NMouseScroll ContinueOnError="True" Direction="Down" DisplayName="Mouse Scroll" sap:VirtualizedContainerService.HintSize="334,136" sap2010:WorkflowViewState.IdRef="NMouseScroll_2" InteractionMode="HardwareEvents" MovementUnits="7" Timeout="3" Version="V1" />
                     <uix:NClick ClickType="Single" DisplayName="Click" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" Version="V1">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable DesignTimeRectangle="0, 0, 0, 0" FullSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='אחזקת קבלה מהירה למטופל אמבולטורי: מסך פתיחה: מסך נתונים' /&gt;&lt;sap colTooltip='IR קשור-מקרה' id='usr/ssubSUBSCREEN:SAPMNPA10:0500/subSUBSCR13:SAPLNIRA:0200/subNIRA_SC:SAPLNIRA_TC:0100/tblSAPLNIRA_TCG_TC_NIRA' tableRow='0' /&gt;" Guid="0f4e2c57-b052-4852-a519-9e3aa704c374" SearchSteps="Selector" />

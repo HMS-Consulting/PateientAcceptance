@@ -13,7 +13,7 @@
   <this:ExecuteTransaction.in_pateientNumber>
     <InArgument x:TypeArguments="x:String" />
   </this:ExecuteTransaction.in_pateientNumber>
-  <sap:VirtualizedContainerService.HintSize>1391,1872</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1121,1872</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="58">
@@ -758,13 +758,21 @@
                           <av:PointCollection x:Key="ConnectorLocation">160,285.5 160,355.5</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SeqNWP1_InsertPateientData workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="SAP_NWP1_InsertPateientData.xaml">
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SeqNWP1_InsertPateientData workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="SAP_NWP1_InsertPateientData.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateFrom">[DateAdd("d",-10,DateTime.Now)]</InArgument>
-                          <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateTo">[DateAdd("d",10,DateTime.Now)]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_str_ClinicService">[io_ProcessSetup.BusinessProcess.Assets("Sap_clinic").ToString]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_str_pateientCassNumber" />
-                          <InArgument x:TypeArguments="x:String" x:Key="in_str_pateientNumber">[int_pateientNumber.ToString]</InArgument>
+                          <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateFrom">
+                            <mva:VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="DateAdd(&quot;d&quot;,-20,DateTime.Now)" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateTo">
+                            <mva:VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="DateAdd(&quot;d&quot;,30,DateTime.Now)" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_str_ClinicService">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_ProcessSetup.BusinessProcess.Assets(&quot;Sap_clinic&quot;).ToString" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_str_pateientNumber">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="int_pateientNumber.ToString" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_str_pateientID" />
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                       <FlowStep.Next>
@@ -839,7 +847,7 @@
                                             <ActivityAction.Argument>
                                               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                                             </ActivityAction.Argument>
-                                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,706" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,708" sap2010:WorkflowViewState.IdRef="Sequence_15">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -898,17 +906,11 @@
                                                   <av:PointCollection x:Key="ConnectorLocation">150,535.5 150,565.5 140,565.5 140,604.5</av:PointCollection>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_InsertVisitData workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="sap_InsertVisitData.xaml">
+                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_InsertVisitData workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="sap_InsertVisitData.xaml">
                                                 <ui:InvokeWorkflowFile.Arguments>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_str_visitType">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_ProcessSetup.BusinessProcess.Assets(&quot;VisitType&quot;).ToString" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_str_visitorType">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_ProcessSetup.BusinessProcess.Assets(&quot;VisitorType&quot;).ToString" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_str_referrer">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_ProcessSetup.BusinessProcess.Assets(&quot;Referrer&quot;).ToString" />
-                                                  </InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_str_visitType">[io_ProcessSetup.BusinessProcess.Assets("VisitType").ToString]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_str_visitorType">[io_ProcessSetup.BusinessProcess.Assets("VisitorType").ToString]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_str_referrer">[io_ProcessSetup.BusinessProcess.Assets("Referrer").ToString]</InArgument>
                                                 </ui:InvokeWorkflowFile.Arguments>
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">

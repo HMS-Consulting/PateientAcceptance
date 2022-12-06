@@ -3,14 +3,14 @@
     <x:Property Name="in_dateFrom" Type="InArgument(s:DateTime)" />
     <x:Property Name="in_dateTo" Type="InArgument(s:DateTime)" />
     <x:Property Name="in_str_ClinicService" Type="InArgument(x:String)" />
-    <x:Property Name="in_str_pateientCassNumber" Type="InArgument(x:String)">
+    <x:Property Name="in_str_pateientNumber" Type="InArgument(x:String)" />
+    <x:Property Name="in_str_pateientID" Type="InArgument(x:String)">
       <x:Property.Attributes>
         <RequiredArgumentAttribute />
       </x:Property.Attributes>
     </x:Property>
-    <x:Property Name="in_str_pateientNumber" Type="InArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1033,2912</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1055,3500</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -49,7 +49,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="52">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="104">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -102,9 +102,10 @@
       <AssemblyReference>System.Management.Automation</AssemblyReference>
       <AssemblyReference>HmsTeam.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Activities.Contracts</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Seq NWP1 - insert current data" sap:VirtualizedContainerService.HintSize="915,2847" sap2010:WorkflowViewState.IdRef="Sequence_15">
+  <Sequence DisplayName="Seq NWP1 - insert current data" sap:VirtualizedContainerService.HintSize="915,3435" sap2010:WorkflowViewState.IdRef="Sequence_15">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:UiElement" Name="uiwin_nwp1" />
     </Sequence.Variables>
@@ -113,13 +114,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: בחירות של סוג תצוגה 'מתקן שירות/מרפאת חוץ'" sap:VirtualizedContainerService.HintSize="873,2755" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" OpenMode="Never" OutUiElement="[uiwin_nwp1]" ScopeGuid="4ffc1a46-127c-4132-9a55-8c8593848986" Timeout="5" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: בחירות של סוג תצוגה 'מתקן שירות/מרפאת חוץ'" sap:VirtualizedContainerService.HintSize="873,3343" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" OpenMode="Never" OutUiElement="[uiwin_nwp1]" ScopeGuid="4ffc1a46-127c-4132-9a55-8c8593848986" Timeout="5" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do insert data" sap:VirtualizedContainerService.HintSize="839,2466" sap2010:WorkflowViewState.IdRef="Sequence_16">
+          <Sequence DisplayName="Do insert data" sap:VirtualizedContainerService.HintSize="839,3054" sap2010:WorkflowViewState.IdRef="Sequence_16">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -137,15 +138,15 @@
                 </ui:Target>
               </ui:SetValue.Target>
             </ui:SetValue>
-            <If Condition="[not String.IsNullOrEmpty( in_str_pateientCassNumber)]" sap:VirtualizedContainerService.HintSize="797,538" sap2010:WorkflowViewState.IdRef="If_3">
+            <If Condition="[String.IsNullOrEmpty( in_str_pateientID)]" sap:VirtualizedContainerService.HintSize="797,1126" sap2010:WorkflowViewState.IdRef="If_3">
               <If.Then>
-                <Sequence DisplayName="Sequence   in_str_pateientCassNumber" sap:VirtualizedContainerService.HintSize="376,379" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                <Sequence DisplayName="Sequence   in_str_pateientNumber" sap:VirtualizedContainerService.HintSize="376,379" sap2010:WorkflowViewState.IdRef="Sequence_19">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text  in_str_pateientCassNumber" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="SetValue_8" Text="[in_str_pateientCassNumber]">
+                  <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text  in_str_pateientNumber" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="SetValue_8" Text="[in_str_pateientNumber]">
                     <ui:SetValue.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1f845132-20f8-4bc0-ba52-966add29c91a" InformativeScreenshot="0e37a5c902389c4fb40c59a5613f98b1" Selector="&lt;wnd app='saplgpad.exe' cls='#32770' title='בחירות של סוג תצוגה &amp;apos;מתקן שירות/מרפאת חוץ&amp;apos;' idx='*' /&gt;&lt;sap id='usr/tabsTABSTRIP/tabpTAB_ALLGEMEIN/ssubSUB_ALLGEMEIN:SAPLN1LSTAMB:0110/ctxtSCR_PATIENT' /&gt;">
                         <ui:Target.TimeoutMS>
@@ -157,19 +158,33 @@
                       </ui:Target>
                     </ui:SetValue.Target>
                   </ui:SetValue>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;מתקן שירות &quot; +&quot;מ-אאג&quot; + &quot;מספר מקרה &quot; + in_str_pateientCassNumber]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;מתקן שירות &quot; +&quot;מ-אאג&quot; + &quot;מספר מקרה &quot; + in_str_pateientID]" />
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence DisplayName="Sequence   in_str_pateientCassNumber" sap:VirtualizedContainerService.HintSize="376,379" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                <Sequence DisplayName="Sequence   in_str_pateientIDNumber" sap:VirtualizedContainerService.HintSize="376,967" sap2010:WorkflowViewState.IdRef="Sequence_20">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text  in_str_pateientCassNumber" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="SetValue_9" Text="[in_str_pateientNumber]">
+                  <uix:NClick ClickType="Single" DisplayName="Click 'CTextField מספר מטופל'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4ffc1a46-127c-4132-9a55-8c8593848986" Version="V1">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="559, 318, 90, 20" ElementType="InputBox" FriendlyName="'CTextField מספר מטופל'" FullSelectorArgument="&lt;sap id='usr/tabsTABSTRIP/tabpTAB_ALLGEMEIN/ssubSUB_ALLGEMEIN:SAPLN1LSTAMB:0110/ctxtSCR_PATIENT' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/tabsTABSTRIP/tabpTAB_ALLGEMEIN/ssubSUB_ALLGEMEIN:SAPLN1LSTAMB:0110/ctxtSCR_PATIENT' /&gt;" Guid="b4f4e182-a5ac-4cd1-b608-9c250d38bdb5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF4AAAAYCAYAAABz00ofAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALTSURBVGhD7dlbTxpRFIZhf1avetFfWNoqKAgKKkUpgnIY0FAqWOsJq0BRFKaUgwIiVETAQ7+yJpltaYax0wu92ZO8CcleYZIHWCGZkVpbBO/p4/DP1MiU1YRxox66N6819/adDoFAAOMTExgd0/NUIiOyYvDrGQGNXg2tmwvNXd00MTlpxqeQDgebo0jtGHgKkU0kqIPZMvUAv5ET0Llt4fa+p7ne3TUmTJNIbOpRzoyhWdDzFCpn9JIRWT3AiwF07q5Q75Y117vvwGS2IL1nRKtkwM25iacQ2ZARWTH4L2JQgq+08nj54pVqNFPvlFgETz+f44QZ3aoRv5pmnkJkQ0YDq4bgaV9naykJN34YVozOaObs+juLVpRl2srhH0mGJ6sB+IteBenyDoOXv+FqiY0ULvsf2LRthsM/kgxPVgPwxfYx9gpRCVSGV7voPFH+jGqnANvsLE6SFg6vEtmQEVkxePpXk79MYju/ogme5k/bWcza7cilOLxaZENGZDUAn23GsZ7zaoKn+eJVBnbHPMT0dP/NTYo35RG8STIiKw7/hCnDnwhI1dexduKSQOXULjqnefHnPof/hxThY0c+CT4meuDdtcERMWiCd8wvIH9o5fAqkQ0ZkRWDjx76kaxHsVXySfjCwZwm+HnnB/w4mkG3xuGHRTZkRFYMfi3pReo8ht1KUOrvlTMsmss1v8LpWkTheI7Dq0Q2ZERWDD6878FBdY3ByytnIWocGp3TXLaxD5fbjWLWzuFVIhsyIisGL2w5ES+GsVFYliLQ8NECVtOOodE5zWWqcbg9SyjnHBxeJbIhI7Ji8KHtRRB+aMeluc1vEXiWvTjL2XFdtSrelGdGu2LFad+IrBh8bGMVQsiLpWW35oRgfy35A0ju2dAovUer6uYpdNG3ScRn4PvzCZT84n/7GInALwSx5PPxhuaXjCJ9q+BKQIo/7H6mOPyzJOI32WSUCJmWHgMAAAAASUVORK5CYII=" InformativeScreenshot="2355491a53732e8fec516a7c5895d282.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32770' title='בחירות של סוג תצוגה &amp;apos;מתקן שירות/מרפאת חוץ&amp;apos;' idx='*' /&gt;" SearchSteps="Selector" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NClick ClickType="Single" DisplayName="Click find patsient by id" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4ffc1a46-127c-4132-9a55-8c8593848986" Version="V1">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="559, 318, 90, 20" ElementType="InputBox" FriendlyName="'CTextField מספר מטופל'" FullSelectorArgument="&lt;sap id='usr/tabsTABSTRIP/tabpTAB_ALLGEMEIN/ssubSUB_ALLGEMEIN:SAPLN1LSTAMB:0110/ctxtSCR_PATIENT' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/tabsTABSTRIP/tabpTAB_ALLGEMEIN/ssubSUB_ALLGEMEIN:SAPLN1LSTAMB:0110/ctxtSCR_PATIENT' /&gt;" Guid="b4f4e182-a5ac-4cd1-b608-9c250d38bdb5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF4AAAAYCAYAAABz00ofAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALTSURBVGhD7dlbTxpRFIZhf1avetFfWNoqKAgKKkUpgnIY0FAqWOsJq0BRFKaUgwIiVETAQ7+yJpltaYax0wu92ZO8CcleYZIHWCGZkVpbBO/p4/DP1MiU1YRxox66N6819/adDoFAAOMTExgd0/NUIiOyYvDrGQGNXg2tmwvNXd00MTlpxqeQDgebo0jtGHgKkU0kqIPZMvUAv5ET0Llt4fa+p7ne3TUmTJNIbOpRzoyhWdDzFCpn9JIRWT3AiwF07q5Q75Y117vvwGS2IL1nRKtkwM25iacQ2ZARWTH4L2JQgq+08nj54pVqNFPvlFgETz+f44QZ3aoRv5pmnkJkQ0YDq4bgaV9naykJN34YVozOaObs+juLVpRl2srhH0mGJ6sB+IteBenyDoOXv+FqiY0ULvsf2LRthsM/kgxPVgPwxfYx9gpRCVSGV7voPFH+jGqnANvsLE6SFg6vEtmQEVkxePpXk79MYju/ogme5k/bWcza7cilOLxaZENGZDUAn23GsZ7zaoKn+eJVBnbHPMT0dP/NTYo35RG8STIiKw7/hCnDnwhI1dexduKSQOXULjqnefHnPof/hxThY0c+CT4meuDdtcERMWiCd8wvIH9o5fAqkQ0ZkRWDjx76kaxHsVXySfjCwZwm+HnnB/w4mkG3xuGHRTZkRFYMfi3pReo8ht1KUOrvlTMsmss1v8LpWkTheI7Dq0Q2ZERWDD6878FBdY3ByytnIWocGp3TXLaxD5fbjWLWzuFVIhsyIisGL2w5ES+GsVFYliLQ8NECVtOOodE5zWWqcbg9SyjnHBxeJbIhI7Ji8KHtRRB+aMeluc1vEXiWvTjL2XFdtSrelGdGu2LFad+IrBh8bGMVQsiLpWW35oRgfy35A0ju2dAovUer6uYpdNG3ScRn4PvzCZT84n/7GInALwSx5PPxhuaXjCJ9q+BKQIo/7H6mOPyzJOI32WSUCJmWHgMAAAAASUVORK5CYII=" InformativeScreenshot="25af642f6c76700a4832c6990f7bb701.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32770' title='בחירות של סוג תצוגה &amp;apos;מתקן שירות/מרפאת חוץ&amp;apos;' idx='*' /&gt;" SearchSteps="Selector">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset Position="BottomLeft" X="6" Y="-10" />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text  in_str_pateientID" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="SetValue_9" Text="[in_str_pateientID]">
                     <ui:SetValue.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1f845132-20f8-4bc0-ba52-966add29c91a" InformativeScreenshot="0e37a5c902389c4fb40c59a5613f98b1" Selector="&lt;wnd app='saplgpad.exe' cls='#32770' title='בחירות של סוג תצוגה*' idx='*' /&gt;&lt;sap id='usr/tabsTABSTRIP/tabpTAB_ALLGEMEIN/ssubSUB_ALLGEMEIN:SAPLN1LSTAMB:0110/ctxtSCR_PATIENT' /&gt;">
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1f845132-20f8-4bc0-ba52-966add29c91a" InformativeScreenshot="a1e212826c528eee27ca6e526e52a118" Selector="&lt;wnd app='saplgpad.exe' cls='#32770' title='רשימת מטופלים: מסך פתיחה' idx='*' /&gt;&lt;sap id='usr/subSEARCH:SAPLNPA1:0100/txtEXTNR_FIRST' /&gt;">
                         <ui:Target.TimeoutMS>
                           <InArgument x:TypeArguments="x:Int32" />
                         </ui:Target.TimeoutMS>
@@ -179,7 +194,12 @@
                       </ui:Target>
                     </ui:SetValue.Target>
                   </ui:SetValue>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;מתקן שירות &quot; +&quot;מ-אאג&quot; + &quot;מספר מטופל &quot; +in_str_pateientNumber]" />
+                  <uix:NClick ClickType="Single" DisplayName="Click 'חיפוש'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4ffc1a46-127c-4132-9a55-8c8593848986" Version="V1">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="24, 273, 76, 22" ElementType="Button" FriendlyName="'חיפוש'" FullSelectorArgument="&lt;sap id='usr/subSEARCH:SAPLNPA1:0100/btnRNPA1-SEARCH' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/subSEARCH:SAPLNPA1:0100/btnRNPA1-SEARCH' check:text='חיפוש' /&gt;" Guid="a6b68b14-505b-44de-b055-c5dc46565dfd" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFAAAAAaCAYAAAAg0tunAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKcSURBVGhD7dlBSxRhHMfxeTHiO/DipcO+iiTUg0hQXYLYQ1BBuOWh3INiZClaYIgYQQwdii4idVA6KBUDW6xgy0atiy616s6v+a3OzDMzzzOju24o8xy+MPt/nhnZjzODoFHeLUDXehqwzTzAP6VneDp5G0NDl3Ux0YhWEcCJ/E28fHEPdv0bsFfUSaINjWgVAbx29Qqqm3Ow97aAxq5OEm1oRCslIPZ/ALXl1JQZWYRx6UEzHsfOHZtkwIOyd5E0RKDZ91YzHsfOHZtEQHt/07tIGjoJIG2SAetfgZ23qSkCFTOnTSzgNgFrK0D1VSq6OGE2328uVPi9J865lzY0UgJWirOwd94Blfnk1vrR29MPS/HZynWjN5dFvseAYWRgcr6QcY75Wcg7Zyy4l9cL73XXTiGiuEj51xuxcY+LTaPOABJnMOutm4MGhhd4fAjTPA7tcff5M2Fv+PpO/KX44O3lPqIikixxned0DNAHY1kMC3eLtyYBVO6VAB7u7UZ+TZy1lgyQd1j4Ef4vgJE7Q3U3ci5FOS4g79DOAXKWtH66gNJ3k/AYHs38u9N9zxnO+3HsaD0I6HUeAX99n3EA3wC/Z5Jb7XO+YB+s0NzKdcEYuB6YmQMEDO7z4nWMCzBl88j1Rx3ALuRXxVlrKQET1mmkBPxZmIZdXQr8IGWSL0goQ4KqBiSIc04IvNkZBaSRErBkTaFxEkDvEXYfy1HpXg9Qco4Uj51RQBopAbe+PEJj+5iA5zwXSEwGGF6nkRKwuD6eGkDxTxY3zpLWaaQELHx6iIOKfxFdMNrQSAm48eE+aqV5/C1N6STRhkZSwMfjtzA9eQPrK3fx+eOIThJtaESrCGC9/BxzT+5I/5Gi86MRrSKAutbSgG1VwD+RxQgdXIgrsQAAAABJRU5ErkJggg==" InformativeScreenshot="e1c9f3b6422b8b556b1218cc3115faa1.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32770' title='רשימת מטופלים: מסך פתיחה' idx='*' /&gt;" SearchSteps="Selector" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;מתקן שירות &quot; +&quot;מ-אאג&quot; + &quot;מספר תז &quot; +in_str_pateientID]" />
                 </Sequence>
               </If.Else>
             </If>
