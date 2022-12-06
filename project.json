@@ -6,6 +6,7 @@
     "HmsTeam.Framework.Activities": "2022.5.20",
     "HmsTeam.SAP.Activities": "[22.11.1]",
     "HmsTeam.Shared": "2022.3.7",
+    "UiPath.PDF.Activities": "[3.10.1]",
     "UiPath.System.Activities": "21.10.5",
     "UiPath.UIAutomation.Activities": "21.10.7"
   },

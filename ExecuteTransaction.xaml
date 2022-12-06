@@ -139,10 +139,11 @@
       <Variable x:TypeArguments="s:Exception" Name="SystemException" />
       <Variable x:TypeArguments="ui:BusinessRuleException" Name="BusinessException" />
       <Variable x:TypeArguments="x:Int32" Name="int_pateientNumber" />
-      <Variable x:TypeArguments="x:Int32" Name="int_currentID" />
+      <Variable x:TypeArguments="x:String" Name="str_currentID" />
       <Variable x:TypeArguments="x:String" Name="str_statusBarText" />
       <Variable x:TypeArguments="x:String" Name="str_statusBarType" />
       <Variable x:TypeArguments="x:String" Name="str_fileName" />
+      <Variable x:TypeArguments="s:DateTime" Name="date_reservation" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -156,12 +157,12 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID20</x:Reference>
+      <x:Reference>__ReferenceID21</x:Reference>
     </Flowchart.StartNode>
     <FlowStep>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">640,23.6</av:Point>
+          <av:Point x:Key="ShapeLocation">870,1176</av:Point>
           <av:Size x:Key="ShapeSize">200,108</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -198,7 +199,7 @@
     <FlowStep>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">860,13.6</av:Point>
+          <av:Point x:Key="ShapeLocation">860,1213.6</av:Point>
           <av:Size x:Key="ShapeSize">200,93</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -250,7 +251,7 @@
     <FlowStep>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">860,121.6</av:Point>
+          <av:Point x:Key="ShapeLocation">860,1321.6</av:Point>
           <av:Size x:Key="ShapeSize">200,93</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -302,7 +303,7 @@
     <FlowStep>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">860,228.4</av:Point>
+          <av:Point x:Key="ShapeLocation">860,1158.4</av:Point>
           <av:Size x:Key="ShapeSize">200,108</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -354,7 +355,7 @@
     <FlowStep>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">640,143.6</av:Point>
+          <av:Point x:Key="ShapeLocation">870,1196</av:Point>
           <av:Size x:Key="ShapeSize">200,108</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -403,12 +404,12 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:CommentOut>
     </FlowStep>
-    <FlowStep x:Name="__ReferenceID20">
+    <FlowStep x:Name="__ReferenceID21">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">120,20</av:Point>
           <av:Size x:Key="ShapeSize">200,153</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">320,96.5 350,96.5 350,79.52 370,79.52</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">320,96.5 350,96.5 350,90 410,90</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <Sequence sap2010:Annotation.AnnotationText="if you want to run this file only without main, please fill the values in beginning actions arguments and in the transaction specific content" DisplayName="transaction manually creation" sap:VirtualizedContainerService.HintSize="200,153" sap2010:WorkflowViewState.IdRef="Sequence_10">
@@ -671,139 +672,131 @@
         </If>
       </Sequence>
       <FlowStep.Next>
-        <FlowStep x:Name="__ReferenceID4">
+        <FlowStep x:Name="__ReferenceID20">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">370,10.52</av:Point>
-              <av:Size x:Key="ShapeSize">200,138</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">470,148.52 460,148.52 460,161.52</av:PointCollection>
+              <av:Point x:Key="ShapeLocation">410,64.5</av:Point>
+              <av:Size x:Key="ShapeSize">200,51</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">610,90 640,90 640,97.5 710,97.5</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:MultipleAssign sap2010:Annotation.AnnotationText="כאן נכניס את חילוס מספר המטופל ותאריך הזמנה למרפאה על מנת להכניס לפילטר במסך הבית&#xA;" DisplayName="Multiple Assign current case number and id number" sap:VirtualizedContainerService.HintSize="200,138" sap2010:WorkflowViewState.IdRef="MultipleAssign_9">
-            <ui:MultipleAssign.AssignOperations>
-              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_68">
-                  <ui:AssignOperation.To>
-                    <OutArgument x:TypeArguments="x:String">[str_fileName]</OutArgument>
-                  </ui:AssignOperation.To>
-                  <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:String">[path.GetFileNameWithoutExtension(io_currentTranItem.SpecificContent("filePath").ToString)]</InArgument>
-                  </ui:AssignOperation.Value>
-                </ui:AssignOperation>
-                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_35">
-                  <ui:AssignOperation.To>
-                    <OutArgument x:TypeArguments="x:Int32">[int_pateientNumber]</OutArgument>
-                  </ui:AssignOperation.To>
-                  <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:Int32">[cint(str_fileName.Split("_"c)(1))]</InArgument>
-                  </ui:AssignOperation.Value>
-                </ui:AssignOperation>
-                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_36">
-                  <ui:AssignOperation.To>
-                    <OutArgument x:TypeArguments="x:Int32">[int_currentID]</OutArgument>
-                  </ui:AssignOperation.To>
-                  <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:Int32">[cint(str_fileName.Split("_"c)(0))]</InArgument>
-                  </ui:AssignOperation.Value>
-                </ui:AssignOperation>
-              </scg:List>
-            </ui:MultipleAssign.AssignOperations>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ReadDataFromPDF workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="ReadDataFromPDF.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_str_PDFfilePath">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_currentTranItem.SpecificContent(&quot;filePath&quot;).ToString" />
+              </InArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="out_customerID">
+                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_currentID" />
+              </OutArgument>
+              <OutArgument x:TypeArguments="s:DateTime" x:Key="out_reservationDatetime">
+                <mva:VisualBasicReference x:TypeArguments="s:DateTime" ExpressionText="date_reservation" />
+              </OutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-          </ui:MultipleAssign>
+          </ui:InvokeWorkflowFile>
           <FlowStep.Next>
-            <FlowStep x:Name="__ReferenceID5">
+            <FlowStep x:Name="__ReferenceID4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:Point x:Key="ShapeLocation">360,161.52</av:Point>
-                  <av:Size x:Key="ShapeSize">200,51</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">460,212.52 460,232.52</av:PointCollection>
+                  <av:Point x:Key="ShapeLocation">710,51</av:Point>
+                  <av:Size x:Key="ShapeSize">200,93</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">810,144 810,224.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ucas:CallTransaction DisplayName="Call Transaction 'saplgpad.exe זימון'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CallTransaction_1" Transaction="[io_ProcessSetup.BusinessProcess.Assets(&quot;SAP_MainScreen&quot;).ToString]">
-                <ucas:CallTransaction.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a07c1288-c15d-4da0-a745-7e480c795adc" InformativeScreenshot="18d2b05659a26e303efab781293406fe" Selector="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' omit:title='זימון מטופל אמבולטורי' /&gt;" TimeoutMS="5">
-                    <ui:Target.WaitForReady>
-                      <InArgument x:TypeArguments="ui:WaitForReady" />
-                    </ui:Target.WaitForReady>
-                  </ui:Target>
-                </ucas:CallTransaction.Target>
-              </ucas:CallTransaction>
+              <ui:MultipleAssign sap2010:Annotation.AnnotationText="save file name without extention" DisplayName="Multiple Assign current case number and id number" sap:VirtualizedContainerService.HintSize="200,93" sap2010:WorkflowViewState.IdRef="MultipleAssign_9">
+                <ui:MultipleAssign.AssignOperations>
+                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_68">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[str_fileName]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[path.GetFileNameWithoutExtension(io_currentTranItem.SpecificContent("filePath").ToString)]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                  </scg:List>
+                </ui:MultipleAssign.AssignOperations>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:MultipleAssign>
               <FlowStep.Next>
-                <FlowStep x:Name="__ReferenceID6">
+                <FlowStep x:Name="__ReferenceID5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:Point x:Key="ShapeLocation">360,232.52</av:Point>
+                      <av:Point x:Key="ShapeLocation">710,224.5</av:Point>
                       <av:Size x:Key="ShapeSize">200,51</av:Size>
-                      <av:PointCollection x:Key="ConnectorLocation">360,258.02 330,258.02 330,260 260,260</av:PointCollection>
+                      <av:PointCollection x:Key="ConnectorLocation">710,250 680,250 680,258.02 560,258.02</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;בוצע מעבר לטרנזקציה : &quot;+io_ProcessSetup.BusinessProcess.Assets(&quot;SAP_MainScreen&quot;).ToString]">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </ui:LogMessage>
+                  <ucas:CallTransaction DisplayName="Call Transaction 'saplgpad.exe זימון'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CallTransaction_1" Transaction="[io_ProcessSetup.BusinessProcess.Assets(&quot;SAP_MainScreen&quot;).ToString]">
+                    <ucas:CallTransaction.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a07c1288-c15d-4da0-a745-7e480c795adc" InformativeScreenshot="18d2b05659a26e303efab781293406fe" Selector="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' omit:title='זימון מטופל אמבולטורי' /&gt;" TimeoutMS="5">
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ucas:CallTransaction.Target>
+                  </ucas:CallTransaction>
                   <FlowStep.Next>
-                    <FlowStep x:Name="__ReferenceID0">
+                    <FlowStep x:Name="__ReferenceID6">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <av:Point x:Key="ShapeLocation">60,234.5</av:Point>
+                          <av:Point x:Key="ShapeLocation">360,232.52</av:Point>
                           <av:Size x:Key="ShapeSize">200,51</av:Size>
-                          <av:PointCollection x:Key="ConnectorLocation">160,285.5 160,355.5</av:PointCollection>
+                          <av:PointCollection x:Key="ConnectorLocation">360,258.02 330,258.02 330,260 260,260</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SeqNWP1_InsertPateientData workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="SAP_NWP1_InsertPateientData.xaml">
-                        <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateFrom">
-                            <mva:VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="DateAdd(&quot;d&quot;,-20,DateTime.Now)" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateTo">
-                            <mva:VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="DateAdd(&quot;d&quot;,30,DateTime.Now)" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_str_ClinicService">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_ProcessSetup.BusinessProcess.Assets(&quot;Sap_clinic&quot;).ToString" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_str_pateientNumber">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="int_pateientNumber.ToString" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_str_pateientID" />
-                        </ui:InvokeWorkflowFile.Arguments>
-                      </ui:InvokeWorkflowFile>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;בוצע מעבר לטרנזקציה : &quot;+io_ProcessSetup.BusinessProcess.Assets(&quot;SAP_MainScreen&quot;).ToString]">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:LogMessage>
                       <FlowStep.Next>
-                        <FlowStep x:Name="__ReferenceID1">
+                        <FlowStep x:Name="__ReferenceID0">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <av:Point x:Key="ShapeLocation">60,355.5</av:Point>
+                              <av:Point x:Key="ShapeLocation">60,234.5</av:Point>
                               <av:Size x:Key="ShapeSize">200,51</av:Size>
-                              <av:PointCollection x:Key="ConnectorLocation">260,381 290,381 290,380 350,380</av:PointCollection>
+                              <av:PointCollection x:Key="ConnectorLocation">160,285.5 160,355.5</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_FindAndSelectCurrentRow workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="sap_FindAndSelectCurrentRow.xaml">
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SeqNWP1_InsertPateientData workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="SAP_NWP1_InsertPateientData.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                              <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateFrom">
+                                <mva:VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="date_reservation" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateTo">
+                                <mva:VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="date_reservation" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_str_ClinicService">
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_ProcessSetup.BusinessProcess.Assets(&quot;Sap_clinic&quot;).ToString" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_str_pateientNumber" />
+                              <InArgument x:TypeArguments="x:String" x:Key="in_str_pateientID">
+                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_currentID" />
+                              </InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
                           </ui:InvokeWorkflowFile>
                           <FlowStep.Next>
-                            <FlowStep x:Name="__ReferenceID2">
+                            <FlowStep x:Name="__ReferenceID1">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <av:Point x:Key="ShapeLocation">350,354.5</av:Point>
+                                  <av:Point x:Key="ShapeLocation">60,355.5</av:Point>
                                   <av:Size x:Key="ShapeSize">200,51</av:Size>
-                                  <av:PointCollection x:Key="ConnectorLocation">550,380 630,380</av:PointCollection>
+                                  <av:PointCollection x:Key="ConnectorLocation">260,381 290,381 290,380 350,380</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_acceptanceToCurrentRow workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="sap_acceptanceToCurrentRow.xaml">
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_FindAndSelectCurrentRow workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="sap_FindAndSelectCurrentRow.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
                                   <scg:Dictionary x:TypeArguments="x:String, Argument" />
                                 </ui:InvokeWorkflowFile.Arguments>
@@ -814,17 +807,17 @@
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:InvokeWorkflowFile>
                               <FlowStep.Next>
-                                <FlowStep x:Name="__ReferenceID3">
+                                <FlowStep x:Name="__ReferenceID2">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <av:Point x:Key="ShapeLocation">630,354.5</av:Point>
+                                      <av:Point x:Key="ShapeLocation">350,354.5</av:Point>
                                       <av:Size x:Key="ShapeSize">200,51</av:Size>
-                                      <av:PointCollection x:Key="ConnectorLocation">730,405.5 730,456</av:PointCollection>
+                                      <av:PointCollection x:Key="ConnectorLocation">550,380 630,380</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_clikEntersToExitAlertMassages workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="sap_clikEntersToExitAlertMassages.xaml">
+                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_acceptanceToCurrentRow workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="sap_acceptanceToCurrentRow.xaml">
                                     <ui:InvokeWorkflowFile.Arguments>
-                                      <InArgument x:TypeArguments="x:Int32" x:Key="in_int_maxRetray">3</InArgument>
+                                      <scg:Dictionary x:TypeArguments="x:String, Argument" />
                                     </ui:InvokeWorkflowFile.Arguments>
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -833,84 +826,82 @@
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:InvokeWorkflowFile>
                                   <FlowStep.Next>
-                                    <FlowStep x:Name="__ReferenceID7">
+                                    <FlowStep x:Name="__ReferenceID3">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <av:Point x:Key="ShapeLocation">630,456</av:Point>
-                                          <av:Size x:Key="ShapeSize">200,108</av:Size>
-                                          <av:PointCollection x:Key="ConnectorLocation">630,510 510,510</av:PointCollection>
+                                          <av:Point x:Key="ShapeLocation">630,354.5</av:Point>
+                                          <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                          <av:PointCollection x:Key="ConnectorLocation">730,405.5 730,456</av:PointCollection>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <uix:NApplicationCard sap2010:Annotation.AnnotationText="לחיצה על בחר מקרה ובדיקת מעבר תקין למסך הבא&#xA;" AttachMode="ByInstance" DisplayName="Use Application: אחזקת נתוני אב מטופל: מסך נתונים" sap:VirtualizedContainerService.HintSize="200,108" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="1e5b5b79-0819-46f9-8cc6-831c6c4010d6" Version="V1">
-                                        <uix:NApplicationCard.Body>
-                                          <ActivityAction x:TypeArguments="x:Object">
-                                            <ActivityAction.Argument>
-                                              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-                                            </ActivityAction.Argument>
-                                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,708" sap2010:WorkflowViewState.IdRef="Sequence_15">
-                                              <sap:WorkflowViewStateService.ViewState>
-                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                </scg:Dictionary>
-                                              </sap:WorkflowViewStateService.ViewState>
-                                              <uix:NClick ClickType="Single" DisplayName="Click 'בחר מקרה'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1e5b5b79-0819-46f9-8cc6-831c6c4010d6" Timeout="1" Version="V1">
-                                                <uix:NClick.Target>
-                                                  <uix:TargetAnchorable DesignTimeRectangle="1119, 121, 90, 22" ElementType="Button" FriendlyName="'בחר מקרה'" FullSelectorArgument="&lt;ctrl name='בחר מקרה' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='בחר מקרה' role='push button' automationid='' check:text='בחר מקרה' /&gt;" Guid="c2d288e4-0044-49a2-bbef-be318d386b53" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF4AAAAaCAYAAAA+G+sUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKuSURBVGhD7ZnPaxNBFMf3jyml/0B7yMVDDv0femgjhiKoF0F6EFSQJu3F7qHSYLXFKlRKUXpZPOhNih7641BRWaiSQg0RTUONmrbJ132Ns9l9O7vZrNuE0Fn4kHnv7cyb+exCAtHKv4pQdB4lvkso8V1C+114Ygc0fjR3G+n0ZUWMkFPuWbuv37QTNH7xLIt69TNwlFfEALkkp9yzdu3qFTtxOt5bQv1oH6j9VDBSFy9FhnuWisfxV6DyRsEggVGu8OJPitLG5x0hXrzFfnFyctWGLsqHEl8/3pM2Pu/4ieZxdPHVT8DhKwVDiG33CiX+gMRX1oHymj9baSQ0DZqLYRin9Rz0IVYbSsMMnKshkc016qvDjfvp064PQN/6N99FlF5in2swswOsZuGczxDi6VMgiyO98aX8Y9QPXwOl5bYwM/3QBkdhSmpGyjpQasKTbzKBca0f+iaNZ6APkgQRW6wkfdfmuHptjiLB5gXts1XdTzSPOyreLU9WS8Lw5JuQsPGVxpgOn8jMOOpBa3McvSTiW6/VePBiL078RPP47MRLD0QbDiE+xFznQ5DVg2mvlwxv/wZ+onkcSfz3L4uW+JfAj0V/NkasA43AdOWnrQP1Qd9w5gTXLRkXYNBYNteVk60TtDanRa8QaxljJN6b9xPN40jiv+0uoF5+7mnqIlbxfJ7jXt97guhR8QVzHrWOiac8O2REWU16VPz+xxxqB50Rb4x57zczfdYX67Q9bv7Ui188CXb9lGSIfQj8RPM4kvj8zmxr8f+DVEZvIMS2e4USv7t9Dycl60lJGsdCj4uPSkvx799OoVJYxp/CvCIGyCU59Yh/MHvLTtB4Ye4Gdtbv4sO7SUUMkEtyyj1r1eJTO0HjpYd3pH9fKaJDTrln9Wd3l1Diu4QS3xWK+Asa+LeLxB+GFQAAAABJRU5ErkJggg==" InformativeScreenshot="9d42dd057bc97cfc288d50e52d55d435.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='אחזקת נתוני אב מטופל: מסך נתונים' /&gt;" SearchSteps="Selector, FuzzySelector, Image" SelectionStrategy="AA" />
-                                                </uix:NClick.Target>
-                                              </uix:NClick>
-                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;לחיצה על בחר מקרה&quot;]" />
-                                              <uix:NClick ClickType="Single" DisplayName="Click 'מקרה'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1e5b5b79-0819-46f9-8cc6-831c6c4010d6" Timeout="5" Version="V1">
-                                                <uix:NClick.Target>
-                                                  <uix:TargetAnchorable DesignTimeRectangle="1437, 123, 65, 20" ElementType="Button" FriendlyName="'מקרה'" FullSelectorArgument="&lt;sap id='tbar[1]/btn[43]' /&gt;" FuzzySelectorArgument="&lt;sap id='tbar[1]/btn[43]' check:text='מקרה' /&gt;" Guid="9dcca957-b0b1-41eb-80a6-e58acaea5c5c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEUAAAAYCAYAAACsnTAAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEXSURBVFhH7ZU9DoMwDEZzog6Im3TqkFt0ZeEI3Vm7cwFmpt6ge2/h1qQBQj5QKOpfYqQnUBxb8ktC1PV2IcFFpABECkCkAKKRorVeBOXMEZWUuWetmKSkhIpJTkqImCSlMKiG5TUp7ZEypUg57Knq4jUV+SSWH6lZzFWUlbWJn/dmPr/7+I6K9pk/Azca+rxHCqApd27zIyr9aEyfvPGBEx36xq3UkQgryssb+EkpbmMoZncShsUdzuabBfc7p2OptuH7UvgIeCvHKxwgJSB3LAjFEfFJccZQneSkTPPQUUtKCo9Pjsrq2oZopFTanz/+yXY3WuC1/H0pW4BCtyNSANzoGlANy+el/AEiBSBSACIFIFI8LnQHjVFH7rjZrBYAAAAASUVORK5CYII=" InformativeScreenshot="6644abd243f5803744236a2723a3e057.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='קבלה מהירה למטופל אמבולטורי: מסך פתיחה: רשימת מקרים' /&gt;" SearchSteps="Selector" />
-                                                </uix:NClick.Target>
-                                              </uix:NClick>
-                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;לחיצה על מקרה&quot;]" />
-                                            </Sequence>
-                                          </ActivityAction>
-                                        </uix:NApplicationCard.Body>
-                                        <uix:NApplicationCard.TargetApp>
-                                          <uix:TargetApp Area="1, 1, 1534, 822" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplgpad.exe" IconBase64="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" InformativeScreenshot="d4cb6372ce264a0d0d47a40279ee1b4e.png" Selector="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='*מסך*' /&gt;" />
-                                        </uix:NApplicationCard.TargetApp>
+                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_clikEntersToExitAlertMassages workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="sap_clikEntersToExitAlertMassages.xaml">
+                                        <ui:InvokeWorkflowFile.Arguments>
+                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_int_maxRetray">3</InArgument>
+                                        </ui:InvokeWorkflowFile.Arguments>
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                      </uix:NApplicationCard>
+                                      </ui:InvokeWorkflowFile>
                                       <FlowStep.Next>
-                                        <FlowStep x:Name="__ReferenceID8">
+                                        <FlowStep x:Name="__ReferenceID7">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <av:Point x:Key="ShapeLocation">310,484.5</av:Point>
-                                              <av:Size x:Key="ShapeSize">200,51</av:Size>
-                                              <av:PointCollection x:Key="ConnectorLocation">310,510 250,510</av:PointCollection>
+                                              <av:Point x:Key="ShapeLocation">630,456</av:Point>
+                                              <av:Size x:Key="ShapeSize">200,108</av:Size>
+                                              <av:PointCollection x:Key="ConnectorLocation">630,510 510,510</av:PointCollection>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_clikEntersToExitAlertMassages workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="sap_clikEntersToExitAlertMassages.xaml">
-                                            <ui:InvokeWorkflowFile.Arguments>
-                                              <InArgument x:TypeArguments="x:Int32" x:Key="in_int_maxRetray">3</InArgument>
-                                            </ui:InvokeWorkflowFile.Arguments>
+                                          <uix:NApplicationCard sap2010:Annotation.AnnotationText="לחיצה על בחר מקרה ובדיקת מעבר תקין למסך הבא&#xA;" AttachMode="ByInstance" DisplayName="Use Application: אחזקת נתוני אב מטופל: מסך נתונים" sap:VirtualizedContainerService.HintSize="200,108" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="1e5b5b79-0819-46f9-8cc6-831c6c4010d6" Version="V1">
+                                            <uix:NApplicationCard.Body>
+                                              <ActivityAction x:TypeArguments="x:Object">
+                                                <ActivityAction.Argument>
+                                                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                                                </ActivityAction.Argument>
+                                                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,708" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <uix:NClick ClickType="Single" DisplayName="Click 'בחר מקרה'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1e5b5b79-0819-46f9-8cc6-831c6c4010d6" Timeout="1" Version="V1">
+                                                    <uix:NClick.Target>
+                                                      <uix:TargetAnchorable DesignTimeRectangle="1119, 121, 90, 22" ElementType="Button" FriendlyName="'בחר מקרה'" FullSelectorArgument="&lt;ctrl name='בחר מקרה' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='בחר מקרה' role='push button' automationid='' check:text='בחר מקרה' /&gt;" Guid="c2d288e4-0044-49a2-bbef-be318d386b53" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF4AAAAaCAYAAAA+G+sUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKuSURBVGhD7ZnPaxNBFMf3jyml/0B7yMVDDv0femgjhiKoF0F6EFSQJu3F7qHSYLXFKlRKUXpZPOhNih7641BRWaiSQg0RTUONmrbJ132Ns9l9O7vZrNuE0Fn4kHnv7cyb+exCAtHKv4pQdB4lvkso8V1C+114Ygc0fjR3G+n0ZUWMkFPuWbuv37QTNH7xLIt69TNwlFfEALkkp9yzdu3qFTtxOt5bQv1oH6j9VDBSFy9FhnuWisfxV6DyRsEggVGu8OJPitLG5x0hXrzFfnFyctWGLsqHEl8/3pM2Pu/4ieZxdPHVT8DhKwVDiG33CiX+gMRX1oHymj9baSQ0DZqLYRin9Rz0IVYbSsMMnKshkc016qvDjfvp064PQN/6N99FlF5in2swswOsZuGczxDi6VMgiyO98aX8Y9QPXwOl5bYwM/3QBkdhSmpGyjpQasKTbzKBca0f+iaNZ6APkgQRW6wkfdfmuHptjiLB5gXts1XdTzSPOyreLU9WS8Lw5JuQsPGVxpgOn8jMOOpBa3McvSTiW6/VePBiL078RPP47MRLD0QbDiE+xFznQ5DVg2mvlwxv/wZ+onkcSfz3L4uW+JfAj0V/NkasA43AdOWnrQP1Qd9w5gTXLRkXYNBYNteVk60TtDanRa8QaxljJN6b9xPN40jiv+0uoF5+7mnqIlbxfJ7jXt97guhR8QVzHrWOiac8O2REWU16VPz+xxxqB50Rb4x57zczfdYX67Q9bv7Ui188CXb9lGSIfQj8RPM4kvj8zmxr8f+DVEZvIMS2e4USv7t9Dycl60lJGsdCj4uPSkvx799OoVJYxp/CvCIGyCU59Yh/MHvLTtB4Ye4Gdtbv4sO7SUUMkEtyyj1r1eJTO0HjpYd3pH9fKaJDTrln9Wd3l1Diu4QS3xWK+Asa+LeLxB+GFQAAAABJRU5ErkJggg==" InformativeScreenshot="9d42dd057bc97cfc288d50e52d55d435.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='אחזקת נתוני אב מטופל: מסך נתונים' /&gt;" SearchSteps="Selector, FuzzySelector, Image" SelectionStrategy="AA" />
+                                                    </uix:NClick.Target>
+                                                  </uix:NClick>
+                                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;לחיצה על בחר מקרה&quot;]" />
+                                                  <uix:NClick ClickType="Single" DisplayName="Click 'מקרה'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1e5b5b79-0819-46f9-8cc6-831c6c4010d6" Timeout="5" Version="V1">
+                                                    <uix:NClick.Target>
+                                                      <uix:TargetAnchorable DesignTimeRectangle="1437, 123, 65, 20" ElementType="Button" FriendlyName="'מקרה'" FullSelectorArgument="&lt;sap id='tbar[1]/btn[43]' /&gt;" FuzzySelectorArgument="&lt;sap id='tbar[1]/btn[43]' check:text='מקרה' /&gt;" Guid="9dcca957-b0b1-41eb-80a6-e58acaea5c5c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEUAAAAYCAYAAACsnTAAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEXSURBVFhH7ZU9DoMwDEZzog6Im3TqkFt0ZeEI3Vm7cwFmpt6ge2/h1qQBQj5QKOpfYqQnUBxb8ktC1PV2IcFFpABECkCkAKKRorVeBOXMEZWUuWetmKSkhIpJTkqImCSlMKiG5TUp7ZEypUg57Knq4jUV+SSWH6lZzFWUlbWJn/dmPr/7+I6K9pk/Azca+rxHCqApd27zIyr9aEyfvPGBEx36xq3UkQgryssb+EkpbmMoZncShsUdzuabBfc7p2OptuH7UvgIeCvHKxwgJSB3LAjFEfFJccZQneSkTPPQUUtKCo9Pjsrq2oZopFTanz/+yXY3WuC1/H0pW4BCtyNSANzoGlANy+el/AEiBSBSACIFIFI8LnQHjVFH7rjZrBYAAAAASUVORK5CYII=" InformativeScreenshot="6644abd243f5803744236a2723a3e057.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='קבלה מהירה למטופל אמבולטורי: מסך פתיחה: רשימת מקרים' /&gt;" SearchSteps="Selector" />
+                                                    </uix:NClick.Target>
+                                                  </uix:NClick>
+                                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;לחיצה על מקרה&quot;]" />
+                                                </Sequence>
+                                              </ActivityAction>
+                                            </uix:NApplicationCard.Body>
+                                            <uix:NApplicationCard.TargetApp>
+                                              <uix:TargetApp Area="1, 1, 1534, 822" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplgpad.exe" IconBase64="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" InformativeScreenshot="d4cb6372ce264a0d0d47a40279ee1b4e.png" Selector="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='*מסך*' /&gt;" />
+                                            </uix:NApplicationCard.TargetApp>
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                          </ui:InvokeWorkflowFile>
+                                          </uix:NApplicationCard>
                                           <FlowStep.Next>
-                                            <FlowStep x:Name="__ReferenceID9">
+                                            <FlowStep x:Name="__ReferenceID8">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <av:Point x:Key="ShapeLocation">50,484.5</av:Point>
+                                                  <av:Point x:Key="ShapeLocation">310,484.5</av:Point>
                                                   <av:Size x:Key="ShapeSize">200,51</av:Size>
-                                                  <av:PointCollection x:Key="ConnectorLocation">150,535.5 150,565.5 140,565.5 140,604.5</av:PointCollection>
+                                                  <av:PointCollection x:Key="ConnectorLocation">310,510 250,510</av:PointCollection>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_InsertVisitData workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="sap_InsertVisitData.xaml">
+                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_clikEntersToExitAlertMassages workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="sap_clikEntersToExitAlertMassages.xaml">
                                                 <ui:InvokeWorkflowFile.Arguments>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_str_visitType">[io_ProcessSetup.BusinessProcess.Assets("VisitType").ToString]</InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_str_visitorType">[io_ProcessSetup.BusinessProcess.Assets("VisitorType").ToString]</InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_str_referrer">[io_ProcessSetup.BusinessProcess.Assets("Referrer").ToString]</InArgument>
+                                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_int_maxRetray">3</InArgument>
                                                 </ui:InvokeWorkflowFile.Arguments>
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -919,17 +910,19 @@
                                                 </sap:WorkflowViewStateService.ViewState>
                                               </ui:InvokeWorkflowFile>
                                               <FlowStep.Next>
-                                                <FlowStep x:Name="__ReferenceID11">
+                                                <FlowStep x:Name="__ReferenceID9">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <av:Point x:Key="ShapeLocation">40,604.5</av:Point>
+                                                      <av:Point x:Key="ShapeLocation">50,484.5</av:Point>
                                                       <av:Size x:Key="ShapeSize">200,51</av:Size>
-                                                      <av:PointCollection x:Key="ConnectorLocation">240,630 300,630</av:PointCollection>
+                                                      <av:PointCollection x:Key="ConnectorLocation">150,535.5 150,565.5 140,565.5 140,604.5</av:PointCollection>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_clikEntersToExitAlertMassages workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="sap_clikEntersToExitAlertMassages.xaml">
+                                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_InsertVisitData workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="sap_InsertVisitData.xaml">
                                                     <ui:InvokeWorkflowFile.Arguments>
-                                                      <InArgument x:TypeArguments="x:Int32" x:Key="in_int_maxRetray">3</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="in_str_visitType">[io_ProcessSetup.BusinessProcess.Assets("VisitType").ToString]</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="in_str_visitorType">[io_ProcessSetup.BusinessProcess.Assets("VisitorType").ToString]</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="in_str_referrer">[io_ProcessSetup.BusinessProcess.Assets("Referrer").ToString]</InArgument>
                                                     </ui:InvokeWorkflowFile.Arguments>
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -938,313 +931,334 @@
                                                     </sap:WorkflowViewStateService.ViewState>
                                                   </ui:InvokeWorkflowFile>
                                                   <FlowStep.Next>
-                                                    <FlowStep x:Name="__ReferenceID10">
+                                                    <FlowStep x:Name="__ReferenceID11">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                          <av:Point x:Key="ShapeLocation">300,604.5</av:Point>
+                                                          <av:Point x:Key="ShapeLocation">40,604.5</av:Point>
                                                           <av:Size x:Key="ShapeSize">200,51</av:Size>
-                                                          <av:PointCollection x:Key="ConnectorLocation">500,630 699,630 699,666.5</av:PointCollection>
+                                                          <av:PointCollection x:Key="ConnectorLocation">240,630 300,630</av:PointCollection>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
-                                                      <ucas:ReadStatusbar ContinueOnError="{x:Null}" MessageData="{x:Null}" MessageId="{x:Null}" MessageNumber="{x:Null}" DisplayName="Read Status Bar 'StatusPane הזן'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReadStatusbar_1" MessageText="[str_statusBarText]" MessageType="[str_statusBarType]">
-                                                        <ucas:ReadStatusbar.Target>
-                                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="351a3742-a608-4c7c-a516-0d9a7577dc93" InformativeScreenshot="31c0ae1d354b7ebcd73ce76277e7ae83" Selector="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;&lt;sap id='sbar/pane[0]' /&gt;">
-                                                            <ui:Target.TimeoutMS>
-                                                              <InArgument x:TypeArguments="x:Int32" />
-                                                            </ui:Target.TimeoutMS>
-                                                            <ui:Target.WaitForReady>
-                                                              <InArgument x:TypeArguments="ui:WaitForReady" />
-                                                            </ui:Target.WaitForReady>
-                                                          </ui:Target>
-                                                        </ucas:ReadStatusbar.Target>
-                                                      </ucas:ReadStatusbar>
+                                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_clikEntersToExitAlertMassages workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="sap_clikEntersToExitAlertMassages.xaml">
+                                                        <ui:InvokeWorkflowFile.Arguments>
+                                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_int_maxRetray">3</InArgument>
+                                                        </ui:InvokeWorkflowFile.Arguments>
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                      </ui:InvokeWorkflowFile>
                                                       <FlowStep.Next>
-                                                        <FlowDecision x:Name="__ReferenceID13" Condition="[str_statusBarText.Contains(&quot;נוצר&quot;)]" DisplayName="נוצר מקרה?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+                                                        <FlowStep x:Name="__ReferenceID10">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                              <av:Point x:Key="ShapeLocation">664,666.5</av:Point>
-                                                              <av:Size x:Key="ShapeSize">70,87</av:Size>
-                                                              <av:PointCollection x:Key="TrueConnector">664,710 634,710 634,720 591,720</av:PointCollection>
-                                                              <av:PointCollection x:Key="FalseConnector">734,710 764,710 764,700 850,700</av:PointCollection>
+                                                              <av:Point x:Key="ShapeLocation">300,604.5</av:Point>
+                                                              <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                                              <av:PointCollection x:Key="ConnectorLocation">500,630 699,630 699,666.5</av:PointCollection>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
-                                                          <FlowDecision.True>
-                                                            <FlowStep x:Name="__ReferenceID12">
+                                                          <ucas:ReadStatusbar ContinueOnError="{x:Null}" MessageData="{x:Null}" MessageId="{x:Null}" MessageNumber="{x:Null}" DisplayName="Read Status Bar 'StatusPane הזן'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReadStatusbar_1" MessageText="[str_statusBarText]" MessageType="[str_statusBarType]">
+                                                            <ucas:ReadStatusbar.Target>
+                                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="351a3742-a608-4c7c-a516-0d9a7577dc93" InformativeScreenshot="31c0ae1d354b7ebcd73ce76277e7ae83" Selector="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;&lt;sap id='sbar/pane[0]' /&gt;">
+                                                                <ui:Target.TimeoutMS>
+                                                                  <InArgument x:TypeArguments="x:Int32" />
+                                                                </ui:Target.TimeoutMS>
+                                                                <ui:Target.WaitForReady>
+                                                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                                </ui:Target.WaitForReady>
+                                                              </ui:Target>
+                                                            </ucas:ReadStatusbar.Target>
+                                                          </ucas:ReadStatusbar>
+                                                          <FlowStep.Next>
+                                                            <FlowDecision x:Name="__ReferenceID13" Condition="[str_statusBarText.Contains(&quot;נוצר&quot;)]" DisplayName="נוצר מקרה?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
                                                               <sap:WorkflowViewStateService.ViewState>
                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                  <av:Point x:Key="ShapeLocation">329,690</av:Point>
-                                                                  <av:Size x:Key="ShapeSize">262,60</av:Size>
-                                                                  <av:PointCollection x:Key="ConnectorLocation">329,720 250,720</av:PointCollection>
+                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                  <av:Point x:Key="ShapeLocation">664,666.5</av:Point>
+                                                                  <av:Size x:Key="ShapeSize">70,87</av:Size>
+                                                                  <av:PointCollection x:Key="TrueConnector">664,710 634,710 634,720 591,720</av:PointCollection>
+                                                                  <av:PointCollection x:Key="FalseConnector">734,710 764,710 764,700 850,700</av:PointCollection>
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
-                                                              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
-                                                                <Assign.To>
-                                                                  <OutArgument x:TypeArguments="x:Object">[io_dic_AllTransactionData("CreatedCaseNumber")]</OutArgument>
-                                                                </Assign.To>
-                                                                <Assign.Value>
-                                                                  <InArgument x:TypeArguments="x:Object">[System.Text.RegularExpressions.Regex.Match(str_statusBarText,"(?&lt;=מקרה\s)\d{3,20}(?=\s+נוצר)").Value.ToString]</InArgument>
-                                                                </Assign.Value>
-                                                                <sap:WorkflowViewStateService.ViewState>
-                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                  </scg:Dictionary>
-                                                                </sap:WorkflowViewStateService.ViewState>
-                                                              </Assign>
-                                                              <FlowStep.Next>
-                                                                <FlowStep x:Name="__ReferenceID14">
+                                                              <FlowDecision.True>
+                                                                <FlowStep x:Name="__ReferenceID12">
                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                      <av:Point x:Key="ShapeLocation">50,694.5</av:Point>
-                                                                      <av:Size x:Key="ShapeSize">200,51</av:Size>
-                                                                      <av:PointCollection x:Key="ConnectorLocation">150,745.5 150,784.5</av:PointCollection>
+                                                                      <av:Point x:Key="ShapeLocation">329,690</av:Point>
+                                                                      <av:Size x:Key="ShapeSize">262,60</av:Size>
+                                                                      <av:PointCollection x:Key="ConnectorLocation">329,720 250,720</av:PointCollection>
                                                                     </scg:Dictionary>
                                                                   </sap:WorkflowViewStateService.ViewState>
-                                                                  <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: מוניטור מקרה" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="Simulate" ScopeGuid="48a446ba-ffde-4a85-9110-3fe5c8e7d02a" Version="V1">
-                                                                    <uix:NApplicationCard.Body>
-                                                                      <ActivityAction x:TypeArguments="x:Object">
-                                                                        <ActivityAction.Argument>
-                                                                          <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-                                                                        </ActivityAction.Argument>
-                                                                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,577" sap2010:WorkflowViewState.IdRef="Sequence_17">
-                                                                          <sap:WorkflowViewStateService.ViewState>
-                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                            </scg:Dictionary>
-                                                                          </sap:WorkflowViewStateService.ViewState>
-                                                                          <uix:NClick ClickType="Single" DisplayName="Click 'אימות כיסוי'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="48a446ba-ffde-4a85-9110-3fe5c8e7d02a" Version="V1">
-                                                                            <uix:NClick.Target>
-                                                                              <uix:TargetAnchorable DesignTimeRectangle="1292, 123, 75, 20" ElementType="Button" FriendlyName="'אימות כיסוי'" FullSelectorArgument="&lt;sap id='tbar[1]/btn[7]' /&gt;" FuzzySelectorArgument="&lt;sap id='tbar[1]/btn[7]' check:text='אימות כיסוי' /&gt;" Guid="bd3af3de-8970-491f-880c-3ff3a2a84126" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAE8AAAAYCAYAAAC7v6DJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGUSURBVFhH7ZWxlcMgDEA9UQq/bJIqRbZwm8YjpE+bPgukTuUN0mcLDgE2CCQg1rtOxX/nwzISHxSGz3cxyj5UngCVJ0DlCVB5AlSeAJUnQOUJUHkCOuQ9zfU4mGE4mTv5THC5Ed8u5n7J4sJ4mRO4mTOKjYzzM8Tg+T+PkxmOk3nB3y3+YK5vIvY9mdG+Pz/g3QrErPFtOk+eT+wT5c9lMicpE4iL9Lzmg19sNh4BgblgLzUXmNYWhVlWoUVseIfmp9fD0d22IGRNGp+5ZHjR6beYVrGUPAsSgueHDYliAZgj5shrgf/jRtvY6mZi/kkeHs8LTqm9Y+VByzHyyvkqtdhNGOfJnWQYA/F8LSW7Lox6sUDrREXo71d+lUflrW1wmDv8RuIT20Ysr2wTgFl0QUvyr/KoeCYHMUds3z7E8vythYvrLaR5YWQL5Ma3esj4PnlefLKuDuTyACcQbrkAI85JTePY0wkL9jFkKzHy0i5wG7Pl6ZFnce1b6wTMLnmKR+UJUHkCVJ4AlSdA5QlQebtZzB8UMSdHYmjVjAAAAABJRU5ErkJggg==" InformativeScreenshot="3fa4a51ab7622de885ef4d7639fd94dc.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='מוניטור מקרה' /&gt;" SearchSteps="Selector" />
-                                                                            </uix:NClick.Target>
-                                                                          </uix:NClick>
-                                                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Message="[&quot;לחיצה על אימות כיסוי&quot;]" />
-                                                                          <uix:NClick ClickType="Single" DisplayName="Click 'Button שמירה (Ctrl+S)'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="48a446ba-ffde-4a85-9110-3fe5c8e7d02a" Version="V1">
-                                                                            <uix:NClick.Target>
-                                                                              <uix:TargetAnchorable DesignTimeRectangle="1282, 50, 22, 22" ElementType="Button" FriendlyName="'Button שמירה (Ctrl+S)'" FullSelectorArgument="&lt;sap id='tbar[0]/btn[11]' tooltip='שמירה*' /&gt;" FuzzySelectorArgument="&lt;sap id='tbar[0]/btn[11]' tooltip='שמירה*' /&gt;" Guid="ecdb82d3-75a2-4b4a-9c7e-689804d457b6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEeSURBVEhL7ZIxTgMxEEWnogwXpEgR4AJcI1IK0oQKcQKkdBRAkRKlokDAJRCBza6dj2clR2bytVZY4Sq2nnejPzNPXkVW9QdKIN/1J0pQUNSsUAKpwlECeiM5GfeCzqT2UHx9/9o+Wc7I9UjlvmD51URyRq5H1q6CJW1iOSPXI3U4LGkTyxm5noI38mtYYtPx6RTz5ftObrl9emtrtzciNdKEwxJFZ7MHDEaX7e8utOb86nErojOdb2DRYm2azJ/3IoroTLdxsPQWsZk+HJa+IjqT2hORvuewIjpz4x0sWpyKWE0kimZ3L7i4WeBoOOF1HrvbitLMbs1Tif7V0zzuTlH8FGlmt+Y5iW4BWdq8D1HStajoP9ZB9OdVSAT8AN48aF3JiGE3AAAAAElFTkSuQmCC" InformativeScreenshot="17c219758659e4fdcee234d4de0ca460.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='אחזקת קבלה מהירה למטופל אמבולטורי: מסך פתיחה: מסך נתונים' /&gt;" SearchSteps="Selector" />
-                                                                            </uix:NClick.Target>
-                                                                          </uix:NClick>
-                                                                        </Sequence>
-                                                                      </ActivityAction>
-                                                                    </uix:NApplicationCard.Body>
-                                                                    <uix:NApplicationCard.TargetApp>
-                                                                      <uix:TargetApp Area="-8, -8, 1534, 822" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplgpad.exe" IconBase64="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" InformativeScreenshot="8580f838a227dc3b251458e24af301b4.png" Selector="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' /&gt;" />
-                                                                    </uix:NApplicationCard.TargetApp>
+                                                                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                                                                    <Assign.To>
+                                                                      <OutArgument x:TypeArguments="x:Object">[io_dic_AllTransactionData("CreatedCaseNumber")]</OutArgument>
+                                                                    </Assign.To>
+                                                                    <Assign.Value>
+                                                                      <InArgument x:TypeArguments="x:Object">[System.Text.RegularExpressions.Regex.Match(str_statusBarText,"(?&lt;=מקרה\s)\d{3,20}(?=\s+נוצר)").Value.ToString]</InArgument>
+                                                                    </Assign.Value>
                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                       </scg:Dictionary>
                                                                     </sap:WorkflowViewStateService.ViewState>
-                                                                  </uix:NApplicationCard>
+                                                                  </Assign>
                                                                   <FlowStep.Next>
-                                                                    <FlowStep x:Name="__ReferenceID15">
+                                                                    <FlowStep x:Name="__ReferenceID14">
                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                          <av:Point x:Key="ShapeLocation">50,784.5</av:Point>
+                                                                          <av:Point x:Key="ShapeLocation">50,694.5</av:Point>
                                                                           <av:Size x:Key="ShapeSize">200,51</av:Size>
-                                                                          <av:PointCollection x:Key="ConnectorLocation">250,810 704,810 704,836.5</av:PointCollection>
+                                                                          <av:PointCollection x:Key="ConnectorLocation">150,745.5 150,784.5</av:PointCollection>
                                                                         </scg:Dictionary>
                                                                       </sap:WorkflowViewStateService.ViewState>
-                                                                      <ucas:ReadStatusbar ContinueOnError="{x:Null}" MessageData="{x:Null}" MessageId="{x:Null}" MessageNumber="{x:Null}" DisplayName="Read Status Bar 'StatusPane הזן'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReadStatusbar_2" MessageText="[str_statusBarText]" MessageType="[str_statusBarType]">
-                                                                        <ucas:ReadStatusbar.Target>
-                                                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="351a3742-a608-4c7c-a516-0d9a7577dc93" InformativeScreenshot="31c0ae1d354b7ebcd73ce76277e7ae83" Selector="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;&lt;sap id='sbar/pane[0]' /&gt;">
-                                                                            <ui:Target.TimeoutMS>
-                                                                              <InArgument x:TypeArguments="x:Int32" />
-                                                                            </ui:Target.TimeoutMS>
-                                                                            <ui:Target.WaitForReady>
-                                                                              <InArgument x:TypeArguments="ui:WaitForReady" />
-                                                                            </ui:Target.WaitForReady>
-                                                                          </ui:Target>
-                                                                        </ucas:ReadStatusbar.Target>
-                                                                      </ucas:ReadStatusbar>
+                                                                      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: מוניטור מקרה" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="Simulate" ScopeGuid="48a446ba-ffde-4a85-9110-3fe5c8e7d02a" Version="V1">
+                                                                        <uix:NApplicationCard.Body>
+                                                                          <ActivityAction x:TypeArguments="x:Object">
+                                                                            <ActivityAction.Argument>
+                                                                              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                                                                            </ActivityAction.Argument>
+                                                                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,577" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                </scg:Dictionary>
+                                                                              </sap:WorkflowViewStateService.ViewState>
+                                                                              <uix:NClick ClickType="Single" DisplayName="Click 'אימות כיסוי'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="48a446ba-ffde-4a85-9110-3fe5c8e7d02a" Version="V1">
+                                                                                <uix:NClick.Target>
+                                                                                  <uix:TargetAnchorable DesignTimeRectangle="1292, 123, 75, 20" ElementType="Button" FriendlyName="'אימות כיסוי'" FullSelectorArgument="&lt;sap id='tbar[1]/btn[7]' /&gt;" FuzzySelectorArgument="&lt;sap id='tbar[1]/btn[7]' check:text='אימות כיסוי' /&gt;" Guid="bd3af3de-8970-491f-880c-3ff3a2a84126" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAE8AAAAYCAYAAAC7v6DJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGUSURBVFhH7ZWxlcMgDEA9UQq/bJIqRbZwm8YjpE+bPgukTuUN0mcLDgE2CCQg1rtOxX/nwzISHxSGz3cxyj5UngCVJ0DlCVB5AlSeAJUnQOUJUHkCOuQ9zfU4mGE4mTv5THC5Ed8u5n7J4sJ4mRO4mTOKjYzzM8Tg+T+PkxmOk3nB3y3+YK5vIvY9mdG+Pz/g3QrErPFtOk+eT+wT5c9lMicpE4iL9Lzmg19sNh4BgblgLzUXmNYWhVlWoUVseIfmp9fD0d22IGRNGp+5ZHjR6beYVrGUPAsSgueHDYliAZgj5shrgf/jRtvY6mZi/kkeHs8LTqm9Y+VByzHyyvkqtdhNGOfJnWQYA/F8LSW7Lox6sUDrREXo71d+lUflrW1wmDv8RuIT20Ysr2wTgFl0QUvyr/KoeCYHMUds3z7E8vythYvrLaR5YWQL5Ma3esj4PnlefLKuDuTyACcQbrkAI85JTePY0wkL9jFkKzHy0i5wG7Pl6ZFnce1b6wTMLnmKR+UJUHkCVJ4AlSdA5QlQebtZzB8UMSdHYmjVjAAAAABJRU5ErkJggg==" InformativeScreenshot="3fa4a51ab7622de885ef4d7639fd94dc.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='מוניטור מקרה' /&gt;" SearchSteps="Selector" />
+                                                                                </uix:NClick.Target>
+                                                                              </uix:NClick>
+                                                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Message="[&quot;לחיצה על אימות כיסוי&quot;]" />
+                                                                              <uix:NClick ClickType="Single" DisplayName="Click 'Button שמירה (Ctrl+S)'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="48a446ba-ffde-4a85-9110-3fe5c8e7d02a" Version="V1">
+                                                                                <uix:NClick.Target>
+                                                                                  <uix:TargetAnchorable DesignTimeRectangle="1282, 50, 22, 22" ElementType="Button" FriendlyName="'Button שמירה (Ctrl+S)'" FullSelectorArgument="&lt;sap id='tbar[0]/btn[11]' tooltip='שמירה*' /&gt;" FuzzySelectorArgument="&lt;sap id='tbar[0]/btn[11]' tooltip='שמירה*' /&gt;" Guid="ecdb82d3-75a2-4b4a-9c7e-689804d457b6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEeSURBVEhL7ZIxTgMxEEWnogwXpEgR4AJcI1IK0oQKcQKkdBRAkRKlokDAJRCBza6dj2clR2bytVZY4Sq2nnejPzNPXkVW9QdKIN/1J0pQUNSsUAKpwlECeiM5GfeCzqT2UHx9/9o+Wc7I9UjlvmD51URyRq5H1q6CJW1iOSPXI3U4LGkTyxm5noI38mtYYtPx6RTz5ftObrl9emtrtzciNdKEwxJFZ7MHDEaX7e8utOb86nErojOdb2DRYm2azJ/3IoroTLdxsPQWsZk+HJa+IjqT2hORvuewIjpz4x0sWpyKWE0kimZ3L7i4WeBoOOF1HrvbitLMbs1Tif7V0zzuTlH8FGlmt+Y5iW4BWdq8D1HStajoP9ZB9OdVSAT8AN48aF3JiGE3AAAAAElFTkSuQmCC" InformativeScreenshot="17c219758659e4fdcee234d4de0ca460.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='אחזקת קבלה מהירה למטופל אמבולטורי: מסך פתיחה: מסך נתונים' /&gt;" SearchSteps="Selector" />
+                                                                                </uix:NClick.Target>
+                                                                              </uix:NClick>
+                                                                            </Sequence>
+                                                                          </ActivityAction>
+                                                                        </uix:NApplicationCard.Body>
+                                                                        <uix:NApplicationCard.TargetApp>
+                                                                          <uix:TargetApp Area="-8, -8, 1534, 822" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplgpad.exe" IconBase64="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" InformativeScreenshot="8580f838a227dc3b251458e24af301b4.png" Selector="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' /&gt;" />
+                                                                        </uix:NApplicationCard.TargetApp>
+                                                                        <sap:WorkflowViewStateService.ViewState>
+                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                          </scg:Dictionary>
+                                                                        </sap:WorkflowViewStateService.ViewState>
+                                                                      </uix:NApplicationCard>
                                                                       <FlowStep.Next>
-                                                                        <FlowDecision x:Name="__ReferenceID16" Condition="[str_statusBarText.Contains(&quot;שינויים בוצעו&quot;)]" DisplayName="שינויים נשמרו?" sap:VirtualizedContainerService.HintSize="80,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+                                                                        <FlowStep x:Name="__ReferenceID15">
                                                                           <sap:WorkflowViewStateService.ViewState>
                                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                              <av:Point x:Key="ShapeLocation">664,836.5</av:Point>
-                                                                              <av:Size x:Key="ShapeSize">80,87</av:Size>
-                                                                              <av:PointCollection x:Key="TrueConnector">664,880 570,880</av:PointCollection>
-                                                                              <av:PointCollection x:Key="FalseConnector">744,880 774,880 774,870 860,870</av:PointCollection>
+                                                                              <av:Point x:Key="ShapeLocation">50,784.5</av:Point>
+                                                                              <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                                                              <av:PointCollection x:Key="ConnectorLocation">250,810 704,810 704,836.5</av:PointCollection>
                                                                             </scg:Dictionary>
                                                                           </sap:WorkflowViewStateService.ViewState>
-                                                                          <FlowDecision.True>
-                                                                            <FlowStep x:Name="__ReferenceID17">
+                                                                          <ucas:ReadStatusbar ContinueOnError="{x:Null}" MessageData="{x:Null}" MessageId="{x:Null}" MessageNumber="{x:Null}" DisplayName="Read Status Bar 'StatusPane הזן'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReadStatusbar_2" MessageText="[str_statusBarText]" MessageType="[str_statusBarType]">
+                                                                            <ucas:ReadStatusbar.Target>
+                                                                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="351a3742-a608-4c7c-a516-0d9a7577dc93" InformativeScreenshot="31c0ae1d354b7ebcd73ce76277e7ae83" Selector="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;&lt;sap id='sbar/pane[0]' /&gt;">
+                                                                                <ui:Target.TimeoutMS>
+                                                                                  <InArgument x:TypeArguments="x:Int32" />
+                                                                                </ui:Target.TimeoutMS>
+                                                                                <ui:Target.WaitForReady>
+                                                                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                                                </ui:Target.WaitForReady>
+                                                                              </ui:Target>
+                                                                            </ucas:ReadStatusbar.Target>
+                                                                          </ucas:ReadStatusbar>
+                                                                          <FlowStep.Next>
+                                                                            <FlowDecision x:Name="__ReferenceID16" Condition="[str_statusBarText.Contains(&quot;שינויים בוצעו&quot;)]" DisplayName="שינויים נשמרו?" sap:VirtualizedContainerService.HintSize="80,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
                                                                               <sap:WorkflowViewStateService.ViewState>
                                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                  <av:Point x:Key="ShapeLocation">370,854.5</av:Point>
-                                                                                  <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                  <av:Point x:Key="ShapeLocation">664,836.5</av:Point>
+                                                                                  <av:Size x:Key="ShapeSize">80,87</av:Size>
+                                                                                  <av:PointCollection x:Key="TrueConnector">664,880 570,880</av:PointCollection>
+                                                                                  <av:PointCollection x:Key="FalseConnector">744,880 774,880 774,870 810,870</av:PointCollection>
                                                                                 </scg:Dictionary>
                                                                               </sap:WorkflowViewStateService.ViewState>
-                                                                              <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: מוניטור מקרה" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="Simulate" ScopeGuid="48c7ebc3-5204-4b37-824d-873337629618" Version="V1">
-                                                                                <uix:NApplicationCard.Body>
-                                                                                  <ActivityAction x:TypeArguments="x:Object">
-                                                                                    <ActivityAction.Argument>
-                                                                                      <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-                                                                                    </ActivityAction.Argument>
-                                                                                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="722,995" sap2010:WorkflowViewState.IdRef="Sequence_18">
-                                                                                      <sap:WorkflowViewStateService.ViewState>
-                                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                        </scg:Dictionary>
-                                                                                      </sap:WorkflowViewStateService.ViewState>
-                                                                                      <uix:NClick ClickType="Single" DisplayName="Click 'Button חזרה (F3)'" sap:VirtualizedContainerService.HintSize="680,156" sap2010:WorkflowViewState.IdRef="NClick_9" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="48c7ebc3-5204-4b37-824d-873337629618" Version="V1">
-                                                                                        <uix:NClick.Target>
-                                                                                          <uix:TargetAnchorable DesignTimeRectangle="1266, 50, 22, 22" ElementType="Button" FriendlyName="'Button חזרה (F3)'" FullSelectorArgument="&lt;sap id='tbar[0]/btn[3]' /&gt;" FuzzySelectorArgument="&lt;sap id='tbar[0]/btn[3]' /&gt;" Guid="6aca80ca-0abe-47c4-a52e-f06a581000e7" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIMSURBVEhL7ZTNS1RRGMbPH2Lg1jaFA9NCcQwNwmqWWRh9SJBpm6IwJwsm00lCptEpSsKPTSCVEqZg6qL/IgqJMAnClWTN3I95Os+JKzNn3uQadFedy+8wHLjPj/fc9x217WwhCtRP5zuiIEKRu40oUAW9RUGoita+fsLDucc4fb8TTTeOGtoz5/HgZQ7v1z+I79jsWpHjuUZw7G4ruiYbcXs+jsxqzHDnTRzdUw04MdCKzMwICk5RzAhQBe8HJCi5Np7C2XwCQysxpJfq0L9Yi76FGsMt/ZtnQyv1OPcogcv5q79lQhZRRa8AidHXT4xkcPlghcCGwnvLB4yMlUlZRDl6s/n8bR3NvW1aEttVEkAZK+M18ptJmWJFrObSRCPSb/eLwRK8xp7phj9WpRy/CJvObDf65g6FqiaAVbFB2I1SpnL1ZnMkldxpY3IyGzfYZ+Wi1MI+c9UtN49X5RHl+S5sGFQCdgjC7TNbxrbnuZSpvJIHm2S6fc8yXh3njEMtZSpfbzb5+XEkB1v2JGPjcID5byFlihV92dwwd92Raw4t41BzJD5urFXlEVXyPUhc0J0XVtIx2mSGe/hFVswiykf1MzI7FlpyKnsYZ8YSuP6sXw+mW5ZS+YiisBJ+R47CzLtXZW/Lj9LvVK2gooCB58O4mLtSccbOfLo4Yb5nmCWK/sX6L/rrFZEI+AUSuz2dyMUBCQAAAABJRU5ErkJggg==" InformativeScreenshot="ff74fbe8ded2f35d5931496f7c5a4e3e.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='מוניטור מקרה' /&gt;" SearchSteps="Selector" />
-                                                                                        </uix:NClick.Target>
-                                                                                      </uix:NClick>
-                                                                                      <uix:NCheckState Exists="{x:Null}" DisplayName="check error to print " sap:VirtualizedContainerService.HintSize="680,553" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="48c7ebc3-5204-4b37-824d-873337629618" Version="V1">
-                                                                                        <uix:NCheckState.IfExists>
-                                                                                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="376,337" sap2010:WorkflowViewState.IdRef="Sequence_33">
-                                                                                            <sap:WorkflowViewStateService.ViewState>
-                                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                              </scg:Dictionary>
-                                                                                            </sap:WorkflowViewStateService.ViewState>
-                                                                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;הודעת מדפסת הופיע&quot;]" />
-                                                                                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_clikEntersToExitAlertMassages workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="sap_clikEntersToExitAlertMassages.xaml">
-                                                                                              <ui:InvokeWorkflowFile.Arguments>
-                                                                                                <InArgument x:TypeArguments="x:Int32" x:Key="in_int_maxRetray">1</InArgument>
-                                                                                              </ui:InvokeWorkflowFile.Arguments>
-                                                                                            </ui:InvokeWorkflowFile>
-                                                                                          </Sequence>
-                                                                                        </uix:NCheckState.IfExists>
-                                                                                        <uix:NCheckState.IfNotExists>
-                                                                                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="250,84" sap2010:WorkflowViewState.IdRef="Sequence_34">
-                                                                                            <sap:WorkflowViewStateService.ViewState>
-                                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                              </scg:Dictionary>
-                                                                                            </sap:WorkflowViewStateService.ViewState>
-                                                                                          </Sequence>
-                                                                                        </uix:NCheckState.IfNotExists>
-                                                                                        <uix:NCheckState.Target>
-                                                                                          <uix:TargetAnchorable DesignTimeRectangle="38, 32, 356, 20" ElementType="Text" FriendlyName="'לא נמצאו'" FullSelectorArgument="&lt;sap id='usr/txtMESSTXT1' text='לא נמצאו נתוני הדפסה ל- NP41I0 בטבלה ZNWO2. המדבקה' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/txtMESSTXT1' text='לא נמצאו נתוני הדפסה ל- NP41I0 בטבלה ZNWO2. המדבקה' check:text='לא נמצאו נתוני הדפסה ל- NP41I0 בטבלה ZNWO2. המדבקה' /&gt;" Guid="945f4ad2-9f50-4e98-a855-6f20859175d8" ImageBase64="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" InformativeScreenshot="7c249a126ddcd2072ec11a611e00c147.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32770' title='מידע' idx='*' /&gt;" SearchSteps="Selector" />
-                                                                                        </uix:NCheckState.Target>
-                                                                                        <sap:WorkflowViewStateService.ViewState>
-                                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                                                          </scg:Dictionary>
-                                                                                        </sap:WorkflowViewStateService.ViewState>
-                                                                                      </uix:NCheckState>
-                                                                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_clikEntersToExitAlertMassages workflow" sap:VirtualizedContainerService.HintSize="680,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="sap_clikEntersToExitAlertMassages.xaml">
-                                                                                        <ui:InvokeWorkflowFile.Arguments>
-                                                                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_int_maxRetray">2</InArgument>
-                                                                                        </ui:InvokeWorkflowFile.Arguments>
-                                                                                      </ui:InvokeWorkflowFile>
-                                                                                    </Sequence>
-                                                                                  </ActivityAction>
-                                                                                </uix:NApplicationCard.Body>
-                                                                                <uix:NApplicationCard.TargetApp>
-                                                                                  <uix:TargetApp Area="-8, -8, 1552, 840" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplgpad.exe" IconBase64="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" InformativeScreenshot="f2d6ae5261f0ac8fac4d216152f516ed.png" Selector="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' /&gt;" />
-                                                                                </uix:NApplicationCard.TargetApp>
-                                                                                <sap:WorkflowViewStateService.ViewState>
-                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                  </scg:Dictionary>
-                                                                                </sap:WorkflowViewStateService.ViewState>
-                                                                              </uix:NApplicationCard>
-                                                                            </FlowStep>
-                                                                          </FlowDecision.True>
-                                                                          <FlowDecision.False>
-                                                                            <FlowStep x:Name="__ReferenceID19">
-                                                                              <sap:WorkflowViewStateService.ViewState>
-                                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                  <av:Point x:Key="ShapeLocation">860,837</av:Point>
-                                                                                  <av:Size x:Key="ShapeSize">200,66</av:Size>
-                                                                                </scg:Dictionary>
-                                                                              </sap:WorkflowViewStateService.ViewState>
-                                                                              <Sequence DisplayName="שגיאה בשמירת כיסוי ביטוחי" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_32">
-                                                                                <sap:WorkflowViewStateService.ViewState>
-                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                  </scg:Dictionary>
-                                                                                </sap:WorkflowViewStateService.ViewState>
-                                                                                <ui:MultipleAssign sap2010:Annotation.AnnotationText="The purpose of the details is having dynamic data that shows the problem for each record" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="431,173" sap2010:WorkflowViewState.IdRef="MultipleAssign_19">
-                                                                                  <ui:MultipleAssign.AssignOperations>
-                                                                                    <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                                                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_66">
-                                                                                        <ui:AssignOperation.To>
-                                                                                          <OutArgument x:TypeArguments="s:Exception">[SystemException]</OutArgument>
-                                                                                        </ui:AssignOperation.To>
-                                                                                        <ui:AssignOperation.Value>
-                                                                                          <InArgument x:TypeArguments="s:Exception">[new System.Exception("נוצר מקרה - שגיאה לאחר בדיקת אימות כיסוי")]</InArgument>
-                                                                                        </ui:AssignOperation.Value>
-                                                                                      </ui:AssignOperation>
-                                                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_67">
-                                                                                        <ui:AssignOperation.To>
-                                                                                          <OutArgument x:TypeArguments="x:Object">[SystemException.Data("Details")]</OutArgument>
-                                                                                        </ui:AssignOperation.To>
-                                                                                        <ui:AssignOperation.Value>
-                                                                                          <InArgument x:TypeArguments="x:Object">[str_statusBarText]</InArgument>
-                                                                                        </ui:AssignOperation.Value>
-                                                                                      </ui:AssignOperation>
-                                                                                    </scg:List>
-                                                                                  </ui:MultipleAssign.AssignOperations>
+                                                                              <FlowDecision.True>
+                                                                                <FlowStep x:Name="__ReferenceID17">
                                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                                      <av:Point x:Key="ShapeLocation">370,854.5</av:Point>
+                                                                                      <av:Size x:Key="ShapeSize">200,51</av:Size>
                                                                                     </scg:Dictionary>
                                                                                   </sap:WorkflowViewStateService.ViewState>
-                                                                                </ui:MultipleAssign>
-                                                                                <Throw Exception="[SystemException]" sap:VirtualizedContainerService.HintSize="431,22" sap2010:WorkflowViewState.IdRef="Throw_9" />
-                                                                              </Sequence>
-                                                                            </FlowStep>
-                                                                          </FlowDecision.False>
-                                                                        </FlowDecision>
+                                                                                  <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: מוניטור מקרה" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" InteractionMode="Simulate" ScopeGuid="48c7ebc3-5204-4b37-824d-873337629618" Version="V1">
+                                                                                    <uix:NApplicationCard.Body>
+                                                                                      <ActivityAction x:TypeArguments="x:Object">
+                                                                                        <ActivityAction.Argument>
+                                                                                          <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                                                                                        </ActivityAction.Argument>
+                                                                                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="722,995" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                            </scg:Dictionary>
+                                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                                          <uix:NClick ClickType="Single" DisplayName="Click 'Button חזרה (F3)'" sap:VirtualizedContainerService.HintSize="680,156" sap2010:WorkflowViewState.IdRef="NClick_9" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="48c7ebc3-5204-4b37-824d-873337629618" Version="V1">
+                                                                                            <uix:NClick.Target>
+                                                                                              <uix:TargetAnchorable DesignTimeRectangle="1266, 50, 22, 22" ElementType="Button" FriendlyName="'Button חזרה (F3)'" FullSelectorArgument="&lt;sap id='tbar[0]/btn[3]' /&gt;" FuzzySelectorArgument="&lt;sap id='tbar[0]/btn[3]' /&gt;" Guid="6aca80ca-0abe-47c4-a52e-f06a581000e7" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIMSURBVEhL7ZTNS1RRGMbPH2Lg1jaFA9NCcQwNwmqWWRh9SJBpm6IwJwsm00lCptEpSsKPTSCVEqZg6qL/IgqJMAnClWTN3I95Os+JKzNn3uQadFedy+8wHLjPj/fc9x217WwhCtRP5zuiIEKRu40oUAW9RUGoita+fsLDucc4fb8TTTeOGtoz5/HgZQ7v1z+I79jsWpHjuUZw7G4ruiYbcXs+jsxqzHDnTRzdUw04MdCKzMwICk5RzAhQBe8HJCi5Np7C2XwCQysxpJfq0L9Yi76FGsMt/ZtnQyv1OPcogcv5q79lQhZRRa8AidHXT4xkcPlghcCGwnvLB4yMlUlZRDl6s/n8bR3NvW1aEttVEkAZK+M18ptJmWJFrObSRCPSb/eLwRK8xp7phj9WpRy/CJvObDf65g6FqiaAVbFB2I1SpnL1ZnMkldxpY3IyGzfYZ+Wi1MI+c9UtN49X5RHl+S5sGFQCdgjC7TNbxrbnuZSpvJIHm2S6fc8yXh3njEMtZSpfbzb5+XEkB1v2JGPjcID5byFlihV92dwwd92Raw4t41BzJD5urFXlEVXyPUhc0J0XVtIx2mSGe/hFVswiykf1MzI7FlpyKnsYZ8YSuP6sXw+mW5ZS+YiisBJ+R47CzLtXZW/Lj9LvVK2gooCB58O4mLtSccbOfLo4Yb5nmCWK/sX6L/rrFZEI+AUSuz2dyMUBCQAAAABJRU5ErkJggg==" InformativeScreenshot="ff74fbe8ded2f35d5931496f7c5a4e3e.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='מוניטור מקרה' /&gt;" SearchSteps="Selector" />
+                                                                                            </uix:NClick.Target>
+                                                                                          </uix:NClick>
+                                                                                          <uix:NCheckState Exists="{x:Null}" DisplayName="check error to print " sap:VirtualizedContainerService.HintSize="680,553" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="48c7ebc3-5204-4b37-824d-873337629618" Version="V1">
+                                                                                            <uix:NCheckState.IfExists>
+                                                                                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="376,337" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                                                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                                  </scg:Dictionary>
+                                                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;הודעת מדפסת הופיע&quot;]" />
+                                                                                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_clikEntersToExitAlertMassages workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="sap_clikEntersToExitAlertMassages.xaml">
+                                                                                                  <ui:InvokeWorkflowFile.Arguments>
+                                                                                                    <InArgument x:TypeArguments="x:Int32" x:Key="in_int_maxRetray">1</InArgument>
+                                                                                                  </ui:InvokeWorkflowFile.Arguments>
+                                                                                                </ui:InvokeWorkflowFile>
+                                                                                              </Sequence>
+                                                                                            </uix:NCheckState.IfExists>
+                                                                                            <uix:NCheckState.IfNotExists>
+                                                                                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="250,84" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                                                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                                  </scg:Dictionary>
+                                                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                                              </Sequence>
+                                                                                            </uix:NCheckState.IfNotExists>
+                                                                                            <uix:NCheckState.Target>
+                                                                                              <uix:TargetAnchorable DesignTimeRectangle="38, 32, 356, 20" ElementType="Text" FriendlyName="'לא נמצאו'" FullSelectorArgument="&lt;sap id='usr/txtMESSTXT1' text='לא נמצאו נתוני הדפסה ל- NP41I0 בטבלה ZNWO2. המדבקה' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/txtMESSTXT1' text='לא נמצאו נתוני הדפסה ל- NP41I0 בטבלה ZNWO2. המדבקה' check:text='לא נמצאו נתוני הדפסה ל- NP41I0 בטבלה ZNWO2. המדבקה' /&gt;" Guid="945f4ad2-9f50-4e98-a855-6f20859175d8" ImageBase64="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" InformativeScreenshot="7c249a126ddcd2072ec11a611e00c147.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='#32770' title='מידע' idx='*' /&gt;" SearchSteps="Selector" />
+                                                                                            </uix:NCheckState.Target>
+                                                                                            <sap:WorkflowViewStateService.ViewState>
+                                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                              </scg:Dictionary>
+                                                                                            </sap:WorkflowViewStateService.ViewState>
+                                                                                          </uix:NCheckState>
+                                                                                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke sap_clikEntersToExitAlertMassages workflow" sap:VirtualizedContainerService.HintSize="680,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="sap_clikEntersToExitAlertMassages.xaml">
+                                                                                            <ui:InvokeWorkflowFile.Arguments>
+                                                                                              <InArgument x:TypeArguments="x:Int32" x:Key="in_int_maxRetray">2</InArgument>
+                                                                                            </ui:InvokeWorkflowFile.Arguments>
+                                                                                          </ui:InvokeWorkflowFile>
+                                                                                        </Sequence>
+                                                                                      </ActivityAction>
+                                                                                    </uix:NApplicationCard.Body>
+                                                                                    <uix:NApplicationCard.TargetApp>
+                                                                                      <uix:TargetApp Area="-8, -8, 1552, 840" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplgpad.exe" IconBase64="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" InformativeScreenshot="f2d6ae5261f0ac8fac4d216152f516ed.png" Selector="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' /&gt;" />
+                                                                                    </uix:NApplicationCard.TargetApp>
+                                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                      </scg:Dictionary>
+                                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                                  </uix:NApplicationCard>
+                                                                                </FlowStep>
+                                                                              </FlowDecision.True>
+                                                                              <FlowDecision.False>
+                                                                                <FlowStep x:Name="__ReferenceID19">
+                                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                      <av:Point x:Key="ShapeLocation">810,837</av:Point>
+                                                                                      <av:Size x:Key="ShapeSize">200,66</av:Size>
+                                                                                    </scg:Dictionary>
+                                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                                  <Sequence DisplayName="שגיאה בשמירת כיסוי ביטוחי" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                      </scg:Dictionary>
+                                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                                    <ui:MultipleAssign sap2010:Annotation.AnnotationText="The purpose of the details is having dynamic data that shows the problem for each record" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="431,173" sap2010:WorkflowViewState.IdRef="MultipleAssign_19">
+                                                                                      <ui:MultipleAssign.AssignOperations>
+                                                                                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                                                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_66">
+                                                                                            <ui:AssignOperation.To>
+                                                                                              <OutArgument x:TypeArguments="s:Exception">[SystemException]</OutArgument>
+                                                                                            </ui:AssignOperation.To>
+                                                                                            <ui:AssignOperation.Value>
+                                                                                              <InArgument x:TypeArguments="s:Exception">[new System.Exception("נוצר מקרה - שגיאה לאחר בדיקת אימות כיסוי")]</InArgument>
+                                                                                            </ui:AssignOperation.Value>
+                                                                                          </ui:AssignOperation>
+                                                                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_67">
+                                                                                            <ui:AssignOperation.To>
+                                                                                              <OutArgument x:TypeArguments="x:Object">[SystemException.Data("Details")]</OutArgument>
+                                                                                            </ui:AssignOperation.To>
+                                                                                            <ui:AssignOperation.Value>
+                                                                                              <InArgument x:TypeArguments="x:Object">[str_statusBarText]</InArgument>
+                                                                                            </ui:AssignOperation.Value>
+                                                                                          </ui:AssignOperation>
+                                                                                        </scg:List>
+                                                                                      </ui:MultipleAssign.AssignOperations>
+                                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                                        </scg:Dictionary>
+                                                                                      </sap:WorkflowViewStateService.ViewState>
+                                                                                    </ui:MultipleAssign>
+                                                                                    <Throw Exception="[SystemException]" sap:VirtualizedContainerService.HintSize="431,22" sap2010:WorkflowViewState.IdRef="Throw_9" />
+                                                                                  </Sequence>
+                                                                                </FlowStep>
+                                                                              </FlowDecision.False>
+                                                                            </FlowDecision>
+                                                                          </FlowStep.Next>
+                                                                        </FlowStep>
                                                                       </FlowStep.Next>
                                                                     </FlowStep>
                                                                   </FlowStep.Next>
                                                                 </FlowStep>
-                                                              </FlowStep.Next>
-                                                            </FlowStep>
-                                                          </FlowDecision.True>
-                                                          <FlowDecision.False>
-                                                            <FlowStep x:Name="__ReferenceID18">
-                                                              <sap:WorkflowViewStateService.ViewState>
-                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                  <av:Point x:Key="ShapeLocation">850,667</av:Point>
-                                                                  <av:Size x:Key="ShapeSize">200,66</av:Size>
-                                                                </scg:Dictionary>
-                                                              </sap:WorkflowViewStateService.ViewState>
-                                                              <Sequence DisplayName="שגיאה ביצירץ מקרה" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_19">
-                                                                <sap:WorkflowViewStateService.ViewState>
-                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                  </scg:Dictionary>
-                                                                </sap:WorkflowViewStateService.ViewState>
-                                                                <ui:MultipleAssign sap2010:Annotation.AnnotationText="The purpose of the details is having dynamic data that shows the problem for each record" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="431,173" sap2010:WorkflowViewState.IdRef="MultipleAssign_10">
-                                                                  <ui:MultipleAssign.AssignOperations>
-                                                                    <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_37">
-                                                                        <ui:AssignOperation.To>
-                                                                          <OutArgument x:TypeArguments="s:Exception">[SystemException]</OutArgument>
-                                                                        </ui:AssignOperation.To>
-                                                                        <ui:AssignOperation.Value>
-                                                                          <InArgument x:TypeArguments="s:Exception">[new System.Exception("שגיאה ביצירת מקרה")]</InArgument>
-                                                                        </ui:AssignOperation.Value>
-                                                                      </ui:AssignOperation>
-                                                                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_38">
-                                                                        <ui:AssignOperation.To>
-                                                                          <OutArgument x:TypeArguments="x:Object">[SystemException.Data("Details")]</OutArgument>
-                                                                        </ui:AssignOperation.To>
-                                                                        <ui:AssignOperation.Value>
-                                                                          <InArgument x:TypeArguments="x:Object">[str_statusBarText]</InArgument>
-                                                                        </ui:AssignOperation.Value>
-                                                                      </ui:AssignOperation>
-                                                                    </scg:List>
-                                                                  </ui:MultipleAssign.AssignOperations>
+                                                              </FlowDecision.True>
+                                                              <FlowDecision.False>
+                                                                <FlowStep x:Name="__ReferenceID18">
                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                      <av:Point x:Key="ShapeLocation">850,667</av:Point>
+                                                                      <av:Size x:Key="ShapeSize">200,66</av:Size>
                                                                     </scg:Dictionary>
                                                                   </sap:WorkflowViewStateService.ViewState>
-                                                                </ui:MultipleAssign>
-                                                                <Throw Exception="[SystemException]" sap:VirtualizedContainerService.HintSize="431,22" sap2010:WorkflowViewState.IdRef="Throw_5" />
-                                                              </Sequence>
-                                                            </FlowStep>
-                                                          </FlowDecision.False>
-                                                        </FlowDecision>
+                                                                  <Sequence DisplayName="שגיאה ביצירץ מקרה" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                      </scg:Dictionary>
+                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                    <ui:MultipleAssign sap2010:Annotation.AnnotationText="The purpose of the details is having dynamic data that shows the problem for each record" DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="431,173" sap2010:WorkflowViewState.IdRef="MultipleAssign_10">
+                                                                      <ui:MultipleAssign.AssignOperations>
+                                                                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_37">
+                                                                            <ui:AssignOperation.To>
+                                                                              <OutArgument x:TypeArguments="s:Exception">[SystemException]</OutArgument>
+                                                                            </ui:AssignOperation.To>
+                                                                            <ui:AssignOperation.Value>
+                                                                              <InArgument x:TypeArguments="s:Exception">[new System.Exception("שגיאה ביצירת מקרה")]</InArgument>
+                                                                            </ui:AssignOperation.Value>
+                                                                          </ui:AssignOperation>
+                                                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_38">
+                                                                            <ui:AssignOperation.To>
+                                                                              <OutArgument x:TypeArguments="x:Object">[SystemException.Data("Details")]</OutArgument>
+                                                                            </ui:AssignOperation.To>
+                                                                            <ui:AssignOperation.Value>
+                                                                              <InArgument x:TypeArguments="x:Object">[str_statusBarText]</InArgument>
+                                                                            </ui:AssignOperation.Value>
+                                                                          </ui:AssignOperation>
+                                                                        </scg:List>
+                                                                      </ui:MultipleAssign.AssignOperations>
+                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                        </scg:Dictionary>
+                                                                      </sap:WorkflowViewStateService.ViewState>
+                                                                    </ui:MultipleAssign>
+                                                                    <Throw Exception="[SystemException]" sap:VirtualizedContainerService.HintSize="431,22" sap2010:WorkflowViewState.IdRef="Throw_5" />
+                                                                  </Sequence>
+                                                                </FlowStep>
+                                                              </FlowDecision.False>
+                                                            </FlowDecision>
+                                                          </FlowStep.Next>
+                                                        </FlowStep>
                                                       </FlowStep.Next>
                                                     </FlowStep>
                                                   </FlowStep.Next>
@@ -1281,15 +1295,6 @@
     <x:Reference>__ReferenceID7</x:Reference>
     <x:Reference>__ReferenceID8</x:Reference>
     <x:Reference>__ReferenceID9</x:Reference>
-    <FlowStep>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">880,514.5</av:Point>
-          <av:Size x:Key="ShapeSize">200,51</av:Size>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_6" Message="[&quot;&quot;+str_statusBarText]" />
-    </FlowStep>
     <x:Reference>__ReferenceID10</x:Reference>
     <x:Reference>__ReferenceID11</x:Reference>
     <x:Reference>__ReferenceID12</x:Reference>
@@ -1300,5 +1305,6 @@
     <x:Reference>__ReferenceID17</x:Reference>
     <x:Reference>__ReferenceID18</x:Reference>
     <x:Reference>__ReferenceID19</x:Reference>
+    <x:Reference>__ReferenceID20</x:Reference>
   </Flowchart>
 </Activity>
