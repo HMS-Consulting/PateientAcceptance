@@ -105,13 +105,13 @@
           <av:Size x:Key="ShapeSize">200,51</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: אחזקת קבלה מהירה למטופל אמבולטורי: מסך פתיחה: מסך נתונים" sap:VirtualizedContainerService.HintSize="873,3600" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="3b529e25-afc7-4875-ac59-ca6e2be4a8b5" Version="V1">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: אחזקת קבלה מהירה למטופל אמבולטורי: מסך פתיחה: מסך נתונים" sap:VirtualizedContainerService.HintSize="873,3840" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="3b529e25-afc7-4875-ac59-ca6e2be4a8b5" Version="V1">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do insert visitor data" sap:VirtualizedContainerService.HintSize="839,3311" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <Sequence DisplayName="Do insert visitor data" sap:VirtualizedContainerService.HintSize="839,3551" sap2010:WorkflowViewState.IdRef="Sequence_1">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="str_TableText" />
                 <Variable x:TypeArguments="x:String" Name="att_tooltipbutton" />
@@ -154,9 +154,37 @@
                   </ui:Target>
                 </ui:GetAttribute.Target>
               </ui:GetAttribute>
-              <If Condition="[att_tooltipbutton.Equals(&quot;הפעלת יחס ביטוח&quot;)]" DisplayName="   If   הכפתור האדום בשורה הראשונה מופיע" sap:VirtualizedContainerService.HintSize="797,807" sap2010:WorkflowViewState.IdRef="If_1">
+              <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="797,178" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" Shortcuts="[d(hk)][k(pgdn)][u(hk)]" Version="V1" />
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="797,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                <ui:CommentOut.Body>
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,228" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NMouseScroll Direction="Down" DisplayName="Mouse Scroll" sap:VirtualizedContainerService.HintSize="334,136" sap2010:WorkflowViewState.IdRef="NMouseScroll_3" InteractionMode="HardwareEvents" MovementUnits="7" Timeout="3" Version="V1" />
+                  </Sequence>
+                </ui:CommentOut.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:CommentOut>
+              <ui:Check AlterIfDisabled="{x:Null}" DelayAfter="{x:Null}" Action="Check" ContinueOnError="True" DelayBefore="300" sap:VirtualizedContainerService.HintSize="797,68" sap2010:WorkflowViewState.IdRef="Check_1">
+                <ui:Check.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d75f88f3-9709-4bc1-a034-c75d86a692fb" Selector="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='אחזקת קבלה מהירה למטופל אמבולטורי: מסך פתיחה: מסך נתונים' /&gt;&lt;sap colTooltip='יחסי ביטוח חולה משלם פרטי' id='usr/ssubSUBSCREEN:SAPMNPA10:0500/subSUBSCR13:SAPLNIRA:0200/subNIRA_SC:SAPLNIRA_TC:0100/tblSAPLNIRA_TCG_TC_NIRA' tableRow='0' /&gt;" TimeoutMS="3000">
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:Check.Target>
+              </ui:Check>
+              <If Condition="[att_tooltipbutton.Equals(&quot;הפעלת יחס ביטוח&quot;)]" DisplayName="   If   הכפתור האדום בשורה הראשונה מופיע" sap:VirtualizedContainerService.HintSize="797,630" sap2010:WorkflowViewState.IdRef="If_1">
                 <If.Then>
-                  <Sequence sap:VirtualizedContainerService.HintSize="376,648" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <Sequence sap:VirtualizedContainerService.HintSize="376,471" sap2010:WorkflowViewState.IdRef="Sequence_2">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:Boolean" Name="boo_elementExist" />
                     </Sequence.Variables>
@@ -165,7 +193,6 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NMouseScroll ContinueOnError="True" Direction="Down" DisplayName="Mouse Scroll" sap:VirtualizedContainerService.HintSize="334,136" sap2010:WorkflowViewState.IdRef="NMouseScroll_2" InteractionMode="HardwareEvents" MovementUnits="7" Timeout="3" Version="V1" />
                     <uix:NClick ClickType="Single" DisplayName="Click" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" Version="V1">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable DesignTimeRectangle="0, 0, 0, 0" FullSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='אחזקת קבלה מהירה למטופל אמבולטורי: מסך פתיחה: מסך נתונים' /&gt;&lt;sap colTooltip='IR קשור-מקרה' id='usr/ssubSUBSCREEN:SAPMNPA10:0500/subSUBSCR13:SAPLNIRA:0200/subNIRA_SC:SAPLNIRA_TC:0100/tblSAPLNIRA_TCG_TC_NIRA' tableRow='0' /&gt;" Guid="0f4e2c57-b052-4852-a519-9e3aa704c374" SearchSteps="Selector" />
@@ -214,14 +241,35 @@
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence sap:VirtualizedContainerService.HintSize="376,247" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence sap:VirtualizedContainerService.HintSize="376,292" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;לא נמצא כפתור הפעלת יחסי ביטוח בשורה 1&quot;]" />
-                    <Throw Exception="[new BusinessRuleException(&quot;לא נמצאו קשרי ביטוח ללקוח&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click ir status" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+                      <ui:Click.CursorPosition>
+                        <ui:CursorPosition Position="Center">
+                          <ui:CursorPosition.OffsetX>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetX>
+                          <ui:CursorPosition.OffsetY>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetY>
+                        </ui:CursorPosition>
+                      </ui:Click.CursorPosition>
+                      <ui:Click.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="775413b5-243a-4498-a512-ee5271792175" Selector="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='אחזקת קבלה מהירה למטופל אמבולטורי: מסך פתיחה: מסך נתונים' /&gt;&lt;sap colTooltip='IR קשור-מקרה' id='usr/ssubSUBSCREEN:SAPMNPA10:0500/subSUBSCR13:SAPLNIRA:0200/subNIRA_SC:SAPLNIRA_TC:0100/tblSAPLNIRA_TCG_TC_NIRA' tableRow='0' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:Click.Target>
+                    </ui:Click>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;לא נמצא כפתור הפעלת יחסי ביטוח בשורה 1&quot; + &quot;סומן משלם עצמי&quot;]" />
                   </Sequence>
                 </If.Else>
               </If>
