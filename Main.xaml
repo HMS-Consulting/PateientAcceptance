@@ -27,7 +27,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1391,768</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1152,768</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="120">
@@ -145,6 +145,7 @@
       <AssemblyReference>UiPath.Activities.Contracts</AssemblyReference>
       <AssemblyReference>Microsoft.Vbe.Interop</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <StateMachine InitialState="{x:Reference __ReferenceID53}" DisplayName="Main" sap:VirtualizedContainerService.HintSize="1162,703" sap2010:WorkflowViewState.IdRef="StateMachine_1">
@@ -1467,14 +1468,31 @@
                                       </ui:LogMessage>
                                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ExecuteTransation workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_45" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="ExecuteTransaction.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
-                                          <InOutArgument x:TypeArguments="ui:QueueItem" x:Key="io_currentTranItem">[tran_currentTranItem]</InOutArgument>
-                                          <InOutArgument x:TypeArguments="scg:List(s:Exception)" x:Key="io_list_transactionSystemExceptions">[list_transactionSystemExceptions]</InOutArgument>
-                                          <InOutArgument x:TypeArguments="scg:List(ui:BusinessRuleException)" x:Key="io_list_transactionBusinessExceptions">[list_transactionBusinessExceptions]</InOutArgument>
-                                          <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="io_dic_AllTransactionData">[dic_str_obj_AllTransactionData]</InOutArgument>
-                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_int_HandledTransactionsCount">[int_handledTransactionsCounter]</InArgument>
-                                          <InOutArgument x:TypeArguments="x:Boolean" x:Key="io_boo_SendTransactionToActionCenter">[boo_SendTransactionToActionCenter]</InOutArgument>
-                                          <InOutArgument x:TypeArguments="x:Boolean" x:Key="io_boo_TransactionPostponed">[boo_TransactionPostponed]</InOutArgument>
-                                          <InOutArgument x:TypeArguments="hm:ProcessSetup" x:Key="io_ProcessSetup">[in_ProcessSetup]</InOutArgument>
+                                          <InOutArgument x:TypeArguments="ui:QueueItem" x:Key="io_currentTranItem">
+                                            <mva:VisualBasicReference x:TypeArguments="ui:QueueItem" ExpressionText="tran_currentTranItem" />
+                                          </InOutArgument>
+                                          <InOutArgument x:TypeArguments="scg:List(s:Exception)" x:Key="io_list_transactionSystemExceptions">
+                                            <mva:VisualBasicReference x:TypeArguments="scg:List(s:Exception)" ExpressionText="list_transactionSystemExceptions" />
+                                          </InOutArgument>
+                                          <InOutArgument x:TypeArguments="scg:List(ui:BusinessRuleException)" x:Key="io_list_transactionBusinessExceptions">
+                                            <mva:VisualBasicReference x:TypeArguments="scg:List(ui:BusinessRuleException)" ExpressionText="list_transactionBusinessExceptions" />
+                                          </InOutArgument>
+                                          <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="io_dic_AllTransactionData">
+                                            <mva:VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="dic_str_obj_AllTransactionData" />
+                                          </InOutArgument>
+                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_int_HandledTransactionsCount">
+                                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="int_handledTransactionsCounter" />
+                                          </InArgument>
+                                          <InOutArgument x:TypeArguments="x:Boolean" x:Key="io_boo_SendTransactionToActionCenter">
+                                            <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boo_SendTransactionToActionCenter" />
+                                          </InOutArgument>
+                                          <InOutArgument x:TypeArguments="x:Boolean" x:Key="io_boo_TransactionPostponed">
+                                            <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boo_TransactionPostponed" />
+                                          </InOutArgument>
+                                          <InOutArgument x:TypeArguments="hm:ProcessSetup" x:Key="io_ProcessSetup">
+                                            <mva:VisualBasicReference x:TypeArguments="hm:ProcessSetup" ExpressionText="in_ProcessSetup" />
+                                          </InOutArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_pateientNumber" />
                                         </ui:InvokeWorkflowFile.Arguments>
                                       </ui:InvokeWorkflowFile>
                                       <Assign sap2010:Annotation.AnnotationText="This activity is here for cases we kill the job during a transaction execution. the robot will go to the finally block and we have to ensure the transaction ended successfuly" DisplayName="Assign boo_TransactionSuccess" sap:VirtualizedContainerService.HintSize="333.6,152" sap2010:WorkflowViewState.IdRef="Assign_181">

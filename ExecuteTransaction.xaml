@@ -707,7 +707,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">810,144 810,224.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:MultipleAssign sap2010:Annotation.AnnotationText="save file name without extention" DisplayName="Multiple Assign current case number and id number" sap:VirtualizedContainerService.HintSize="200,93" sap2010:WorkflowViewState.IdRef="MultipleAssign_9">
+              <ui:MultipleAssign sap2010:Annotation.AnnotationText="save file name without extention" DisplayName="Multiple Assign current case number and id number" sap:VirtualizedContainerService.HintSize="431,193" sap2010:WorkflowViewState.IdRef="MultipleAssign_9">
                 <ui:MultipleAssign.AssignOperations>
                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_68">
@@ -716,6 +716,22 @@
                       </ui:AssignOperation.To>
                       <ui:AssignOperation.Value>
                         <InArgument x:TypeArguments="x:String">[path.GetFileNameWithoutExtension(io_currentTranItem.SpecificContent("filePath").ToString)]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_69">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:Object">[io_dic_AllTransactionData("CustomerID")]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:Object">[str_currentID]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_70">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:Object">[io_dic_AllTransactionData("Date")]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:Object">[date_reservation.ToString("dd/MM/yyyy")]</InArgument>
                       </ui:AssignOperation.Value>
                     </ui:AssignOperation>
                   </scg:List>
@@ -773,10 +789,10 @@
                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SeqNWP1_InsertPateientData workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="SAP_NWP1_InsertPateientData.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
                               <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateFrom">
-                                <mva:VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="date_reservation" />
+                                <mva:VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="DateAdd(&quot;d&quot;,CType(io_ProcessSetup.BusinessProcess.Assets(&quot;addDateFrom&quot;),Int32),date_reservation)" />
                               </InArgument>
                               <InArgument x:TypeArguments="s:DateTime" x:Key="in_dateTo">
-                                <mva:VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="date_reservation" />
+                                <mva:VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="DateAdd(&quot;d&quot;,CType(io_ProcessSetup.BusinessProcess.Assets(&quot;addDateTo&quot;),Int32),date_reservation)" />
                               </InArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="in_str_ClinicService">
                                 <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_ProcessSetup.BusinessProcess.Assets(&quot;Sap_clinic&quot;).ToString" />
@@ -859,7 +875,7 @@
                                                 <ActivityAction.Argument>
                                                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                                                 </ActivityAction.Argument>
-                                                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,708" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,706" sap2010:WorkflowViewState.IdRef="Sequence_15">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -871,7 +887,7 @@
                                                     </uix:NClick.Target>
                                                   </uix:NClick>
                                                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;לחיצה על בחר מקרה&quot;]" />
-                                                  <uix:NClick ClickType="Single" DisplayName="Click 'מקרה'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1e5b5b79-0819-46f9-8cc6-831c6c4010d6" Timeout="5" Version="V1">
+                                                  <uix:NClick ClickType="Single" ContinueOnError="True" DisplayName="Click 'מקרה'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1e5b5b79-0819-46f9-8cc6-831c6c4010d6" Timeout="2" Version="V1">
                                                     <uix:NClick.Target>
                                                       <uix:TargetAnchorable DesignTimeRectangle="1437, 123, 65, 20" ElementType="Button" FriendlyName="'מקרה'" FullSelectorArgument="&lt;sap id='tbar[1]/btn[43]' /&gt;" FuzzySelectorArgument="&lt;sap id='tbar[1]/btn[43]' check:text='מקרה' /&gt;" Guid="9dcca957-b0b1-41eb-80a6-e58acaea5c5c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEUAAAAYCAYAAACsnTAAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEXSURBVFhH7ZU9DoMwDEZzog6Im3TqkFt0ZeEI3Vm7cwFmpt6ge2/h1qQBQj5QKOpfYqQnUBxb8ktC1PV2IcFFpABECkCkAKKRorVeBOXMEZWUuWetmKSkhIpJTkqImCSlMKiG5TUp7ZEypUg57Knq4jUV+SSWH6lZzFWUlbWJn/dmPr/7+I6K9pk/Azca+rxHCqApd27zIyr9aEyfvPGBEx36xq3UkQgryssb+EkpbmMoZncShsUdzuabBfc7p2OptuH7UvgIeCvHKxwgJSB3LAjFEfFJccZQneSkTPPQUUtKCo9Pjsrq2oZopFTanz/+yXY3WuC1/H0pW4BCtyNSANzoGlANy+el/AEiBSBSACIFIFI8LnQHjVFH7rjZrBYAAAAASUVORK5CYII=" InformativeScreenshot="6644abd243f5803744236a2723a3e057.png" ScopeSelectorArgument="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='קבלה מהירה למטופל אמבולטורי: מסך פתיחה: רשימת מקרים' /&gt;" SearchSteps="Selector" />
                                                     </uix:NClick.Target>
