@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1417,1505</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1183,1545</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>sap_FindAndSelectCurrentRow_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
@@ -86,7 +86,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="sap_FindAndSelectCurrentRow" sap:VirtualizedContainerService.HintSize="590,1440" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="sap_FindAndSelectCurrentRow" sap:VirtualizedContainerService.HintSize="590,1480" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:UiElement" Name="out_uiWin" />
     </Sequence.Variables>
@@ -95,21 +95,21 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: רשימת מוזמנים (רענון אוטומטי כל 360 שניות)   ;" sap:VirtualizedContainerService.HintSize="548,1256" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="e1e2e85d-d65f-4aad-9eb6-52546aef6177" Version="V1">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: רשימת מוזמנים (רענון אוטומטי כל 360 שניות)   ;" sap:VirtualizedContainerService.HintSize="548,1296" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="e1e2e85d-d65f-4aad-9eb6-52546aef6177" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="514,967" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="514,1007" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="472,873" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="472,913" sap2010:WorkflowViewState.IdRef="TryCatch_1">
               <TryCatch.Try>
-                <ui:CellScope ColumnName="מקרה" DisplayName="Table Cell Scope 'GridViewColumn  מקרה'" sap:VirtualizedContainerService.HintSize="434,646" sap2010:WorkflowViewState.IdRef="CellScope_3" RowNumber="First Empty Row" TableRow="[out_int_rowIndex]" UiElement="[out_uiElment_currentRowCell]">
+                <ui:CellScope ColumnName="מקרה" DisplayName="Table Cell Scope 'GridViewColumn  מקרה'" sap:VirtualizedContainerService.HintSize="434,686" sap2010:WorkflowViewState.IdRef="CellScope_3" RowNumber="First Empty Row" TableRow="[out_int_rowIndex]" UiElement="[out_uiElment_currentRowCell]">
                   <ui:CellScope.Body>
                     <ActivityAction x:TypeArguments="x:Object">
                       <ActivityAction.Argument>
@@ -156,7 +156,7 @@
                     </scg:List>
                   </ui:CellScope.ColumnNames>
                   <ui:CellScope.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3644816a-291d-47f2-aca3-47dccb90ad4f" InformativeScreenshot="f6ac4ee468d03d035508ce0572382391" Selector="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='רשימת מוזמנים (רענון אוטומטי כל 360 שניות)   ;' /&gt;&lt;sap id='usr/ssubVIEW_SCREEN:SAPLN1LSTAMB:0007/cntlISH_VIEW_007/shellcont/shell' /&gt;" TimeoutMS="3000">
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3644816a-291d-47f2-aca3-47dccb90ad4f" InformativeScreenshot="f6ac4ee468d03d035508ce0572382391" Selector="&lt;wnd app='saplgpad.exe' cls='SAP_FRONTEND_SESSION' title='רשימת מוזמנים (רענון אוטומטי כל 360 שניות)   ;' /&gt;&lt;sap id='usr/ssubVIEW_SCREEN:SAPLN1LSTAMB:0007/cntlISH_VIEW_007/shellcont/shell' /&gt;" TimeoutMS="2000">
                       <ui:Target.WaitForReady>
                         <InArgument x:TypeArguments="ui:WaitForReady" />
                       </ui:Target.WaitForReady>
